@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
 :root {
+  /* Primary Colors */
+  --primary: #1a1a1a;
+  --primary-dark: #000000;
+  --secondary: #d4af37;
+  --secondary-light: #f4e6a1;
+
+  /* Background Colors */
   --background: #ffffff;
-  --foreground: #171717;
+  --background-dark: #1a1a1a;
+  --foreground: #1a1a1a;
+  --foreground-light: #666666;
+  --foreground-dark: #ffffff;
+
+  /* Accent Colors */
+  --accent: #f4e6a1;
+  --accent-dark: #d4af37;
+
+  /* Gray Scale */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
 }
 
 @theme inline {
+  /* Colors */
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-accent: var(--accent);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Fonts */
+  --font-lato: var(--font-lato);
+  --font-sans: var(--font-lato), "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Container */
+  --container-center: true;
+  --container-padding: 55px;
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1810px;
+  --container-3xl: 1810px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-lato), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
 }

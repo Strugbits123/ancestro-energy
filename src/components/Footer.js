@@ -1,3 +1,6 @@
+import Image from 'next/image';
+import logo from "@/src/assets/logo.png";
+
 export default function Footer() {
   const gradientStyle = {
     background: 'linear-gradient(129.65deg, #C4952D -68.94%, #AE7F2A -37.03%, #F5DC7B 0.2%, #AE7F2A 189.02%)',
@@ -14,11 +17,7 @@ export default function Footer() {
         <div className="text-center mb-12">
           {/* Ancestro Logo */}
           <div className="inline-block mb-8">
-            <svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 45L22.5 30L30 45H15Z" fill="white"/>
-              <text x="40" y="38" fontSize="20" fontWeight="bold" fill="white">ANCESTRO</text>
-              <text x="40" y="52" fontSize="12" fill="white">ENERGY</text>
-            </svg>
+            <Image src={logo} alt="Logo" />
           </div>
         </div>
 

@@ -138,7 +138,7 @@ export default function Footer() {
                 key={i}
                 src={`/images/${country}.png`}
                 alt={`${country} flag`}
-                className="w-10 h-6 rounded-sm object-cover shadow"
+                className="w-18 h-12 rounded-sm object-cover shadow"
               />
             ))}
           </div>

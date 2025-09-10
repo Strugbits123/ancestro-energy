@@ -1,6 +1,7 @@
 import Header from '../src/components/Header';
 import Footer from '../src/components/Footer';
 import SunButton from '../src/components/SunButton';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -80,7 +81,9 @@ export default function Home() {
               </div>
 
               {/* CTA Button */}
-              <SunButton className="w-full">I WANT SOLAR</SunButton>
+              <Link href="/solar">
+                <SunButton className="w-full">I WANT SOLAR</SunButton>
+              </Link>
             </div>
 
             {/* Right Card - Dealer */}

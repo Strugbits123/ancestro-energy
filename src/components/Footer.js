@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="text-center mb-12">
           {/* Ancestro Logo */}
           <div className="inline-block mb-8">
-            <Image src={logo} alt="Logo" />
+            <Image src={logo} alt="Logo" className='h-28 w-72' />
           </div>
         </div>
 
@@ -25,7 +25,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Solutions Column */}
           <div>
-            <h3 
+            <h3
               className="font-bold text-sm mb-6 tracking-wider uppercase"
               style={gradientStyle}
             >
@@ -41,7 +41,7 @@ export default function Footer() {
 
           {/* Dealers Column */}
           <div>
-            <h3 
+            <h3
               className="font-bold text-sm mb-6 tracking-wider uppercase"
               style={gradientStyle}
             >
@@ -57,7 +57,7 @@ export default function Footer() {
 
           {/* Investors Column */}
           <div>
-            <h3 
+            <h3
               className="font-bold text-sm mb-6 tracking-wider uppercase"
               style={gradientStyle}
             >
@@ -73,7 +73,7 @@ export default function Footer() {
 
           {/* Company Column */}
           <div>
-            <h3 
+            <h3
               className="font-bold text-sm mb-6 tracking-wider uppercase"
               style={gradientStyle}
             >
@@ -93,27 +93,61 @@ export default function Footer() {
           <p className="text-sm font-bold mb-6 tracking-wider uppercase text-white">
             Powered by Ancestro Ecosystem
           </p>
-          
+
           {/* Partner Logos */}
           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 p-6 bg-gradient-to-r from-white/36 to-gray-500/0 border border-white/30 backdrop-blur-sm rounded-lg mb-6">
-            <div className="bg-white h-8 w-24 md:w-32 rounded"></div>
-            <div className="bg-white h-8 w-20 md:w-28 rounded"></div>
-            <div className="bg-white h-8 w-20 md:w-28 rounded"></div>
-            <div className="bg-white h-8 w-18 md:w-24 rounded"></div>
-            <div className="bg-white h-8 w-16 md:w-20 rounded"></div>
+            {[
+              "Ancestro-Capital",
+              "Ancestro-Charge",
+              "Ancestro-Foundation",
+              "Ancestro-Sustainability",
+              "AncestroProject",
+            ].map((country, i) => (
+              <img
+                key={i}
+                src={`/images/${country}.png`}
+                alt={`${country} flag`}
+                className="w-80 h-16 rounded-sm  shadow"
+              />
+            ))}
           </div>
 
           {/* Country Flags */}
           <div className="flex flex-wrap justify-center items-center gap-3 mb-8">
-            {Array.from({length: 14}).map((_, i) => (
-              <div key={i} className="w-10 h-6 bg-gray-400 rounded-sm"></div>
+            {[
+              "argentina",
+              "belize",
+              "bolivia",
+              "brazil",
+              "chile",
+              "colombia",
+              "costa-rica",
+              "dominican",
+              "ecuador",
+              "guatemala",
+              "honduras",
+              "mexico",
+              "nicaragua",
+              "panama",
+              "paraguay",
+              "peru",
+              "salvador",
+              "uruguay",
+            ].map((country, i) => (
+              <img
+                key={i}
+                src={`/images/${country}.png`}
+                alt={`${country} flag`}
+                className="w-10 h-6 rounded-sm object-cover shadow"
+              />
             ))}
           </div>
+
         </div>
       </div>
 
       {/* Footer Bottom */}
-      <div 
+      <div
         className="py-4"
         style={{
           background: 'linear-gradient(129.65deg, #C4952D -68.94%, #AE7F2A -37.03%, #F5DC7B 0.2%, #AE7F2A 189.02%)'

@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import logo from "@/src/assets/logo.png";
+// import logo from "@/src/assets/logo.png";
+import logo from "@/public/assets/logo.png";
 import SunButton from './SunButton';
 
 export default function Header() {
@@ -44,11 +45,11 @@ export default function Header() {
       {isMenuOpen && (
         <div className="fixed inset-0 z-40">
           {/* Backdrop */}
-          <div 
+          <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setIsMenuOpen(false)}
           ></div>
-          
+
           {/* Glass Sidebar */}
           <div className="absolute top-0 right-0 h-full w-80 bg-white/10 backdrop-blur-xl border-l border-white/20 shadow-2xl">
             {/* Sidebar Header */}

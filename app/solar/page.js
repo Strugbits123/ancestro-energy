@@ -7,17 +7,17 @@ import { caseStudy } from "@/src/constants/data";
 export default function Solar() {
 
 
-    return (<>
+    return (<div className="min-h-screen">
 
         {/*Hero Section*/}
-        <section className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-800 via-gray-900 to-black">
+        <section className="relative flex flex-col items-center justify-center bg-gradient-to-br from-gray-800 via-gray-900 to-black">
             {/* Background */}
             <div className="absolute inset-0">
                 <div
                     className="w-full h-full"
                     style={{
                         backgroundImage: `
-                            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,1)),
                             url('/images/solar-hero-section.png')
                             `,
                         backgroundRepeat: 'no-repeat',
@@ -48,7 +48,7 @@ export default function Solar() {
                                 />
                             ))}
                         </div>
-                        <div className="flex justify-start mt-4 w-full xl:w-[35%]"><SunButton className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton></div>
+                        <div className="flex justify-start mt-4 w-full xl:w-[35%]"><SunButton redirect={'/solar/apply'} className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton></div>
                     </div>
 
                     {/* Right Side: Image */}
@@ -64,15 +64,14 @@ export default function Solar() {
                 </div>
             </div>
 
-
-
+            <h2 className="z-50 text-center font-lato font-bold text-[25px] font-lato leading-relaxed text-white p-5">OUR CASE STUDY</h2>
 
 
         </section>
 
         {/*OUR CASE STUDY*/}
         <section className="flex flex-col bg-black  py-10 items-center">
-            <h2 className="text-center font-bold text-[25px] font-lato leading-relaxed text-white p-5">OUR CASE STUDY</h2>
+            {/* <h2 className="text-center font-lato font-bold text-[25px] font-lato leading-relaxed text-white p-5">OUR CASE STUDY</h2> */}
             <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 {
                     caseStudy.map((study, i) => i < 3 && (
@@ -87,13 +86,13 @@ export default function Solar() {
             </div>
             <div className="flex flex-col md:flex-row gap-3 mt-5">
                 <SunButton>SEE MORE CASE STUDIES.</SunButton>
-                <SunButton className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
+                <SunButton redirect={'/solar/apply'} className="text-[15px] font-lato border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
             </div>
         </section>
 
         {/*LEARN MORE ABOUT ANCESTRO*/}
         <section className="flex flex-col bg-black  py-10 items-center">
-            <h2 className="text-center font-bold text-[25px] font-lato leading-relaxed text-white p-5">LERAN MORE ABOUT ANCESTRO</h2>
+            <h2 className="text-center font-lato font-bold text-[25px] font-lato leading-relaxed text-white p-5">LERAN MORE ABOUT ANCESTRO</h2>
             <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 {
                     [
@@ -107,8 +106,8 @@ export default function Solar() {
                                 src={card.img}
                             />
                             <div className="gap-1 absolute bottom-0 p-5">
-                                <h2 className="text-[22px] font-bold font-lato text-white">{card.title}</h2>
-                                <span className="text-white font-lato text-[12px]">{card.desc}</span>
+                                <h2 className="font-lato text-[22px] font-bold font-lato text-white">{card.title}</h2>
+                                <span className="font-lato text-white font-lato text-[12px]">{card.desc}</span>
                             </div>
                         </div>
 
@@ -117,8 +116,8 @@ export default function Solar() {
             </div>
             <div className="flex flex-col md:flex-row gap-3 mt-5">
                 <SunButton>DISCOVER MORE.</SunButton>
-                <SunButton className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
+                <SunButton redirect={'/solar/apply'} className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
             </div>
         </section>
-    </>);
+    </div>);
 }

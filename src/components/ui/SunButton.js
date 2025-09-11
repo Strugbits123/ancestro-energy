@@ -44,7 +44,7 @@ export default function SunButton({
   // Size variants
   const sizeClasses = {
     small: "px-4 py-1 h-[40px] text-sm",
-    default: "px-6 py-2 h-[50px]",
+    default: "px-6 py-2",
     large: "px-8 py-3 h-[60px] text-lg"
   };
 
@@ -73,7 +73,7 @@ export default function SunButton({
   
   return (
     <Component
-      className={`relative group border ${sizeClasses[size]} ${variantClasses[variant]} rounded-full font-medium overflow-hidden transition-opacity ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'} ${className}`}
+      className={`relative group border ${sizeClasses[size]} ${variantClasses[variant]} rounded-full font-medium overflow-hidden transition-opacity active:bg-yellow-500 active:text-black transition duration-500 ease-in-out ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'} ${className}`}
       onClick={handleClick}
       disabled={disabled}
       type={Component === "button" ? type : undefined}
@@ -82,7 +82,7 @@ export default function SunButton({
       rel={Component === "a" && target === "_blank" ? "noopener noreferrer" : undefined}
       {...props}
     >
-      <span className="relative z-10">{children}</span>
+      <span className="relative z-10 ">{children}</span>
       {/* sun circle rising */}
       <span className="absolute inset-0 flex items-end justify-center">
         <span className={`${sunSizes[size]} rounded-full bg-yellow-500 opacity-0 translate-y-full transition-all duration-500 ${sunPositions[size]} group-hover:opacity-100 blur-[2px]`}></span>

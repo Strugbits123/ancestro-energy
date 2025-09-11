@@ -1,14 +1,14 @@
 "use client"
 import { useState } from "react";
 
-const FlagHoverModal = ({ content }) => {
+const FlagHover = ({ content }) => {
     const [show, setShow] = useState(false);
     const [position, setPosition] = useState({ x: 0, y: 0 });
 
     const handleMouseEnter = (e) => {
         const rect = e.target.getBoundingClientRect();
         setPosition({
-            x: rect.right + 20,
+            x: rect.right,
             y: rect.top - 200,
         });
         setShow(true);
@@ -32,7 +32,7 @@ const FlagHoverModal = ({ content }) => {
 
             {show && (
                 <div
-                    className="flex flex-col items-center justify-center absolute z-50  shadow-lg h-fit max-w-[300px] rounded p-4 text-sm w-fit bg-gradient-to-r from-white/10 via-white/20 to-white/30 border border-white/30 backdrop-blur-lg rounded-[20px]"
+                    className="flex flex-col items-center justify-center absolute z-50  shadow-lg h-fit max-w-[320px] rounded p-4 text-sm w-fit bg-gradient-to-r from-white/10 via-white/20 to-white/30 border border-white/30 backdrop-blur-lg rounded-[20px]"
                     style={{
                         top: position.y,
                         left: position.x,
@@ -48,11 +48,11 @@ const FlagHoverModal = ({ content }) => {
                     <div className="flex flex-wrap gap-[5px]">
                         {content.study.investmentData.map((data, i) => (
                             <div key={i} className="text-[8px] text-white p-2 bg-gradient-to-r from-white/10 via-white/20 to-white/30 border border-white/30 backdrop-blur-lg rounded-full">
-                                {data}
+                                {data.toUpperCase()}
                             </div>
                         ))}
                     </div>
-                    <div className="px-1 pb-2 pt-1 mt-2 text-white text-[9px] text-start">
+                    <div className="px-1 pb-2 pt-1 mt-2 text-white text-[12px] text-start">
                         {content.study.description}
                     </div>
                     <div className="flex justify-between w-full mb-3">
@@ -65,4 +65,4 @@ const FlagHoverModal = ({ content }) => {
     );
 };
 
-export default FlagHoverModal;
+export default FlagHover;

@@ -31,7 +31,7 @@ export default function Footer() {
             >
               Solutions (Customer-Focused)
             </h3>
-            <ul className="list-disc  space-y-3">
+            <ul className="list-disc  space-y-3 mx-auto">
               <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">$0 Down Solar Subscriptions</a></li>
               <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Customer Support & Help Center</a></li>
               <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Customer Portal Access</a></li>
@@ -47,7 +47,7 @@ export default function Footer() {
             >
               Dealers
             </h3>
-            <ul className="list-disc  space-y-3">
+            <ul className="list-disc  space-y-3 mx-auto">
               <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Join Dealer Network</a></li>
               <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Dealer Portal Login</a></li>
               <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Dealer Training & Tools</a></li>
@@ -63,7 +63,7 @@ export default function Footer() {
             >
               Investors
             </h3>
-            <ul className="list-disc  space-y-3">
+            <ul className="list-disc  space-y-3 mx-auto">
               <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Why Invest With Ancestro Capital</a></li>
               <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Investor Portal Login</a></li>
               <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Market Reports & Projections</a></li>
@@ -79,7 +79,7 @@ export default function Footer() {
             >
               Company
             </h3>
-            <ul className="list-disc  space-y-3">
+            <ul className="list-disc  space-y-3 mx-auto">
               <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">About Ancestro</a></li>
               <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Press & Media</a></li>
               <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Careers (future)</a></li>
@@ -121,8 +121,8 @@ export default function Footer() {
               "brazil",
               "chile",
               "colombia",
-              "costa-rica",
-              "dominican",
+              "costa rica",
+              "dominican republic",
               "ecuador",
               "guatemala",
               "honduras",
@@ -131,7 +131,7 @@ export default function Footer() {
               "panama",
               "paraguay",
               "peru",
-              "salvador",
+              "el salvador",
               "uruguay",
             ].map((country, i) => (
               <img
@@ -170,10 +170,10 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm font-bold tracking-wider uppercase text-black">
               <a href="mailto:info@ancestroenergy.com" className="flex items-center gap-2 hover:underline">
-                <img src={'/icons/mail.png'}/> <div>info@ancestroenergy.com</div>
+                <img src={'/icons/mail.png'} /> <div>info@ancestroenergy.com</div>
               </a>
               <div className="flex items-center space-x-4">
-                <span><img src={'/icons/phone.png'}/></span>
+                <span><img src={'/icons/phone.png'} /></span>
                 <div>+1 (555) 123-45675</div>
                 <span>+44 20 7946 0958</span>
               </div>

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 // import logo from "@/src/assets/logo.png";
 import logo from "@/public/assets/logo.png";
-import SunButton from './SunButton';
+import SunButton from './ui/SunButton';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

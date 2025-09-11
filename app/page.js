@@ -1,6 +1,6 @@
 import Header from '../src/components/Header';
 import Footer from '../src/components/Footer';
-import SunButton from '../src/components/SunButton';
+import SunButton from '../src/components/ui/SunButton';
 import Link from 'next/link';
 
 export default function Home() {

@@ -22,7 +22,7 @@ const FlagHoverModal = ({ content }) => {
         <div
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="relative inline-block"
+            className="relative inline-block w-25 h-10 mt-3"
         >
             <img
                 src={content.src}
@@ -32,18 +32,18 @@ const FlagHoverModal = ({ content }) => {
 
             {show && (
                 <div
-                    className="flex flex-col items-center justify-center absolute z-50  shadow-lg h-fit max-w-[280px]  rounded p-4 text-sm w-fit bg-gradient-to-r from-white/10 via-white/20 to-white/30 border border-white/30 backdrop-blur-lg rounded-[20px]"
+                    className="flex flex-col items-center justify-center absolute z-50  shadow-lg h-fit max-w-[300px] rounded p-4 text-sm w-fit bg-gradient-to-r from-white/10 via-white/20 to-white/30 border border-white/30 backdrop-blur-lg rounded-[20px]"
                     style={{
                         top: position.y,
                         left: position.x,
                         position: "fixed",
                     }}
                 >
-                    <img className="h-[45%] w-auto" src={'/images/solar-panel-case-study.png'} />
+                    <img className="h-[45%] w-full" src={'/images/solar-panel-case-study.png'} />
 
                     <div className="mt-2 flex w-full justify-start items-center gap-2">
                         <h1 className="text-white text-2xl font-bold">{`${content.alt.toUpperCase()}`} </h1>
-                        <p className="text-white mt-2">{`${content.study.category}`} </p>
+                        <p className="text-white text-[10px] mt-2">{`${content.study.category}`} </p>
                     </div>
                     <div className="flex flex-wrap gap-[5px]">
                         {content.study.investmentData.map((data, i) => (

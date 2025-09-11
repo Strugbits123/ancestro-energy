@@ -36,7 +36,7 @@ export default function Home() {
           {/* CTA Cards Container */}
           <div className="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-8 mt-8 md:mt-16 max-w-4xl mx-auto">
             {/* Left Card - Customer */}
-            <div className="flex flex-col justify-center items-center p-6 md:p-8 gap-8 w-full max-w-sm bg-gradient-to-r from-white/30 via-white/20 to-white/10 border border-white/30 backdrop-blur-lg rounded-3xl shadow-2xl">
+            <div className="flex flex-col justify-center items-center h-[313px] p-6  md:p-8 gap-8 w-full max-w-sm bg-gradient-to-r from-white/30 via-white/20 to-white/10 border border-white/30 backdrop-blur-lg rounded-3xl shadow-2xl">
               {/* Features List */}
               <div className="flex flex-col items-start gap-4 w-full">
                 {/* $0 Investment */}
@@ -87,7 +87,7 @@ export default function Home() {
             </div>
 
             {/* Right Card - Dealer */}
-            <div className="flex flex-col justify-center items-center p-6 md:p-8 gap-8 w-full max-w-sm bg-gradient-to-r from-white/10 via-white/20 to-white/30 border border-white/30 backdrop-blur-lg rounded-3xl shadow-2xl">
+            <div className="flex flex-col justify-center items-center h-[313px] p-6 md:p-8 gap-8 w-full max-w-sm bg-gradient-to-r from-white/10 via-white/20 to-white/30 border border-white/30 backdrop-blur-lg rounded-3xl shadow-2xl">
               {/* Features List */}
               <div className="flex flex-col items-start gap-4 w-full">
                 {/* Grow Your Business */}

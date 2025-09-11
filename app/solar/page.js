@@ -1,56 +1,7 @@
 import FlagHoverModal from "@/src/components/FlagModal";
 import SunButton from "@/src/components/SunButton";
+import { caseStudy } from "@/src/constants/data";
 
-const caseStudy = [
-    {
-        country: 'COLOMBIA', category: 'FACTORY/INDUSTRIAL PLANT', investmentData: ['TIME TO COMPLETE PROJECT:150 DAYS', 'IMMEDIATE SAVINGS: 12% O&M COST', 'LONG TERM SAVINGS: $150,000+'], description: "Our factory's energy bills were suffocating us. With Ancestro, we started saving from day one—no upfront costs. In just two months, the system was running, and we now project hundreds of thousands in lifetime savings. It has given us financial stability, room to expand production, and the confidence to plan long-term.\n— Carlos M., Factory Owner, Colombia"
-    },
-    {
-        country: 'MEXICO', category: 'WAREHOUSE/LOGISTICS CENTRE', investmentData: ['TIME TO COMPLETE PROJECT:150 DAYS', 'IMMEDIATE SAVINGS: 12% O&M COST', 'LONG TERM SAVINGS: $150,000+'], description: "Our factory's energy bills were suffocating us. With Ancestro, we started saving from day one—no upfront costs. In just two months, the system was running, and we now project hundreds of thousands in lifetime savings. It has given us financial stability, room to expand production, and the confidence to plan long-term.\n— Carlos M., Factory Owner, Colombia"
-    },
-    {
-        country: 'CHILE', category: 'FACTORY/INDUSTRIAL PLANT', investmentData: ['TIME TO COMPLETE PROJECT:150 DAYS', 'IMMEDIATE SAVINGS: 12% O&M COST', 'LONG TERM SAVINGS: $150,000+'], description: "Our factory's energy bills were suffocating us. With Ancestro, we started saving from day one—no upfront costs. In just two months, the system was running, and we now project hundreds of thousands in lifetime savings. It has given us financial stability, room to expand production, and the confidence to plan long-term.\n— Carlos M., Factory Owner, Colombia"
-    },
-    {
-        country: 'COSTA-RICA', category: 'WAREHOUSE/LOGISTICS CENTRE', investmentData: ['TIME TO COMPLETE PROJECT:150 DAYS', 'IMMEDIATE SAVINGS: 12% O&M COST', 'LONG TERM SAVINGS: $150,000+'], description: "Our factory's energy bills were suffocating us. With Ancestro, we started saving from day one—no upfront costs. In just two months, the system was running, and we now project hundreds of thousands in lifetime savings. It has given us financial stability, room to expand production, and the confidence to plan long-term.\n— Carlos M., Factory Owner, Colombia"
-    },
-    {
-        country: 'COLOMBIA', category: 'FACTORY/INDUSTRIAL PLANT', investmentData: ['TIME TO COMPLETE PROJECT:150 DAYS', 'IMMEDIATE SAVINGS: 12% O&M COST', 'LONG TERM SAVINGS: $150,000+'], description: "Our factory's energy bills were suffocating us. With Ancestro, we started saving from day one—no upfront costs. In just two months, the system was running, and we now project hundreds of thousands in lifetime savings. It has given us financial stability, room to expand production, and the confidence to plan long-term.\n— Carlos M., Factory Owner, Colombia"
-    },
-    {
-        country: 'MEXICO', category: 'WAREHOUSE/LOGISTICS CENTRE', investmentData: ['TIME TO COMPLETE PROJECT:150 DAYS', 'IMMEDIATE SAVINGS: 12% O&M COST', 'LONG TERM SAVINGS: $150,000+'], description: "Our factory's energy bills were suffocating us. With Ancestro, we started saving from day one—no upfront costs. In just two months, the system was running, and we now project hundreds of thousands in lifetime savings. It has given us financial stability, room to expand production, and the confidence to plan long-term.\n— Carlos M., Factory Owner, Colombia"
-    },
-    {
-        country: 'DOMINICAN', category: 'FACTORY/INDUSTRIAL PLANT', investmentData: ['TIME TO COMPLETE PROJECT:150 DAYS', 'IMMEDIATE SAVINGS: 12% O&M COST', 'LONG TERM SAVINGS: $150,000+'], description: "Our factory's energy bills were suffocating us. With Ancestro, we started saving from day one—no upfront costs. In just two months, the system was running, and we now project hundreds of thousands in lifetime savings. It has given us financial stability, room to expand production, and the confidence to plan long-term.\n— Carlos M., Factory Owner, Colombia"
-    },
-    {
-        country: 'ECUADOR', category: 'WAREHOUSE/LOGISTICS CENTRE', investmentData: ['TIME TO COMPLETE PROJECT:150 DAYS', 'IMMEDIATE SAVINGS: 12% O&M COST', 'LONG TERM SAVINGS: $150,000+'], description: "Our factory's energy bills were suffocating us. With Ancestro, we started saving from day one—no upfront costs. In just two months, the system was running, and we now project hundreds of thousands in lifetime savings. It has given us financial stability, room to expand production, and the confidence to plan long-term.\n— Carlos M., Factory Owner, Colombia"
-    },
-    {
-        country: 'GUATEMALA', category: 'FACTORY/INDUSTRIAL PLANT', investmentData: ['TIME TO COMPLETE PROJECT:150 DAYS', 'IMMEDIATE SAVINGS: 12% O&M COST', 'LONG TERM SAVINGS: $150,000+'], description: "Our factory's energy bills were suffocating us. With Ancestro, we started saving from day one—no upfront costs. In just two months, the system was running, and we now project hundreds of thousands in lifetime savings. It has given us financial stability, room to expand production, and the confidence to plan long-term.\n— Carlos M., Factory Owner, Colombia"
-    },
-    {
-        country: 'HONDURAS', category: 'WAREHOUSE/LOGISTICS CENTRE', investmentData: ['TIME TO COMPLETE PROJECT:150 DAYS', 'IMMEDIATE SAVINGS: 12% O&M COST', 'LONG TERM SAVINGS: $150,000+'], description: "Our factory's energy bills were suffocating us. With Ancestro, we started saving from day one—no upfront costs. In just two months, the system was running, and we now project hundreds of thousands in lifetime savings. It has given us financial stability, room to expand production, and the confidence to plan long-term.\n— Carlos M., Factory Owner, Colombia"
-    },
-    {
-        country: 'NICARAGUA', category: 'FACTORY/INDUSTRIAL PLANT', investmentData: ['TIME TO COMPLETE PROJECT:150 DAYS', 'IMMEDIATE SAVINGS: 12% O&M COST', 'LONG TERM SAVINGS: $150,000+'], description: "Our factory's energy bills were suffocating us. With Ancestro, we started saving from day one—no upfront costs. In just two months, the system was running, and we now project hundreds of thousands in lifetime savings. It has given us financial stability, room to expand production, and the confidence to plan long-term.\n— Carlos M., Factory Owner, Colombia"
-    },
-    {
-        country: 'PANAMA', category: 'WAREHOUSE/LOGISTICS CENTRE', investmentData: ['TIME TO COMPLETE PROJECT:150 DAYS', 'IMMEDIATE SAVINGS: 12% O&M COST', 'LONG TERM SAVINGS: $150,000+'], description: "Our factory's energy bills were suffocating us. With Ancestro, we started saving from day one—no upfront costs. In just two months, the system was running, and we now project hundreds of thousands in lifetime savings. It has given us financial stability, room to expand production, and the confidence to plan long-term.\n— Carlos M., Factory Owner, Colombia"
-    },
-    {
-        country: 'PARAGUAY', category: 'FACTORY/INDUSTRIAL PLANT', investmentData: ['TIME TO COMPLETE PROJECT:150 DAYS', 'IMMEDIATE SAVINGS: 12% O&M COST', 'LONG TERM SAVINGS: $150,000+'], description: "Our factory's energy bills were suffocating us. With Ancestro, we started saving from day one—no upfront costs. In just two months, the system was running, and we now project hundreds of thousands in lifetime savings. It has given us financial stability, room to expand production, and the confidence to plan long-term.\n— Carlos M., Factory Owner, Colombia"
-    },
-    {
-        country: 'PERU', category: 'WAREHOUSE/LOGISTICS CENTRE', investmentData: ['TIME TO COMPLETE PROJECT:150 DAYS', 'IMMEDIATE SAVINGS: 12% O&M COST', 'LONG TERM SAVINGS: $150,000+'], description: "Our factory's energy bills were suffocating us. With Ancestro, we started saving from day one—no upfront costs. In just two months, the system was running, and we now project hundreds of thousands in lifetime savings. It has given us financial stability, room to expand production, and the confidence to plan long-term.\n— Carlos M., Factory Owner, Colombia"
-    },
-    {
-        country: 'SALVADOR', category: 'FACTORY/INDUSTRIAL PLANT', investmentData: ['TIME TO COMPLETE PROJECT:150 DAYS', 'IMMEDIATE SAVINGS: 12% O&M COST', 'LONG TERM SAVINGS: $150,000+'], description: "Our factory's energy bills were suffocating us. With Ancestro, we started saving from day one—no upfront costs. In just two months, the system was running, and we now project hundreds of thousands in lifetime savings. It has given us financial stability, room to expand production, and the confidence to plan long-term.\n— Carlos M., Factory Owner, Colombia"
-    },
-    {
-        country: 'URUGUAY', category: 'WAREHOUSE/LOGISTICS CENTRE', investmentData: ['TIME TO COMPLETE PROJECT:150 DAYS', 'IMMEDIATE SAVINGS: 12% O&M COST', 'LONG TERM SAVINGS: $150,000+'], description: "Our factory's energy bills were suffocating us. With Ancestro, we started saving from day one—no upfront costs. In just two months, the system was running, and we now project hundreds of thousands in lifetime savings. It has given us financial stability, room to expand production, and the confidence to plan long-term.\n— Carlos M., Factory Owner, Colombia"
-    },
-]
 
 export default function Solar() {
 
@@ -60,18 +11,19 @@ export default function Solar() {
             {/* Background */}
             <div className="absolute inset-0">
                 <div
-                    className="w-full h-full bg-black/50"
+                    className="w-full h-full"
                     style={{
-                        backgroundImage: `url('/images/solar-hero-section.png')`,
+                        backgroundImage: `
+                            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                            url('/images/solar-hero-section.png')
+                            `,
                         backgroundRepeat: 'no-repeat',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
-                        backgroundColor: 'rgba(0,0,0,0.5)',
                     }}
-                // className="w-full h-full bg-black/50 bg-[url('/images/solar-hero-section.png')] bg-no-repeat bg-cover bg-center"
-
                 />
             </div>
+
 
             <div className="container-2xl mx-auto px-[55px] text-center relative z-10 py-20">
                 <div className="flex flex-col xl:flex-row gap-10 items-stretch p-20">
@@ -81,7 +33,7 @@ export default function Solar() {
                             Join LATAM’s Fastest-Growing Solar Subscription Network.
                         </h1>
                         <span className="text-2xl text-left text-white font-lato">$0 upfront. Day-one savings. Long-term stability. Available now in 14 countries.</span>
-                        <div className="flex flex-wrap justify-center items-center gap-8">
+                        <div className="flex flex-wrap justify-center items-center gap-5 mb-4">
                             {caseStudy.map((study, i) => (
                                 <FlagHoverModal
                                     key={i}
@@ -93,7 +45,7 @@ export default function Solar() {
                                 />
                             ))}
                         </div>
-                        <div className="flex justify-start w-full xl:w-[35%]"><SunButton className="border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">Apply Now — Join the Solar Tribe</SunButton></div>
+                        <div className="flex justify-start mt-4 w-full xl:w-[35%]"><SunButton className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">Apply Now — Join the Solar Tribe</SunButton></div>
                     </div>
 
                     {/* Right Side: Image */}

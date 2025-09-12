@@ -1,6 +1,5 @@
+import CarouselComponent from '@/src/components/Carousel';
 import CaseStudy from '@/src/components/CaseStudy';
-import FlagHover from '@/src/components/FlagHover';
-import MultiStepForm from '@/src/components/forms/ApplySolarForm';
 import SunButton from '@/src/components/ui/SunButton';
 import { caseStudy } from '@/src/constants/data';
 
@@ -58,6 +57,10 @@ export default function CaseStudies() {
                         />
                     ))}
                 </div>
+            </div>
+
+            <div className='w-full'>
+                <CarouselComponent/>
             </div>
         </section>
 

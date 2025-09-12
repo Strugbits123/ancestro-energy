@@ -85,7 +85,7 @@ export default function Solar() {
                 }
             </div>
             <div className="flex flex-col md:flex-row gap-3 mt-5">
-                <SunButton>SEE MORE CASE STUDIES.</SunButton>
+                <SunButton redirect={'/solar/casestudies'}>SEE MORE CASE STUDIES.</SunButton>
                 <SunButton redirect={'/solar/apply'} className="text-[15px] font-lato border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
             </div>
         </section>

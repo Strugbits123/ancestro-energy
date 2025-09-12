@@ -2,9 +2,9 @@
 
 import { useRouter } from 'next/navigation';
 
-export default function SunButton({ 
-  children, 
-  className = "", 
+export default function SunButton({
+  children,
+  className = "",
   onClick,
   href,
   redirect,
@@ -13,19 +13,21 @@ export default function SunButton({
   type = "button",
   variant = "default",
   size = "default",
-  ...props 
+  text = "default",
+  font = 'regular',
+  ...props
 }) {
   const router = useRouter();
 
   // Handle different action types
   const handleClick = (e) => {
     if (disabled) return;
-    
+
     // Custom onClick handler
     if (onClick) {
       onClick(e);
     }
-    
+
     // Handle redirects
     if (href && !onClick) {
       if (target === "_blank") {
@@ -34,7 +36,7 @@ export default function SunButton({
         router.push(href);
       }
     }
-    
+
     // Handle redirects with router.push
     if (redirect && !onClick && !href) {
       router.push(redirect);
@@ -69,8 +71,14 @@ export default function SunButton({
     large: "group-hover:translate-y-[22px]"
   };
 
+  const textColor = {
+    override: "",
+    default: "text-white",
+  };
+
+
   const Component = href && target === "_blank" ? "a" : "button";
-  
+
   return (
     <Component
       className={`relative group border ${sizeClasses[size]} ${variantClasses[variant]} rounded-full font-medium overflow-hidden transition-opacity active:bg-yellow-500 active:text-black transition duration-500 ease-in-out ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'} ${className}`}
@@ -82,7 +90,7 @@ export default function SunButton({
       rel={Component === "a" && target === "_blank" ? "noopener noreferrer" : undefined}
       {...props}
     >
-      <span className="relative z-10 ">{children}</span>
+      <span className={`relative z-10 ${textColor[text] || `text-${text}`} ${font === 'regular' ? 'font-[400]' : 'font-[600]'}`}>{children}</span>
       {/* sun circle rising */}
       <span className="absolute inset-0 flex items-end justify-center">
         <span className={`${sunSizes[size]} rounded-full bg-yellow-500 opacity-0 translate-y-full transition-all duration-500 ${sunPositions[size]} group-hover:opacity-100 blur-[2px]`}></span>

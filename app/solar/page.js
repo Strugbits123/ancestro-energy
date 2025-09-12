@@ -29,7 +29,7 @@ export default function Solar() {
 
             {/*Hero section - Main content*/}
             <div className="container-2xl mx-auto px-[55px] text-center relative z-10 py-20">
-                <div className="w-[80%] mx-auto flex flex-col xl:flex-row gap-10 items-stretch p-20">
+                <div className=" mx-auto flex flex-col xl:flex-row gap-10 items-stretch p-20">
                     {/* Left Side: Heading + Flags */}
                     <div className="flex-3 flex flex-col items-start justify-center gap-4 w-full xl:w-[45%]">
                         <h1 className="w-full text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl mx-auto">
@@ -72,7 +72,7 @@ export default function Solar() {
         {/*OUR CASE STUDY*/}
         <section className="flex flex-col bg-black  py-10 items-center">
             {/* <h2 className="text-center font-lato font-bold text-[25px] font-lato leading-relaxed text-white p-5">OUR CASE STUDY</h2> */}
-            <div className="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-[70%] justify-items-center mb-10 gap-10">
+            <div className="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-[82%] justify-items-center mb-10 gap-7">
                 {
                     caseStudy.map((study, i) => i < 3 && (
                         <CaseStudy
@@ -93,7 +93,7 @@ export default function Solar() {
         {/*LEARN MORE ABOUT ANCESTRO*/}
         <section className="flex flex-col bg-black  py-10 items-center">
             <h2 className="text-center font-lato font-bold text-[25px] font-lato leading-relaxed text-white p-5 mb-10">LERAN MORE ABOUT ANCESTRO</h2>
-            <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-10">
+            <div className="w-[82%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-10">
                 {
                     [
                         { img: '/images/learn-more-1.png', title: 'How $0 Down Works', desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
@@ -102,7 +102,7 @@ export default function Solar() {
                     ].map((card, i) => (
                         <div key={i} className="relative w-full h-[523px] overflow-hidden">
                             <img
-                                className="w-auto h-full object-cover transition-transform duration-1000 hover:scale-125"
+                                className="rounded-lg w-auto h-full object-cover transition-transform duration-1000 hover:scale-125 hover:rounded-lg"
                                 src={card.img}
                             />
                             <div className="gap-1 absolute bottom-0 p-5">

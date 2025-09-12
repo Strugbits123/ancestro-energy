@@ -27,7 +27,7 @@ const FlagHover = ({ content }) => {
             <img
                 src={content.src}
                 alt={content.alt}
-                className="w-28 h-16 rounded-sm object-cover shadow"
+                className="w-20 h-13 rounded-sm object-cover shadow"
             />
 
             {show && (

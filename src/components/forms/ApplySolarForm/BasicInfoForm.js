@@ -8,10 +8,11 @@ const BasicInfoForm = ({ onNext }) => (
         {/* Property Type */}
         <div className="flex flex-wrap gap-4 items-center py-5 mt-2">
             {['Business', 'House', 'Solar Farm'].map((label, i) => (
-                <label key={i} className="flex items-center gap-2 text-[15px] text-white uppercase">
+                <label className="flex items-center gap-2 text-white uppercase tracking-[2px]">
                     <input
-                        type="checkbox"
-                        className="rounded-[2px] h-5 w-5 accent-yellow-500 bg-transparent border border-white rounded-sm"
+                        type="radio"
+                        name="option"
+                        className="appearance-none h-5 w-5 border border-white rounded-sm bg-transparent checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none"
                     />
                     {label}
                 </label>
@@ -33,31 +34,21 @@ const BasicInfoForm = ({ onNext }) => (
 
         {/* Property Owner Section */}
         <div className="flex flex-col justify-start mt-6">
-            <span className="uppercase text-white text-[14px] text-left">Are you the property owner?</span>
+            <div className="uppercase text-white tracking-[2px] text-[14px] text-left">Are you the property owner?</div>
             <div className="flex flex-wrap gap-5 items-center pt-5 pr-10">
 
-                <label className="flex items-center gap-2 text-[15px] text-white uppercase">
-                    <input
-                        type="checkbox"
-                        className={`rounded-[2px] h-5 w-5 accent-yellow-500 border border-white rounded-sm  bg-transparent`}
-                    />
-                    {'Owner'}
-                </label>
-                <label className="flex items-center gap-2 text-[15px] text-white uppercase">
-                    <input
-                        type="checkbox"
-                        className={`rounded-[2px] h-5 w-5 accent-yellow-500 border border-white rounded-sm  bg-transparent"
-                                                    }`}
-                    />
-                    {'Renter'}
-                </label>
-                <label className="flex items-center gap-2 text-[15px] text-white uppercase">
-                    <input
-                        type="checkbox"
-                        className={`rounded-[2px] h-5 w-5 accent-yellow-500 border border-white rounded-sm  bg-transparent`}
-                    />
-                    {'Other'}
-                </label>
+                {
+                    ['Owner', 'Renter', 'Other'].map((label, i) => (
+                        <label key={i} className="flex items-center gap-2 text-white uppercase tracking-[2px]">
+                            <input
+                                type="radio"
+                                name="option"
+                                className="appearance-none h-5 w-5 border border-white rounded-sm bg-transparent checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none"
+                            />
+                            {label}
+                        </label>
+                    ))
+                }
 
             </div>
         </div>

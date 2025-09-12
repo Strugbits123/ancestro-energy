@@ -22,7 +22,7 @@ export default function Footer() {
         </div>
 
         {/* Footer Links Grid */}
-        <div className="mx-auto px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-1 md:mb-12">
+        <div className="mx-auto md:ml-20 px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-1 xl:mb-12">
           {/* Solutions Column */}
           <div>
             <h3

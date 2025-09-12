@@ -8,14 +8,6 @@ const lato = Lato({
   display: "swap",
 });
 
-// Note: Major Mono Display would be imported like this:
-// import { Major_Mono_Display } from "next/font/google";
-// const majorMono = Major_Mono_Display({
-//   variable: "--font-major-mono",
-//   subsets: ["latin"],
-//   weight: ["400"],
-//   display: "swap",
-// });
 
 export const metadata = {
   title: "Ancestro Solar - Clean Energy Solutions",

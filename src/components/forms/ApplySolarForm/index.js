@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import STEP1 from './BasicInfoForm';
 import STEP2 from './PropertyDetailForm';
+import STEP3 from './BusinessInfoForm';
+import STEP4 from './Step4Form';
 import STEP5 from './ScheduleCallForm';
 
 export default function MultiStepForm() {
@@ -42,13 +44,13 @@ export default function MultiStepForm() {
         <div
           className={`absolute inset-0 transition-transform duration-500 ease-out transform ${currentStep === 3 ? 'translate-x-0 opacity-100 z-20' : 'translate-x-full opacity-0 z-10'}`}
         >
-          <STEP2 onNext={handleNext} />
+          <STEP3 onNext={handleNext} />
         </div>
 
         <div
           className={`absolute inset-0 transition-transform duration-500 ease-out transform ${currentStep === 4 ? 'translate-x-0 opacity-100 z-20' : 'translate-x-full opacity-0 z-10'}`}
         >
-          <STEP2 onNext={handleNext} />
+          <STEP4 onNext={handleNext} />
         </div>
 
         <div

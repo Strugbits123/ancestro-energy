@@ -23,11 +23,6 @@ export default function MultiStepForm() {
 
   return (
     <>
-      {/* {currentStep === 1 && <STEP1 onNext={handleNext} />}
-      {currentStep === 2 && <STEP2 onNext={handleNext} />}
-      {currentStep === 3 && <STEP2 onNext={handleNext} />}
-      {currentStep === 4 && <STEP2 onNext={handleNext} />}
-      {currentStep === 5 && <STEP5 onNext={handleNext} />} */}
       <div className="relative w-full overflow-hidden h-[800px]">
         <div
           className={`absolute inset-0 transition-transform duration-500 ease-out transform ${currentStep === 1 ? 'translate-x-0 opacity-100 z-20' : 'translate-x-full opacity-0 z-10'}`}
@@ -60,18 +55,30 @@ export default function MultiStepForm() {
         </div>
       </div>
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-100">
-          <div className="bg-white rounded-xl p-8 max-w-md w-full text-center relative">
-            <h2 className="text-2xl font-bold mb-4">Application Submitted!</h2>
-            <button
-              onClick={() => closeModal()}
-              className="px-6 py-3 bg-yellow-500 text-white rounded-full font-bold hover:bg-yellow-600 transition-colors"
-            >
-              Close
-            </button>
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-100 "
+          onClick={() => setIsModalOpen(false) }
+        >
+
+      <div className='rounded-lg w-auto h-[528px] max-w-[528px] overflow-hidden flex items-center justify-center' style={{
+        backgroundImage: `
+                            url('/images/schedule-modal.png')
+                            `,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}>
+        <div className='flex flex-col items-center justify-center'>
+          <img src={'/icons/party-popper.png'} />
+          <div className='text-xl font-[700] font-lato text-white'>CONGRATULATIONS!</div>
+          <div className='font-[400] font-lato text-xl text-white px-3 mt-1'>“You’ve taken the first
+            step towards making your
+            ancestors happy!”
           </div>
         </div>
-      )}
+      </div>
+    </div >
+      )
+}
     </>
   );
 }

@@ -8,7 +8,7 @@ const BasicInfoForm = ({ onNext }) => (
         {/* Property Type */}
         <div className="flex flex-wrap gap-4 items-center py-5 mt-2">
             {['Business', 'House', 'Solar Farm'].map((label, i) => (
-                <label className="flex items-center gap-2 text-white uppercase tracking-[2px]">
+                <label key={i} className="flex items-center gap-2 text-white uppercase tracking-[2px]">
                     <input
                         type="radio"
                         name="option"

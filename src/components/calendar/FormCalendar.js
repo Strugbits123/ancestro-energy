@@ -1,4 +1,5 @@
 'use client'
+import ClockIcon from "@/public/icons/clock";
 import { useState } from "react";
 
 const FormCalendar = () => {
@@ -94,8 +95,9 @@ const FormCalendar = () => {
             </div>
             <div className="border-b border-b-white/30 w-full px-8 py-2" />
             <h4 className="text-md font-[500] font-lato tracking-[2px] mr-10 mt-3">TIME FOR MEETING</h4>
-            <div className="ml-3 flex gap-4 bg-gradient-to-r from-white/5 via-white/10 to-white/20 w-fit p-2 rounded-lg mt-2 border border-white/30 backdrop-blur-lg">
-                <img src={'/icons/clock.png'} />
+            <div className="ml-3 flex items-center gap-4 bg-gradient-to-r from-white/5 via-white/10 to-white/20 w-fit p-2 rounded-lg mt-2 border border-white/30 backdrop-blur-lg">
+                {/* <img src={'/icons/clock.png'} /> */}
+                <ClockIcon height={25} width={25} color="white"/>
                 <div className="text-lg text-white font-[500] font-lato">8:30 AM</div>
             </div>
         </div>

@@ -1,3 +1,4 @@
+import ClockIcon from '@/public/icons/clock';
 import MultiStepForm from '@/src/components/forms/ApplySolarForm';
 
 export default function Apply() {
@@ -24,7 +25,8 @@ export default function Apply() {
                     {/* Left Side: Heading */}
                     <div className="flex-3 flex flex-col items-start justify-center gap-4 w-full xl:w-[45%]">
                         <div className="px-4 py-3 bg-yellow-400 flex gap-2 rounded-[17px]">
-                            <img src={'/icons/clock.png'} />
+                            {/* <img src={'/icons/clock.png'} /> */}
+                            <ClockIcon height={28} width={28}/>
                             <div className="font-lato text-xl font-bold tracking-[2px]">IT WILL TAKE ONLY 5 MINUTES</div>
                         </div>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl mx-auto">

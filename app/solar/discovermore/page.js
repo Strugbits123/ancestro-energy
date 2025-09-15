@@ -1,7 +1,6 @@
-import CarouselComponent from "@/src/components/Carousel";
-import CaseStudy from "@/src/components/CaseStudy";
+import CarouselComponent from "@/src/components/shared/Carousel";
+import DownloadButton from "@/src/components/shared/DownloadButton";
 import SunButton from "@/src/components/ui/SunButton";
-import { caseStudy } from "@/src/constants/data";
 
 export default function DiscoverMore() {
     return (<>
@@ -46,11 +45,22 @@ export default function DiscoverMore() {
                 </div>
             </div>
 
-            <div className="container-2xl mx-auto px-[55px] -mt-[553px] z-10">
+            <div className="container-2xl mx-auto flex flex-col items-center px-[55px] -mt-[553px] z-10">
 
                 <img src={'/images/discover-more-video.png'} />
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 w-full">
+                    {
+                        ['WHAT IS PPA', 'SOLAR VS UTILITY', 'HOW ANCESTRO WORK?', 'HOW ANCESTRO WORK?'].map((text, i) => (
+                            <div key={i} className="flex flex-col max-w-[332px] space-y-4">
+                                <div className="border-b-3 border-b-white/10 w-full px-8 py-2" />
+                                <h1 className="text-white font-bold text-xl">{text}</h1>
+                                <p className="text-white text-md">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            </div>
+                        ))
+                    }
+                </div>
+                <div className="border-b-8 border-b-white/10 w-full px-8 py-2" />
             </div>
-
             <div className='w-full items-center justify-center mt-20'>
                 <h3 className='text-center text-white font-[700] font-lato text-md'>TRUSTED BY DEALERS ACROSS LATAM</h3>
                 <CarouselComponent />
@@ -60,19 +70,9 @@ export default function DiscoverMore() {
                     <h2 className='my-2 text-center text-white font-[700] font-lato text-4xl tracking-[2px]'>SAVE 100 TREES PER YEAR</h2>
                     <p className='my-5 self-center uppercase text-center text-white/80 font-[500] font-lato text-sm'>How to make subtle changes in your home/business that have a big environmental impact</p>
                 </div>
-                <SunButton className="mt-5 mb-10 px-4 py-3 bg-gradient-to-r from-white/10 via-white/20 to-white/30 border border-white/30 backdrop-blur-lg">
-                    <div className='flex flex-row items-center gap-2'>
-                        <img
-                            src="/icons/download-btn.png"
-                            alt="Download"
-                            className="w-5 h-5 object-contain"
-                        />
-                        <span className="text-lg font-medium text-white tracking-[2px]">
-                            DOWNLOAD FREE REPORT
-                        </span>
-                    </div>
-                </SunButton>
+                
+                <DownloadButton />
             </div>
-        </section>
+        </section >
     </>)
 }

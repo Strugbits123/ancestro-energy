@@ -1,7 +1,7 @@
-import CaseStudy from "@/src/components/CaseStudy";
-import FlagHover from "@/src/components/FlagHover";
+import CaseStudy from "@/src/components/shared/SolarCaseStudy";
+import FlagHover from "@/src/components/shared/FlagHover";
 import SunButton from "@/src/components/ui/SunButton";
-import { caseStudy } from "@/src/constants/data";
+import { SolarCaseStudy } from "@/src/constants/data";
 
 
 export default function Solar() {
@@ -37,7 +37,7 @@ export default function Solar() {
                         </h1>
                         <span className="text-md text-left text-white font-lato">$0 upfront. Day-one savings. Long-term stability. Available now in 14 countries.</span>
                         <div className="flex flex-wrap justify-center items-center gap-3 mb-4">
-                            {caseStudy.map((study, i) => (
+                            {SolarCaseStudy.map((study, i) => (
                                 <FlagHover
                                     key={i}
                                     content={{
@@ -74,7 +74,7 @@ export default function Solar() {
             {/* <h2 className="text-center font-lato font-bold text-[25px] font-lato leading-relaxed text-white p-5">OUR CASE STUDY</h2> */}
             <div className="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-[82%] justify-items-center mb-10 gap-7">
                 {
-                    caseStudy.map((study, i) => i < 3 && (
+                    SolarCaseStudy.map((study, i) => i < 3 && (
                         <CaseStudy
                             key={i}
                             content={{

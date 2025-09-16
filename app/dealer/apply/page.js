@@ -30,15 +30,15 @@ export default function Apply() {
                             ONE DECISION
                             ETERNAL IMPACT.
                         </h1>
-                        <h3 className="text-white/70 text-xl font-bold text-center">Apply to join LATAM’s largest dealer network.</h3>
+                        <h3 className="text-white/70 text-md font-bold text-center uppercase tracking-[2px]">Apply to join LATAM’s largest dealer network.</h3>
 
                     </div>
 
                 </div>
-                <div className='flex flex-col md:flex-row w-full md:max-w-[50%] md:px-15 gap-6'> {/**/}
+                <div className='flex flex-col md:flex-row  md:max-w-[50%] md:px-15 gap-8 items-start'> {/**/}
                     {/*DONATE*/}
-                    <div className='flex-1 flex flex-col gap-4 '>
-                        <div className=' h-[224px] flex flex-col justify-around rounded-[25px] py-5 px-6 bg-gradient-to-r from-white/20 via-white/10 to-white/5 border border-white/30 backdrop-blur-lg'>
+                    <div className='flex flex-col gap-4 '>
+                        <div className=' h-[224px] w-[341px] flex flex-col justify-around rounded-[25px] py-5 px-6 bg-gradient-to-r from-white/20 via-white/10 to-white/5 border border-white/30 backdrop-blur-lg'>
                             {
                                 ['BRONZE', "SILVER", 'GOLD', 'PLATINUM'].map((el, i) => (
                                     <div key={i} className='flex justify-between'>
@@ -68,9 +68,21 @@ export default function Apply() {
                         </SunButton>
                     </div>
                     {/*LOAN*/}
-                    <div className='flex-1 flex flex-col gap-4'>
-                        <div className='h-[224px] rounded-[25px] p-4 bg-gradient-to-r from-white/20 via-white/10 to-white/5 border border-white/30 backdrop-blur-lg'>
-
+                    <div className='flex flex-col gap-4'>
+                        <div className='h-[224px]  w-[341px] rounded-[25px] p-4 bg-gradient-to-r from-white/20 via-white/10 to-white/5 border border-white/30 backdrop-blur-lg'>
+                            <h6 className="p-2 uppercase text-left text-sm font-[700] text-white tracking-[2px]">
+                                CONSTRUCTION LOAN
+                            </h6>
+                            <div className='flex flex-col items-start'>
+                                {
+                                    ['1.75% origination fee', '7-10% interest rate', '$700k min loan'].map((el, i) => (
+                                        <div className='flex flex-col p-2 gap-4 w-full'>
+                                            <div className="border-b border-b-white/30 w-full" />
+                                            <div className="text-left uppercase text-sm font-[700] text-white tracking-[2px]">{el}</div>
+                                        </div>
+                                    ))
+                                }
+                            </div>
                         </div>
                         <SunButton
                             redirect={'/'}

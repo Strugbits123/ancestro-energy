@@ -12,7 +12,7 @@ export default function Solar() {
         {/*Hero Section*/}
         <section className="relative flex flex-col items-center justify-center bg-gradient-to-br from-gray-800 via-gray-900 to-black">
             {/* Background */}
-            <div className="absolute inset-0">
+            {/* <div className="absolute inset-0">
                 <div
                     className="w-full h-full"
                     style={{
@@ -25,6 +25,11 @@ export default function Solar() {
                         backgroundPosition: 'center',
                     }}
                 />
+            </div> */}
+            <div className="bg-slideshow">
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
 
             {/*Hero section - Main content*/}

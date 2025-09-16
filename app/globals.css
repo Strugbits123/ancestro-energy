@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   display: none;
 }
 
@@ -57,6 +57,102 @@
   --container-2xl: 1810px;
   --container-3xl: 1810px;
 }
+
+
+/*Slideshow for solar and dealer*/
+@keyframes fadeBackground {
+  0% {
+    opacity: 1;
+  }
+
+  27% {
+    opacity: 1;
+  }
+
+  33% {
+    opacity: 0;
+  }
+
+  94% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.bg-slideshow {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.bg-slideshow div {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fadeBackground 12s infinite;
+  transition: opacity 1s ease-in-out;
+}
+
+.bg-slideshow div:nth-child(1) {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url('/images/solar-hero-section.png');
+  animation-delay: 0s;
+}
+
+.bg-slideshow div:nth-child(2) {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url('/images/shared-hero-1.png');
+  animation-delay: 4s;
+}
+
+.bg-slideshow div:nth-child(3) {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url('/images/shared-hero-2.png');
+  animation-delay: 8s;
+}
+/* End slideshow */
+
+
+/*Slideshow for solar apply*/
+.bg-slideshow-solar-apply {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.bg-slideshow-solar-apply div {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fadeBackground 12s infinite;
+  transition: opacity 1s ease-in-out;
+}
+
+.bg-slideshow-solar-apply div:nth-child(1) {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url('/images/shared-hero-1.png');
+  animation-delay: 4s;
+}
+
+.bg-slideshow-solar-apply div:nth-child(2) {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url('/images/shared-hero-2.png');
+  animation-delay: 8s;
+}
+
+.bg-slideshow-solar-apply div:nth-child(3) {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url('/images/solar-apply-hero-3.png');
+  animation-delay: 0s;
+}
+
+.bg-slideshow-solar-apply div:nth-child(4) {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url('/images/solar-apply-hero.png');
+  animation-delay: 0s;
+}
+
+/* End slideshow */
 
 body {
   background: var(--background);

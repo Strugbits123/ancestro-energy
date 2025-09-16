@@ -151,8 +151,8 @@
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url('/images/solar-apply-hero.png');
   animation-delay: 0s;
 }
-
 /* End slideshow */
+
 
 body {
   background: var(--background);

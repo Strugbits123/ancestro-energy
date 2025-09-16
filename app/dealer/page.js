@@ -11,7 +11,7 @@ export default function Solar() {
         {/*Hero Section*/}
         <section className="relative flex flex-col items-center justify-center bg-gradient-to-br from-gray-800 via-gray-900 to-black">
             {/* Background */}
-            <div className="absolute inset-0">
+            {/* <div className="absolute inset-0">
                 <div
                     className="w-full h-full"
                     style={{
@@ -24,8 +24,12 @@ export default function Solar() {
                         backgroundPosition: 'center',
                     }}
                 />
+            </div> */}
+            <div className="bg-slideshow">
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
-
             {/*Hero section - Main content*/}
             <div className="container-2xl mx-auto px-[55px] text-center relative z-10 py-20">
                 <div className=" mx-auto flex flex-col xl:flex-row gap-10 items-stretch p-20">
@@ -37,7 +41,7 @@ export default function Solar() {
                         <div className="flex flex-wrap justify-center items-center gap-5 mb-4">
                             {DealerCaseStudy.map((study, i) => (
                                 <img
-                                className="h-14 w-21"
+                                    className="h-14 w-21"
                                     key={i}
                                     src={study.flag}
                                 />
@@ -78,8 +82,8 @@ export default function Solar() {
                 }
             </div>
             <div className="flex flex-col md:flex-row gap-3 mt-5">
-                <SunButton redirect={'/solar/casestudies'}>SEE MORE CASE STUDIES.</SunButton>
-                <SunButton redirect={'/solar/apply'} className="text-[15px] font-lato border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
+                <SunButton redirect={'/dealer/casestudies'}>SEE MORE CASE STUDIES.</SunButton>
+                <SunButton redirect={'/dealer/apply'} className="text-[15px] font-lato border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
             </div>
         </section>
 

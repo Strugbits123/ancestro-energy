@@ -125,9 +125,9 @@ export const DealerCaseStudy = [
         description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
     },
     {
-        image: '/images/dealer-case-study-1.png',
+        image: '/images/dealer-case-study-2.png',
         flag: '/images/panama.png',
-        title: 'Dominican Dealer',
+        title: 'PANAMA Dealer',
         investmentData: [
             {
                 metric: 'Revenue',
@@ -141,9 +141,9 @@ export const DealerCaseStudy = [
         description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
     },
     {
-        image: '/images/dealer-case-study-1.png',
+        image: '/images/dealer-case-study-4.png',
         flag: '/images/mexico.png',
-        title: 'Dominican Dealer',
+        title: 'MEXICO Dealer',
         investmentData: [
             {
                 metric: 'Revenue',
@@ -157,9 +157,9 @@ export const DealerCaseStudy = [
         description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
     },
     {
-        image: '/images/dealer-case-study-1.png',
+        image: '/images/dealer-case-study-5.png',
         flag: '/images/peru.png',
-        title: 'Dominican Dealer',
+        title: 'Peru Dealer',
         investmentData: [
             {
                 metric: 'Revenue',
@@ -173,9 +173,9 @@ export const DealerCaseStudy = [
         description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
     },
     {
-        image: '/images/dealer-case-study-1.png',
+        image: '/images/dealer-case-study-6.png',
         flag: '/images/guatemala.png',
-        title: 'Dominican Dealer',
+        title: 'Guatemala Dealer',
         investmentData: [
             {
                 metric: 'Revenue',
@@ -189,9 +189,9 @@ export const DealerCaseStudy = [
         description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
     },
     {
-        image: '/images/dealer-case-study-1.png',
+        image: '/images/dealer-case-study-6.png',
         flag: '/images/el salvador.png',
-        title: 'Dominican Dealer',
+        title: 'EL_SALVADOR Dealer',
         investmentData: [
             {
                 metric: 'Revenue',
@@ -205,9 +205,9 @@ export const DealerCaseStudy = [
         description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
     },
     {
-        image: '/images/dealer-case-study-1.png',
+        image: '/images/dealer-case-study-6.png',
         flag: '/images/uruguay.png',
-        title: 'Dominican Dealer',
+        title: 'Uruguay Dealer',
         investmentData: [
             {
                 metric: 'Revenue',
@@ -221,9 +221,9 @@ export const DealerCaseStudy = [
         description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
     },
     {
-        image: '/images/dealer-case-study-1.png',
+        image: '/images/dealer-case-study-6.png',
         flag: '/images/costa rica.png',
-        title: 'Dominican Dealer',
+        title: 'Costa Rica Dealer',
         investmentData: [
             {
                 metric: 'Revenue',
@@ -237,9 +237,9 @@ export const DealerCaseStudy = [
         description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
     },
     {
-        image: '/images/dealer-case-study-1.png',
+        image: '/images/dealer-case-study-6.png',
         flag: '/images/brazil.png',
-        title: 'Dominican Dealer',
+        title: 'Brazil Dealer',
         investmentData: [
             {
                 metric: 'Revenue',
@@ -253,9 +253,9 @@ export const DealerCaseStudy = [
         description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
     },
     {
-        image: '/images/dealer-case-study-1.png',
+        image: '/images/dealer-case-study-6.png',
         flag: '/images/nicaragua.png',
-        title: 'Dominican Dealer',
+        title: 'Nicaragua Dealer',
         investmentData: [
             {
                 metric: 'Revenue',
@@ -269,9 +269,9 @@ export const DealerCaseStudy = [
         description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
     },
     {
-        image: '/images/dealer-case-study-1.png',
+        image: '/images/dealer-case-study-6.png',
         flag: '/images/honduras.png',
-        title: 'Dominican Dealer',
+        title: 'Honduras Dealer',
         investmentData: [
             {
                 metric: 'Revenue',
@@ -285,9 +285,9 @@ export const DealerCaseStudy = [
         description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
     },
     {
-        image: '/images/dealer-case-study-1.png',
+        image: '/images/dealer-case-study-6.png',
         flag: '/images/chile.png',
-        title: 'Dominican Dealer',
+        title: 'Chile Dealer',
         investmentData: [
             {
                 metric: 'Revenue',
@@ -301,9 +301,9 @@ export const DealerCaseStudy = [
         description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
     },
     {
-        image: '/images/dealer-case-study-1.png',
+        image: '/images/dealer-case-study-6.png',
         flag: '/images/argentina.png',
-        title: 'Dominican Dealer',
+        title: 'Argentina Dealer',
         investmentData: [
             {
                 metric: 'Revenue',
@@ -317,9 +317,9 @@ export const DealerCaseStudy = [
         description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
     },
     {
-        image: '/images/dealer-case-study-1.png',
+        image: '/images/dealer-case-study-6.png',
         flag: '/images/bolivia.png',
-        title: 'Dominican Dealer',
+        title: 'Bolivia Dealer',
         investmentData: [
             {
                 metric: 'Revenue',

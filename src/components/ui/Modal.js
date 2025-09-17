@@ -11,8 +11,10 @@ export default function Modal({ isOpen, onClose, width = 'auto', height = 'auto'
             <div
                 className="rounded-lg overflow-hidden flex items-center justify-center"
                 style={{
-                    maxWidth: width,
-                    height,
+                    width: width,
+                    maxWidth: '90vw',
+                    height: height,
+                    maxHeight: '90vh',
                 }}
                 onClick={(e) => e.stopPropagation()}
             >

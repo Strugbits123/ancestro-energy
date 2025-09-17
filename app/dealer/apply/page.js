@@ -1,6 +1,9 @@
 import ClockIcon from '@/public/icons/clock';
 import MultiStepForm from '@/src/components/forms/ApplySolarForm';
+import ComparisonTable from '@/src/components/tables/PlanComparisonTable';
+import Modal from '@/src/components/ui/Modal';
 import SunButton from '@/src/components/ui/SunButton';
+import DealerForm from '@/src/components/forms/DealerForm';
 
 export default function Apply() {
     return (<>
@@ -62,12 +65,7 @@ export default function Apply() {
                                 ))
                             }
                         </div>
-                        <SunButton
-                            redirect={'/'}
-                            className="max-w-[167px] text-[15px] border-white text-base text-white "
-                        >
-                            DEALER APP
-                        </SunButton>
+                        <DealerForm/>
                     </div>
                     {/*LOAN*/}
                     <div className='flex flex-col gap-4'>
@@ -98,6 +96,8 @@ export default function Apply() {
 
 
         </section>
+
+        {/*Membership Type Section*/}
         <section className='bg-black py-12'>
             <div className='w-full flex flex-col items-center justify-center mt-20'>
                 <div className='w-full'>
@@ -112,7 +112,7 @@ export default function Apply() {
                     <div className='flex justify-between  items-center'>
                         <h6 className='text-white font-bold'>Bronze</h6>
                         <div className='flex gap-1 items-center'>
-                            <h1 className='text-[32px] font-bold text-white'>$2000</h1>
+                            <h1 className='text-[32px] font-bold text-white'>$2,000</h1>
                             <h3 className='text-white text-[12px]'>/month</h3>
                         </div>
                     </div>
@@ -177,7 +177,7 @@ export default function Apply() {
                     <div className='flex justify-between  items-center'>
                         <h6 className='text-white font-bold'>Silver</h6>
                         <div className='flex gap-1 items-center'>
-                            <h1 className='text-[32px] font-bold text-white'>$3000</h1>
+                            <h1 className='text-[32px] font-bold text-white'>$3,000</h1>
                             <h3 className='text-white text-[12px]'>/yr</h3>
                         </div>
                     </div>
@@ -207,7 +207,7 @@ export default function Apply() {
                     <div className='flex justify-between  items-center'>
                         <h6 className='text-white font-bold'>Gold</h6>
                         <div className='flex gap-1 items-center'>
-                            <h1 className='text-[32px] font-bold text-white'>$5000</h1>
+                            <h1 className='text-[32px] font-bold text-white'>$5,000</h1>
                             <h3 className='text-white text-[12px]'>/yr</h3>
                         </div>
                     </div>
@@ -238,6 +238,35 @@ export default function Apply() {
 
         </section>
 
+        {/*Dealer Membership Comparison Section*/}
+        <section className='bg-black py-12'>
+            <div className='w-full flex flex-col items-center justify-center mt-20'>
+                <div className='w-full'>
+                    <h2 className='my-2 text-center text-white font-[700] font-lato text-2xl tracking-[2px]'>Ancestro Dealer Memberships — Side-by-Side Comparison</h2>
+                    <p className='mt-1 mb-10 self-center text-center text-white/80 font-[500] font-lato text-md'>Choose the perfect plan for your business needs</p>
+                </div>
+            </div>
+            <div className="max-w-[1348px] mx-auto flex flex-wrap justify-center md:justify-end gap-4">
+
+                {
+                    ['$2,000', '$3,000', '$5,000', '$10,000'].map((el, i) => (
+                        <div key={i} className="active:border-yellow-400 inline-block w-[224px] h-[145px] mb-8 break-inside-avoid rounded-lg p-3 border border-white/10 
+      bg-[linear-gradient(135deg,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.85)_calc(50%_-_50px),rgba(255,255,255,0.2)_50%,rgba(0,0,0,0.85)_calc(50%_+_50px),rgba(0,0,0,0.85)_100%)]">
+                            <div key={i} className='flex justify-between  items-center mb-3'>
+
+                                <div className='flex gap-1 items-center'>
+                                    <h1 className='text-[32px] font-bold text-white'>{el}</h1>
+                                    <h3 className='text-white text-[12px]'>/month</h3>
+                                </div>
+                            </div>
+                            <SunButton text='yellow-600' className='w-full tracking-[2px] uppercase rounded-lg border-yellow-400 text-base text-yellow-500 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20'>Get Started</SunButton>
+
+                        </div>
+                    ))}
+
+            </div>
+            <ComparisonTable />
+        </section>
 
     </>)
 }

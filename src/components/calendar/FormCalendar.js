@@ -59,7 +59,7 @@ const FormCalendar = () => {
         <div className="bg-gradient-to-r from-white/5 via-white/10 to-white/20 rounded-xl px-[35px] py-[30px] text-white max-w-sm mx-auto mt-5">
             {/* Navigation */}
             <div className="flex items-center justify-between mb-4">
-                <h2 className="text-lg font-bold font-lato tracking-[2px]">{monthYear}</h2>
+                <h2 className="uppercase text-lg font-bold font-lato tracking-[2px]">{monthYear}</h2>
 
                 <div className="flex gap-3">
                     <button
@@ -78,7 +78,7 @@ const FormCalendar = () => {
                     </button>
                 </div>
             </div>
-            <div className="border-b border-b-white/30 w-full px-8 py-2" />
+            <div className="border-b border-b-white/10 w-full px-8 py-2" />
 
             {/* Weekday headers */}
             <div className="grid grid-cols-7 gap-1 mb-2">
@@ -93,10 +93,9 @@ const FormCalendar = () => {
             <div className="grid grid-cols-7 gap-1">
                 {days}
             </div>
-            <div className="border-b border-b-white/30 w-full px-8 py-2" />
+            <div className="border-b border-b-white/10 w-full px-8 py-2" />
             <h4 className="text-md font-[500] font-lato tracking-[2px] mr-10 mt-3">TIME FOR MEETING</h4>
             <div className="ml-3 flex items-center gap-4 bg-gradient-to-r from-white/5 via-white/10 to-white/20 w-fit p-2 rounded-lg mt-2 border border-white/30 backdrop-blur-lg">
-                {/* <img src={'/icons/clock.png'} /> */}
                 <ClockIcon height={25} width={25} color="white"/>
                 <div className="text-lg text-white font-[500] font-lato">8:30 AM</div>
             </div>

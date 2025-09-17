@@ -50,7 +50,6 @@ const PropertyDetailForm = ({ onNext }) => (
         </div>
         <FileInputField label={'Average Monthly electric bill'} placeholder="Upload electrical bill (pdf or jpeg)" />
 
-        {/* replace roof  */}
         <>
             <div className="uppercase font-lato text-white text-[14px] text-left tracking-[2px] mt-5">Do you need to replace your roof within
                 the next 2 years?</div>

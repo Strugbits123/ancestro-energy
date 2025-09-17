@@ -38,7 +38,7 @@ export default function MultiStepForm() {
             <Modal
                 isOpen={isFormModalOpen}
                 onClose={() => setIsFormModalOpen(false)}
-                width="443px" height="800px"
+                width={currentStep === 8? "748px" : "443px"} height="800px"
             >
                 <div className='relative h-full w-full'>
                     <div

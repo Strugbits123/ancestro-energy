@@ -3,20 +3,26 @@ import SunButton from "../../ui/SunButton";
 const ContactInfoForm = ({ onNext }) => (
     <form className="w-full py-8 max-w-[400px] mx-auto overflow-hidden relative rounded-[20px] bg-gradient-to-r from-white/5 via-white/10 to-white/20 border border-white/30 backdrop-blur-lg p-6 md:p-10 md:space-y-1">
         {/* Step Heading */}
-        <h3 className="text-[20px] font-bold font-lato text-white">STEP 01: CONTACT INFO</h3>
+        <h3 className="text-[20px] font-bold font-lato text-white">STEP 06: SELECT YOUR DEALER TIER</h3>
 
-    
+
         {/* Input Fields */}
-        <div className="space-y-5 mb-2">
-            {['FULL NAME', 'EMAIL', 'PHONE NUMBER', 'COUNTRY NAME', 'YOUR ROLE/TITLE', 'WEBSITE', "SOCIAL MEDIA LINKS"].map((placeholder, i, arr) => (
-                <input
-                    key={i}
-                    type={placeholder === 'EMAIL' ? 'email' : placeholder === 'PHONE NUMBER' ? 'tel' : 'text'}
-                    placeholder={placeholder}
-                    className={`w-full px-1 py-2 text-sm font-lato bg-transparent border-b border-white/30 text-white placeholder-white placeholder:uppercase focus:outline-none focus:ring-0 focus:border-white ${i === arr.length - 1 ? 'last:mb-1' : ''}`}
-                />
-            ))}
-        </div>
+        <>
+            <div className="uppercase font-lato text-white/90 text-[12px] text-left tracking-[2px] mt-5">which plan are you most interested in joining?</div>
+
+            <div className="flex flex-wrap gap-2 items-center pt-3 pb-0 mt-2">
+                {['bronze', 'silver', 'gold', 'platinum'].map((label, i) => (
+                    <label key={i} className="flex items-center gap-2 text-[12px] text-white  uppercase tracking-[2px]">
+                        <input
+                            type="radio"
+                            name="option"
+                            className="appearance-none h-5 w-5 border border-white rounded-sm bg-transparent checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none"
+                        />
+                        {label}
+                    </label>
+                ))}
+            </div>
+        </>
 
         {/* NEXT Button */}
         <SunButton

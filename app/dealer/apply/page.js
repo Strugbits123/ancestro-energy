@@ -1,9 +1,7 @@
-import ClockIcon from '@/public/icons/clock';
-import MultiStepForm from '@/src/components/forms/ApplySolarForm';
 import ComparisonTable from '@/src/components/tables/PlanComparisonTable';
-import Modal from '@/src/components/ui/Modal';
 import SunButton from '@/src/components/ui/SunButton';
 import DealerForm from '@/src/components/forms/DealerForm';
+import LoanForm from '@/src/components/forms/LoanForm';
 
 export default function Apply() {
     return (<>
@@ -84,12 +82,13 @@ export default function Apply() {
                                 }
                             </div>
                         </div>
-                        <SunButton
+                        {/* <SunButton
                             redirect={'/'}
                             className="max-w-[167px] text-[15px] border-white text-base text-white "
                         >
                             LOAN APP
-                        </SunButton>
+                        </SunButton> */}
+                        <LoanForm/>
                     </div>
                 </div>
             </div>

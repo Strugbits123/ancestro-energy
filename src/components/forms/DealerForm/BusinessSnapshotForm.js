@@ -12,11 +12,11 @@ const BusinessSnapshotForm = ({ onNext }) => (
 
                 {
                     ['Less then 1 year', '1-3 years', '3-10 years', '10 years'].map((label, i) => (
-                        <label key={i} className="flex items-center gap-2 text-white uppercase tracking-[2px]">
+                        <label key={i} className="text-[12px] flex items-center gap-2 text-white uppercase tracking-[2px]">
                             <input
                                 type="radio"
                                 name="option"
-                                className="appearance-none h-5 w-5 border border-white rounded-sm bg-transparent checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none"
+                                className="appearance-none h-4 w-4 border border-white rounded-sm bg-transparent checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none"
                             />
                             {label}
                         </label>
@@ -25,18 +25,20 @@ const BusinessSnapshotForm = ({ onNext }) => (
 
             </div>
         </div>
+        <div className="border-b border-b-white/30 w-full px-8 py-1" />
+
         {/* Business Specialities Section */}
         <div className="flex flex-col justify-start mt-6">
             <div className="uppercase text-white tracking-[2px] text-[14px] text-left">business specialties (Check all that apply)</div>
-            <div className="flex flex-wrap gap-5 items-center pt-5 pr-10">
+            <div className="flex flex-wrap gap-4 items-center pt-5 pr-10">
 
                 {
                     ['System design', 'Permitting', 'installation', 'Procurement of equipment', 'Project financing', 'Maintenance/o&M'].map((label, i) => (
-                        <label key={i} className="flex items-center gap-2 text-white uppercase tracking-[2px]">
+                        <label key={i} className="text-[12px] flex items-center gap-2 text-white uppercase tracking-[2px]">
                             <input
                                 type="radio"
                                 name="option"
-                                className="appearance-none h-5 w-5 border border-white rounded-sm bg-transparent checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none"
+                                className="appearance-none h-4 w-4 border border-white rounded-sm bg-transparent checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none"
                             />
                             {label}
                         </label>
@@ -45,18 +47,20 @@ const BusinessSnapshotForm = ({ onNext }) => (
 
             </div>
         </div>
+        <div className="border-b border-b-white/30 w-full px-8 py-1" />
+
         {/* Current Offer Section */}
         <div className="flex flex-col justify-start mt-6">
             <div className="uppercase text-white tracking-[2px] text-[14px] text-left">Do you currently offer: (Check all that apply)</div>
-            <div className="flex flex-wrap gap-5 items-center pt-5 pr-10">
+            <div className="flex flex-wrap gap-3 items-center pt-5 pr-10">
 
                 {
                     ['Residential', 'commercial', 'industrial', 'off-grid'].map((label, i) => (
-                        <label key={i} className="flex items-center gap-2 text-white uppercase tracking-[2px]">
+                        <label key={i} className="text-[12px] flex items-center gap-2 text-white uppercase tracking-[2px]">
                             <input
                                 type="radio"
                                 name="option"
-                                className="appearance-none h-5 w-5 border border-white rounded-sm bg-transparent checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none"
+                                className="appearance-none h-4 w-4 border border-white rounded-sm bg-transparent checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none"
                             />
                             {label}
                         </label>
@@ -65,6 +69,8 @@ const BusinessSnapshotForm = ({ onNext }) => (
 
             </div>
         </div>
+        <div className="border-b border-b-white/30 w-full px-8 py-1" />
+
 
 
         {/* NEXT Button */}

@@ -23,23 +23,19 @@ export default function CaseStudies() {
                             REAL PEOPLE, REAL RESULTS
                         </h1>
 
-                        <div className="flex flex-col md:flex-row gap-2 max-w-6xl">
+                        <div className="flex flex-col md:flex-row gap-2 max-w-6xl items-center">
                             <SunButton
                                 redirect={'/solar/apply'}
-                                className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
+                                className="py-5 text-base border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
                             >
                                 APPLY NOW — JOIN THE SOLAR TRIBE
                             </SunButton>
 
-                            <SunButton
-                                redirect={'/solar/apply'}
-                                text="black"
-                                variant="secondary"
-                                font="bold"
-                                className="uppercase text-[15px] bg-white text-base"
+                            <button
+                                className="rounded-full uppercase font-bold py-1 max-h-[90px] md:max-h-[50px] px-3 text-base bg-white text-base"
                             >
                                 25 YeaRS of warranty + Guarantees Insurance from ancestro protect.
-                            </SunButton>
+                            </button>
                         </div>
                     </div>
                 </div>

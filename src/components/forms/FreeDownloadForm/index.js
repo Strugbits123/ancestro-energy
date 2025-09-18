@@ -10,9 +10,9 @@ export default function FreeDownloadForm({ isModalOpen, setIsModalOpen }) {
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
                 width="443px"
-                height="187px"
+                height="205px"
             >
-                <div className="w-full h-full flex items-center justify-center">
+                <div className="w-full h-full flex items-center justify-center border border-white/20 rounded-lg px-2 md:px-6 py-4 md:py-10">
                     <form className="w-full h-full">
                         <input
                             type="text"

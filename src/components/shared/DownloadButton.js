@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Modal from "@/src/components/ui/Modal";
 import SunButton from "@/src/components/ui/SunButton";
 import FreeDownloadForm from "../forms/FreeDownloadForm";
 

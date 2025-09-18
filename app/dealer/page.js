@@ -32,7 +32,7 @@ export default function Solar() {
             </div>
             {/*Hero section - Main content*/}
             <div className="container-2xl mx-auto px-[55px] text-center relative z-10 py-20">
-                <div className=" mx-auto flex flex-col xl:flex-row gap-10 items-stretch p-20">
+                <div className=" mx-auto flex flex-col xl:flex-row gap-10 items-stretch p-4 md:p-20">
                     {/* Left Side: Heading + Flags */}
                     <div className="flex-3 flex flex-col items-start justify-center gap-4 w-full xl:w-[45%]">
                         <h1 className="w-full text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl mx-auto">
@@ -51,12 +51,21 @@ export default function Solar() {
                     </div>
 
                     {/* Right Side: Image */}
-                    <div className="flex-2">
+                    {/* <div className="flex-2">
                         <div className="w-[100%] overflow-hidden relative max-w-2xl rounded-[5%]">
                             <img
                                 src="/images/dealer-hero.png"
                                 alt="solar"
                                 className="w-full object-cover object-center scale-[1.35]"
+                            />
+                        </div>
+                    </div> */}
+                    <div className="flex-[2] min-h-[300px] md:min-h-[500px] w-full">
+                        <div className="w-full h-full overflow-hidden relative rounded-[5%]">
+                            <img
+                                src="/images/map-hero-video.png"
+                                alt="solar"
+                                className="w-full h-full object-cover object-center scale-[1.6] md:scale-[1.35]"
                             />
                         </div>
                     </div>

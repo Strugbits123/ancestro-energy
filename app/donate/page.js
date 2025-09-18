@@ -1,6 +1,4 @@
-import CaseStudy from '@/src/components/shared/DealerCaseStudy';
 import SunButton from '@/src/components/ui/SunButton';
-import { DealerCaseStudy } from '@/src/constants/data';
 
 export default function Donate() {
     return (<>

@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-// import logo from "@/src/assets/logo.png";
 import logo from "@/public/assets/logo.png";
 import SunButton from './ui/SunButton';
 import Link from 'next/link';
@@ -70,10 +69,10 @@ export default function Header() {
               {[
                 { title: 'HOME', link: '/' },
                 { title: 'LEARN', link: '/learn' },
-                { title: 'CASE STUDIES', link: '/case-studies' },
+                { title: 'CASE STUDIES', link: '/solar/casestudies' },
                 { title: 'APPLY', link: '/apply' },
                 { title: 'DONATE', link: '/donate' },
-                { title: 'REFER', link: '/refer' }
+                { title: 'EARN', link: '/solar/earn' }
               ]
                 .map((path, i) => (
                   <Link key={i} href={`${path.link}`} className='block'>

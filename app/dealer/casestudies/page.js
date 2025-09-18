@@ -1,6 +1,4 @@
-import CarouselComponent from '@/src/components/shared/Carousel';
 import CaseStudy from '@/src/components/shared/DealerCaseStudy';
-import DownloadButton from '@/src/components/shared/DownloadButton';
 import SunButton from '@/src/components/ui/SunButton';
 import { DealerCaseStudy } from '@/src/constants/data';
 

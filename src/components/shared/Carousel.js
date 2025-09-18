@@ -47,7 +47,7 @@ const CarouselComponent = () => {
     };
 
     return (
-        <div className="w-full overflow-hidden relative mb-15 mt-5">
+        <div className="w-full overflow-hidden relative pb-15 mt-5 border-none">
             {/* Left fade */}
             <div className="pointer-events-none absolute top-0 left-0 h-full w-[250px] bg-gradient-to-r from-black to-transparent z-10" />
             {/* Right fade */}

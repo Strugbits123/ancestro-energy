@@ -9,84 +9,158 @@ import Link from 'next/link';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const handleCloseMenu = (e) => {
+    console.log('Close button clicked!');
+    e.preventDefault();
+    e.stopPropagation();
+    setIsMenuOpen(false);
+  };
+
+  const handleToggleMenu = () => {
+    console.log('Toggle menu clicked, current state:', isMenuOpen);
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
-      {/* Navigation Bar */}
-      <nav className="container-2xl mx-auto px-[55px] py-4 flex justify-between items-center">
-        {/* Logo */}
-        <div className="flex items-center">
-          <Image src={logo} alt="Logo" />
-        </div>
+    <>
+      {/*Animations */}
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
 
-        {/* Right Side Controls */}
-        {!isMenuOpen && <div className="flex items-center gap-6">
-          {/* Sign In Button */}
-          <SunButton>SIGN IN</SunButton>
+        @keyframes slideInFromRight {
+          from {
+            transform: translateX(100%);
+            opacity: 0.8;
+          }
+          to {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
 
-          {/* Hamburger Menu Button - Glass UI */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="group relative p-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white focus:outline-none transition-all duration-500 hover:bg-white/20 hover:border-white/40 hover:scale-110 hover:shadow-xl hover:shadow-white/10"
-          >
-            <svg className="w-6 h-6 transition-transform duration-300 group-hover:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {isMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
+        @keyframes slideOutToRight {
+          from {
+            transform: translateX(0);
+            opacity: 1;
+          }
+          to {
+            transform: translateX(100%);
+            opacity: 0.8;
+          }
+        }
+
+        .animate-fade-in {
+          animation: fadeIn 0.3s ease-out forwards;
+        }
+
+        .animate-slide-in {
+          animation: slideInFromRight 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        .animate-slide-out {
+          animation: slideOutToRight 0.3s cubic-bezier(0.55, 0.06, 0.68, 0.19) forwards;
+        }
+      `}</style>
+
+      <header className="fixed top-0 left-0 right-0 z-50 py-10">
+        {/* Navigation Bar */}
+        <nav className="container-2xl mx-auto px-[55px] py-4 flex justify-between items-center">
+          {/* Logo */}
+          <div className="flex items-center">
+            <Image src={logo} alt="Logo" />
+          </div>
+
+          {/* Right Side Controls */}
+          {!isMenuOpen && <div className="flex items-center gap-6">
+            {/* Sign In Button */}
+            <SunButton>SIGN IN</SunButton>
+
+            {/* Hamburger Menu Button */}
+            <button
+              type='button'
+              onClick={handleToggleMenu}
+              className="group relative p-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white focus:outline-none transition-all duration-500 hover:bg-white/20 hover:border-white/40 hover:scale-110 hover:shadow-xl hover:shadow-white/10"
+            >
+              <svg className="w-6 h-6 transition-transform duration-300 group-hover:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-            {/* Hover glow effect */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
-          </button>
-        </div>}
-      </nav>
+              </svg>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
+            </button>
+          </div>}
+        </nav>
 
-      {/* Glass Sidebar Menu */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 z-40 ">
-          {/* Backdrop */}
-          <div
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-            onClick={() => setIsMenuOpen(false)}
-          ></div>
+        {/* Sidebar Overlay */}
+        {isMenuOpen && (
+          <div className="fixed inset-0 z-[9999]">
+            <div
+              className="absolute inset-0 bg-black/50 backdrop-blur-sm cursor-pointer animate-fade-in"
+              onClick={handleCloseMenu}
+              style={{ 
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                width: '100vw',
+                height: '100vh'
+              }}
+            />
 
-          {/* Glass Sidebar */}
-          <div className="absolute top-12  rounded-tl-[20px] rounded-bl-[20px] right-0 h-full w-80 bg-white/10 backdrop-blur-xl border-l border-white/20 shadow-2xl">
-            {/* Sidebar Header */}
-            <div className="flex items-center justify-end p-6 border-b border-white/20">
-              <button
-                onClick={() => setIsMenuOpen(false)}
-                className="group p-2 backdrop-blur-md  rounded-full text-white hover:bg-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110"
-              >
-                <svg className="w-5 h-5 transition-transform duration-300 group-hover:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
+            {/* Sidebar with slide-in animation */}
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="absolute right-0 w-80 bg-white/10 backdrop-blur-xl border-l border-white/20 shadow-2xl rounded-tl-[20px] rounded-bl-[20px] animate-slide-in"
+              style={{ 
+                top: '2.5rem',
+                bottom: '2.5rem',
+                height: 'calc(100vh - 5rem)',
+                zIndex: 10000
+              }}
+            >
+              {/* Sidebar Header */}
+              <div className="flex items-center justify-end p-6">
+                <button
+                  type='button'
+                  onClick={handleCloseMenu}
+                  className="group p-2 rounded-full text-white  "
+                >
+                  <svg className="w-10 h-10 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
 
-            {/* Navigation Links */}
-            <div className="p-6 space-y-8 pt-14">
-              {[
-                { title: 'HOME', link: '/' },
-                { title: 'LEARN', link: '/learn' },
-                { title: 'CASE STUDIES', link: '/solar/casestudies' },
-                { title: 'APPLY', link: '/apply' },
-                { title: 'DONATE', link: '/donate' },
-                { title: 'EARN', link: '/solar/earn' }
-              ]
-                .map((path, i) => (
-                  <Link key={i} href={`${path.link}`} className='block'>
-                    <button key={i} className="group w-full text-left px-4 py-3 text-white font-medium text-sm tracking-wider uppercase rounded-lg transition-all duration-300 hover:bg-white/10 hover:text-yellow-300 hover:translate-x-2">
-                      <span className="relative z-10 text-2xl">{path.title}</span>
-                      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-yellow-400/10 to-transparent opacity-0"></div>
+              <div className="p-6 space-y-6 pt-8 overflow-y-auto max-h-full">
+                {[
+                  { title: 'HOME', link: '/' },
+                  { title: 'LEARN', link: '/learn' },
+                  { title: 'CASE STUDIES', link: '/solar/casestudies' },
+                  { title: 'APPLY', link: '/solar/apply' },
+                  { title: 'DONATE', link: '/donate' },
+                  { title: 'EARN', link: '/solar/earn' }
+                ].map((path, i) => (
+                  <Link key={i} href={path.link} className='block'>
+                    <button 
+                      onClick={() => setIsMenuOpen(false)}
+                      className=" w-full text-left px-4 py-3 text-white font-medium text-sm tracking-wider uppercase rounded-lg  relative overflow-hidden hover:cursor-pointer"
+                    >
+                      <span className="relative z-10 text-2xl transition-transform duration-300 group-hover:scale-105">{path.title}</span>
+                      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-yellow-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-100%] group-hover:translate-x-0"></div>
                     </button>
                   </Link>
-                ))
-              }
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      )}
-    </header>
+        )}
+      </header>
+    </>
   );
 }

@@ -1,3 +1,4 @@
+import LatinAmericaMap from "@/src/components/map";
 import SunButton from "@/src/components/ui/SunButton";
 
 export default function Join() {
@@ -24,22 +25,25 @@ export default function Join() {
 
 
             {/*Hero section - Main content*/}
-            <div className="container-2xl mx-auto px-[55px] text-center relative z-10 py-20">
-                <div className=" mx-auto flex flex-col xl:flex-row gap-10 items-stretch p-2 md:p-20">
+            <div className="container-2xl mx-auto px-[10px] md:px-[55px] text-center relative z-10 py-20">
+                <div className="w-full mx-auto flex flex-col xl:flex-row gap-25 items-center p-2 md:p-10">
                     {/* Left Side: Heading + MAP */}
-                    <div className="flex-3 flex flex-col items-start justify-center gap-4 w-full xl:w-[45%]">
+                    <div className="w-[50%] flex flex-col items-start justify-center gap-4 w-full xl:w-[45%]">
                         <h1 className="w-full text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl mx-auto">
                             Join the largest solar financing platform in Latin America
                         </h1>
-                        <div className="flex flex-col gap-3 md:gap-0 md:flex-row w-full mt-4">
+                        <div className="flex flex-col gap-3 md:gap-0 md:flex-row  mt-4">
                             <div className="flex justify-start  w-full xl:w-[176px]"><SunButton redirect={'/learn'} className="text-base border-white/90 text-base text-white/90 ">LEARN MORE</SunButton></div>
                             <div className="flex justify-start  w-full xl:w-[340px]"><SunButton redirect={'/solar/apply'} className="text-base border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton></div>
+                        </div>
+                        <div className="w-full p-8">
+                            <LatinAmericaMap/>
                         </div>
                     </div>
 
                     {/* Right Side: Image */}
-                    <div className="flex-[2] min-h-[300px] md:min-h-[500px] w-full">
-                        <div className="w-full h-full overflow-hidden relative rounded-[5%]">
+                    <div className="w-[90%] md:w-[50%] min-h-[300px] md:min-h-[500px] max-h-[664px]">
+                        <div className="w-full h-full flex justify-center overflow-hidden relative rounded-[5%]">
                             <img
                                 src="/images/map-hero-video.png"
                                 alt="solar"

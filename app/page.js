@@ -92,7 +92,7 @@ export default function Home() {
                   <div className="w-5 h-5 rounded-sm flex-shrink-0">
                     <img src={'/icons/grow-your-business.png'} className='h-full w-full' />
                   </div>
-                  <span className="font-lato font-bold text-sm md:text-lg tracking-wider uppercase text-white">
+                  <span className="text-left font-lato font-bold text-sm md:text-lg tracking-wider uppercase text-white">
                     Grow your business
                   </span>
                 </div>
@@ -103,7 +103,7 @@ export default function Home() {
                     <img src={'/icons/join-solar.png'} className='h-full w-full' />
 
                   </div>
-                  <span className="font-lato font-bold text-sm md:text-lg tracking-wider uppercase text-white leading-tight">
+                  <span className="text-left font-lato font-bold text-sm md:text-lg tracking-wider uppercase text-white leading-tight">
                     join #1 Solar network in Latin America
                   </span>
                 </div>

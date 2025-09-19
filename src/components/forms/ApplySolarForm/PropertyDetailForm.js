@@ -4,14 +4,13 @@ import SunButton from "../../ui/SunButton";
 const PropertyDetailForm = ({ onNext }) => (
     <form className="w-full py-8 max-w-[400px] mx-auto overflow-hidden relative rounded-[20px] bg-gradient-to-r from-white/5 via-white/10 to-white/20 border border-white/30 backdrop-blur-lg py-10 px-7 space-y-1">
         {/* Step Heading */}
-        <h3 className="text-[20px] font-bold font-lato text-white">STEP 02: PROPERTY DEAL</h3>
-
+        <h3 className="text-[20px] font-bold font-lato text-white">STEP 02: PROPERTY DETAIL</h3>
 
 
         {/* Project Type */}
-        <div className="flex flex-col justify-start mt-6 text-left">
-            <span className="uppercase text-white text-[15px] text-left tracking-[2px]">PROJECT TYPE:</span>
-            <div className="flex flex-wrap gap-[7px] items-center pt-5 mb-5">
+        <div className="flex flex-col justify-start mt-1 md:mt-6 text-left">
+            <span className="uppercase text-white text-sm text-left tracking-[2px]">PROJECT TYPE:</span>
+            <div className="flex flex-wrap gap-[7px] items-center pt-5 mb-1 md:mb-5">
 
                 <label className="flex items-center gap-2 text-white uppercase tracking-[2px]">
                     <input
@@ -51,7 +50,7 @@ const PropertyDetailForm = ({ onNext }) => (
         <FileInputField label={'Average Monthly electric bill'} placeholder="Upload electrical bill (pdf or jpeg)" />
 
         <>
-            <div className="uppercase font-lato text-white text-[14px] text-left tracking-[2px] mt-5">Do you need to replace your roof within
+            <div className="uppercase font-lato text-white text-sm text-left tracking-[2px] mt-1 md:mt-5">Do you need to replace your roof within
                 the next 2 years?</div>
 
             <div className="flex flex-wrap gap-4 items-center py-5 mt-2">

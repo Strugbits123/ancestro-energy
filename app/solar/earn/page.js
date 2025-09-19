@@ -72,10 +72,10 @@ export default function Earn() {
                 </div>
 
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-5'>
                 {
                     ['/images/save-trees-1.png', '/images/save-trees-2.png', '/images/save-trees-3.png', '/images/save-trees-4.png'].map((image, i) => (
-                        <img key={i} src={image} className='h-[493px] w-auto' />
+                        <img key={i} src={image} className='h-[493px] w-auto rounded-xl' />
                     ))
                 }
             </div>

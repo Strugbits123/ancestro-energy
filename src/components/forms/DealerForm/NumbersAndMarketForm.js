@@ -40,7 +40,7 @@ const ContactInfoForm = ({ onNext }) => (
         </>
 
         <div>
-            <input placeholder="SHORT DESCRIPTION" className="border border-white/20 h-[97px] w-full rounded-[10px] placeholder:text-white placeholder:text-[10px] placeholder:italic placeholder:pb-15  placeholder:px-2"/>
+            <input placeholder="SHORT DESCRIPTION" className="text-white border border-white/20 h-[97px] w-full rounded-[10px] placeholder:text-white placeholder:text-[10px] placeholder:italic placeholder:pb-15  placeholder:px-2"/>
         </div>
         {/* NEXT Button */}
         <SunButton

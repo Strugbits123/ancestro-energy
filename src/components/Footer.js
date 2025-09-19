@@ -10,7 +10,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-black text-white border-t border-[#C4952D]">
       {/* Main Footer Content */}
       <div className="container-2xl mx-auto px-[55px] py-12">
         {/* Footer Top Section */}

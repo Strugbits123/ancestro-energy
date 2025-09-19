@@ -5,6 +5,7 @@ import STEP2 from './PropertyDetailForm';
 import STEP3 from './BusinessInfoForm';
 import STEP4 from './Step4Form';
 import STEP5 from './ScheduleCallForm';
+import Modal from '../../ui/Modal';
 
 export default function MultiStepForm() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -54,31 +55,46 @@ export default function MultiStepForm() {
           <STEP5 onNext={handleNext} />
         </div>
       </div>
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-100 "
-          onClick={() => setIsModalOpen(false) }
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} width="528px" height="528px"> 
+        <div
+          className="relative w-full h-full flex items-center justify-center"
+          style={{
+            backgroundImage: `url('/images/schedule-modal.png')`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
         >
+          <button
+            onClick={() => setIsModalOpen(false)} 
+            className="absolute top-6 right-2 p-2 rounded-full hover:bg-white/20 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-10 h-10"
+              fill="white"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
 
-      <div className='rounded-lg w-auto h-[528px] max-w-[528px] overflow-hidden flex items-center justify-center' style={{
-        backgroundImage: `
-                            url('/images/schedule-modal.png')
-                            `,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}>
-        <div className='flex flex-col items-center justify-center'>
-          <img src={'/icons/party-popper.png'} />
-          <div className='text-xl font-[700] font-lato text-white'>CONGRATULATIONS!</div>
-          <div className='font-[400] font-lato text-xl text-white px-3 mt-1'>“You’ve taken the first
-            step towards making your
-            ancestors happy!”
+          {/* Modal Content */}
+          <div className="flex flex-col items-center justify-center text-center">
+            <img src="/icons/party-popper.png" alt="Party Popper" />
+            <div className="text-xl font-bold font-lato text-white mt-3">
+              CONGRATULATIONS!
+            </div>
+            <div className="font-[400] font-lato text-2xl text-white px-3 mt-2">
+              “You’ve taken the first step towards making your ancestors happy!”
+            </div>
           </div>
         </div>
-      </div>
-    </div >
-      )
-}
+      </Modal>
     </>
   );
 }

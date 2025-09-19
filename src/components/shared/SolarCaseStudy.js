@@ -1,3 +1,5 @@
+import VideoTestimonial from "./VideoTestimonial";
+
 const CaseStudy = ({ content }) => {
     return (<>
         <div
@@ -25,6 +27,7 @@ const CaseStudy = ({ content }) => {
                 <div className="text-white text-md font-lato leading-loose mt-2">VIDEO TESTIMONIAL<strong className="ml-2 text-xl">→</strong></div>
                 <img className='w-15 h-15' src={'/images/customer-card.png'} />
             </div>
+            {/* <VideoTestimonial /> */}
         </div>
 
     </>)

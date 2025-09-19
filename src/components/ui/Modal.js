@@ -16,9 +16,9 @@ export default function Modal({ isOpen, onClose, width = 'auto', height = 'auto'
                     height: height === 'auto' ? 'auto' : 'auto',
                     maxHeight: '95vh',
                 }}
-                onClick={(e) => e.stopPropagation()}
+                onClick={(e) => { e.stopPropagation() }}
             >
-                <div 
+                <div
                     className="overflow-y-auto max-h-full"
                     style={{
                         height: height !== 'auto' ? height : 'auto',

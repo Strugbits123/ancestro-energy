@@ -38,8 +38,8 @@ const FormCalendar = () => {
                 key={day}
                 onClick={() => setSelectedDate(date)}
                 className={`
-                    rounded-full flex items-center justify-around p-2 text-sm rounded-md transition-colors duration-200 hover:bg-white/10
-                    ${isSelected ? 'bg-yellow-400 font-bold' : 'text-white'}
+                    rounded-xl flex items-center justify-around p-1 text-sm rounded-md transition-colors duration-200 hover:bg-white/10
+                    ${isSelected ? 'bg-yellow-400 font-bold text-black' : 'text-white'}
                     ${isToday && !isSelected ? 'bg-white/20' : ''}
                 `}
             >
@@ -56,29 +56,29 @@ const FormCalendar = () => {
     const weekdays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 
     return (
-        <div className="bg-gradient-to-r from-white/5 via-white/10 to-white/20 rounded-xl px-[35px] py-[30px] text-white max-w-sm mx-auto mt-5">
+        <div className="border border-white/20 bg-gradient-to-r from-white/40 via-white/30 to-white/10 rounded-2xl px-[35px] pt-[15px] pb-[20px] text-white max-w-sm mx-auto mt-5">
             {/* Navigation */}
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center justify-start mb-4 gap-2 ">
                 <h2 className="uppercase text-lg font-bold font-lato tracking-[2px]">{monthYear}</h2>
 
-                <div className="flex gap-3">
+                <div className="flex gap-0">
                     <button
                         type="button"
                         onClick={goToPrevMonth}
-                        className="text-white hover:bg-white/10 p-2 rounded-md text-xl font-bold"
+                        className="text-white hover:bg-white/10 p-2 rounded-md text-2xl font-bold"
                     >
                         ‹
                     </button>
                     <button
                         type="button"
                         onClick={goToNextMonth}
-                        className="text-white hover:bg-white/10 p-2 rounded-md text-xl font-bold"
+                        className="text-white hover:bg-white/10 p-2 rounded-md text-2xl font-bold"
                     >
                         ›
                     </button>
                 </div>
             </div>
-            <div className="border-b border-b-white/10 w-full px-8 py-2" />
+            <div className="border-t border-t-white/10 w-full px-8 py-2" />
 
             {/* Weekday headers */}
             <div className="grid grid-cols-7 gap-1 mb-2">
@@ -94,8 +94,8 @@ const FormCalendar = () => {
                 {days}
             </div>
             <div className="border-b border-b-white/10 w-full px-8 py-2" />
-            <h4 className="text-md font-[500] font-lato tracking-[2px] mr-10 mt-3">TIME FOR MEETING</h4>
-            <div className="ml-3 flex items-center gap-4 bg-gradient-to-r from-white/5 via-white/10 to-white/20 w-fit p-2 rounded-lg mt-2 border border-white/30 backdrop-blur-lg">
+            <h4 className="text-md font-[500] font-lato tracking-[2px] mr-8 mt-2">TIME FOR MEETING</h4>
+            <div className="ml-3 flex items-center gap-4 bg-gradient-to-r from-white/5 via-white/10 to-white/20 w-fit px-2 py-1 rounded-xl mt-2 border-2 border-white/30 backdrop-blur-lg">
                 <ClockIcon height={25} width={25} color="white"/>
                 <div className="text-lg text-white font-[500] font-lato">8:30 AM</div>
             </div>

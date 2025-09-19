@@ -29,7 +29,7 @@ const CompanyForm = ({ onNext }) => (
         <div className="border-b border-b-white/30 w-full px-8 py-3" />
         <div className="py-3 space-y-2">
             <div className="uppercase text-white/90 text-[14px] text-left">PROJECT SUMMARY DETAIL:</div>
-            <input placeholder="WRITE ABOUT YOUR PROJECT" className="border border-white/20 h-[97px] w-full rounded-[10px] placeholder:text-white placeholder:text-[10px] placeholder:italic placeholder:pb-15  placeholder:px-2" />
+            <input placeholder="WRITE ABOUT YOUR PROJECT" className="text-white border border-white/20 h-[97px] w-full rounded-[10px] placeholder:text-white placeholder:text-[10px] placeholder:italic placeholder:pb-15  placeholder:px-2" />
         </div>
         {/* NEXT Button */}
         <SunButton

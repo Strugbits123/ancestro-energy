@@ -9,7 +9,7 @@ const CompanyForm = ({ onNext }) => (
             <div className="font-bold uppercase text-white/90 text-[14px] text-left">please explain why your company is a
                 trustworthy borrower and why this
                 project is finance-worthy:</div>
-            <input placeholder="WRITE IN 1000 CHARACTERS" className="border border-white/20 h-[97px] w-full rounded-[10px] placeholder:text-white placeholder:text-[10px] placeholder:italic placeholder:pb-15  placeholder:px-2" />
+            <input placeholder="WRITE IN 1000 CHARACTERS" className="text-white border border-white/20 h-[97px] w-full rounded-[10px] placeholder:text-white placeholder:text-[10px] placeholder:italic placeholder:pb-15  placeholder:px-2" />
         </div>
 
         {/* Input Fields */}
@@ -46,7 +46,7 @@ const CompanyForm = ({ onNext }) => (
         </div>
         <div>
             <div className="italic uppercase text-white/90 text-[14px] text-left mt-4 mb-2">(If no: Who is building it?)</div>
-            <input placeholder="WRITE ABOUT YOUR PROJECT" className="border border-white/20 h-[97px] w-full rounded-[10px] placeholder:text-white placeholder:text-[10px] placeholder:italic placeholder:pb-15  placeholder:px-2" />
+            <input placeholder="WRITE ABOUT YOUR PROJECT" className="text-white border border-white/20 h-[97px] w-full rounded-[10px] placeholder:text-white placeholder:text-[10px] placeholder:italic placeholder:pb-15  placeholder:px-2" />
         </div>
         {/* NEXT Button */}
         <SunButton

@@ -32,7 +32,7 @@ export default function CaseStudies() {
                             </SunButton>
 
                             <button
-                                className="rounded-full uppercase font-bold py-1 max-h-[90px] md:max-h-[50px] px-3 text-base bg-white text-base"
+                                className="rounded-full uppercase font-bold py-1 max-h-[90px] md:max-h-[50px] px-3 text-[10px] bg-white md:text-base shadow"
                             >
                                 25 YeaRS of warranty + Guarantees Insurance from ancestro protect.
                             </button>
@@ -42,7 +42,7 @@ export default function CaseStudies() {
             </div>
 
             {/* Case Study Grid */}
-            <div className="container-2xl mx-auto px-[55px] -mt-[853px] z-10">
+            <div className="container-2xl mx-auto px-[5px] sm:px-[55px] -mt-[853px] z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-items-center gap-12">
                     {SolarCaseStudy.map((study, i) => (
                         <CaseStudy

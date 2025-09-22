@@ -73,11 +73,11 @@ const CarouselComponent = () => {
                                     <span className="text-white/80">{slide.desc}</span>
                                 </div>
                             </div>
-                            <div className="flex flex-row h-[28px] px-1 w-fit bg-white/30 rounded-full gap-1 items-center">
+                            <div className="flex flex-row h-[28px] px-1 w-fit bg-white/30 rounded-full gap-[2px] sm:gap-1 items-center justify-center">
                                 {Array(slide.stars)
                                     .fill(1)
                                     .map((star, i) => (
-                                        <img key={i} src={'/icons/star-rating.png'} />
+                                        <img key={i} src={'/icons/star-rating.png'} className='w-2 h-2 sm:w-2 sm:h-3 md:w-3 md:h-3 lg:w-auto lg:h-auto'/>
                                     ))}
                             </div>
                         </div>

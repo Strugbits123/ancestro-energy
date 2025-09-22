@@ -34,7 +34,7 @@ export default function CaseStudies() {
             </div>
 
             {/* Case Study Grid */}
-            <div className="container-2xl mx-auto px-[55px] -mt-[853px] z-10 flex flex-col items-center gap-10">
+            <div className="container-2xl mx-auto px-[10px] sm:px-[55px] -mt-[853px] z-10 flex flex-col items-center gap-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-items-center gap-12">
                     {DealerCaseStudy.map((study, i) => (
                         <CaseStudy

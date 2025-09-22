@@ -63,7 +63,7 @@ export default function Apply() {
                                 ))
                             }
                         </div>
-                        <DealerForm/>
+                        <DealerForm />
                     </div>
                     {/*LOAN*/}
                     <div className='flex flex-col gap-4'>
@@ -88,7 +88,7 @@ export default function Apply() {
                         >
                             LOAN APP
                         </SunButton> */}
-                        <LoanForm/>
+                        <LoanForm />
                     </div>
                 </div>
             </div>
@@ -106,7 +106,7 @@ export default function Apply() {
             </div>
             <div className="max-w-[920px] mx-auto columns-1 lg:columns-2 gap-8 [column-fill:_balance]">
 
-                <div className="active:border-yellow-400 inline-block w-[447px] h-[289px] mb-8 break-inside-avoid rounded-lg p-4 border border-white/10 
+                <div className="active:border-yellow-400 inline-block w-[98%] mx-auto sm:w-[447px] h-[289px] mb-8 break-inside-avoid rounded-lg p-4 border border-white/10 
       bg-[linear-gradient(135deg,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.85)_calc(50%_-_120px),rgba(255,255,255,0.2)_50%,rgba(0,0,0,0.85)_calc(50%_+_120px),rgba(0,0,0,0.85)_100%)]">
                     <div className='flex justify-between  items-center'>
                         <h6 className='text-white font-bold'>Bronze</h6>
@@ -125,8 +125,8 @@ export default function Apply() {
                                 'Standard Seating at Ancestro Dealer Events'
                             ].map((el, i) => (
                                 <div key={i} className='flex gap-4 p-2'>
-                                    <img className="h-[20px] w-[24px]" src={'/icons/checkmark.png'} />
-                                    <div className='text-white/80'>{el}</div>
+                                    <img className="h-[18px] w-[20px] sm:h-[20px] sm:w-[24px]" src={'/icons/checkmark.png'} />
+                                    <div className='text-sm sm:text-base text-white/80'>{el}</div>
                                 </div>
                             ))
                         }
@@ -135,7 +135,7 @@ export default function Apply() {
                 </div>
 
 
-                <div className="active:border-yellow-400 border border-white/10  inline-block w-[447px] h-[663px] mb-8 break-inside-avoid rounded-lg p-4 
+                <div className="active:border-yellow-400 border border-white/10  inline-block mx-auto w-[98%] sm:w-[447px] h-[663px] mb-8 break-inside-avoid rounded-lg p-4 
       bg-[linear-gradient(135deg,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.85)_calc(50%_-_250px),rgba(255,255,255,0.2)_50%,rgba(0,0,0,0.85)_calc(50%_+_250px),rgba(0,0,0,0.85)_100%)]">
                     <div className='flex justify-between  items-center'>
                         <h6 className='text-white font-bold'>Platinum</h6>
@@ -161,9 +161,9 @@ export default function Apply() {
                                 'Free construction loan applications',
                                 'Invite-only access to equity co-development pool'
                             ].map((el, i) => (
-                                <div key={i} className='flex gap-4 p-[4px]'>
-                                    <img className="h-[20px] w-[24px]" src={'/icons/checkmark.png'} />
-                                    <div className='text-white/80'>{el}</div>
+                                <div key={i} className='flex gap-4 p-2'>
+                                    <img className="h-[18px] w-[20px] sm:h-[20px] sm:w-[24px]" src={'/icons/checkmark.png'} />
+                                    <div className='text-sm sm:text-base text-white/80'>{el}</div>
                                 </div>
                             ))
                         }
@@ -171,7 +171,7 @@ export default function Apply() {
 
                 </div>
 
-                <div className="active:border-yellow-400 border border-white/10  inline-block w-[447px] h-[409px] mb-8 break-inside-avoid rounded-lg p-4 
+                <div className="active:border-yellow-400 border border-white/10  inline-block mx-auto w-[98%] sm:w-[447px] h-[409px] mb-8 break-inside-avoid rounded-lg p-4 
       bg-[linear-gradient(135deg,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.85)_calc(50%_-_150px),rgba(255,255,255,0.2)_50%,rgba(0,0,0,0.85)_calc(50%_+_150px),rgba(0,0,0,0.85)_100%)]">
                     <div className='flex justify-between  items-center'>
                         <h6 className='text-white font-bold'>Silver</h6>
@@ -193,15 +193,15 @@ export default function Apply() {
                                 'Listed on Ancestro “Find a Dealer” map'
                             ].map((el, i) => (
                                 <div key={i} className='flex gap-4 p-2'>
-                                    <img className="h-[20px] w-[24px]" src={'/icons/checkmark.png'} />
-                                    <div className='text-white/80'>{el}</div>
+                                    <img className="h-[18px] w-[20px] sm:h-[20px] sm:w-[24px]" src={'/icons/checkmark.png'} />
+                                    <div className='text-sm sm:text-base text-white/80'>{el}</div>
                                 </div>
                             ))
                         }
                     </div>
                 </div>
 
-                <div className="active:border-yellow-400 border border-white/10  inline-block w-[447px] h-[513px] mb-8 break-inside-avoid rounded-lg p-4 
+                <div className="active:border-yellow-400 border border-white/10  inline-block mx-auto w-[98%] sm:w-[447px] h-[513px] mb-8 break-inside-avoid rounded-lg p-4 
       bg-[linear-gradient(135deg,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.85)_calc(50%_-_150px),rgba(255,255,255,0.2)_50%,rgba(0,0,0,0.85)_calc(50%_+_150px),rgba(0,0,0,0.85)_100%)]">
                     <div className='flex justify-between  items-center'>
                         <h6 className='text-white font-bold'>Gold</h6>
@@ -224,9 +224,9 @@ export default function Apply() {
                                 'Reserved seating at Ancestro Dealer Events',
                                 'Regional recognition across Ancestro marketing + dealer map'
                             ].map((el, i) => (
-                                <div key={i} className='flex gap-4 p-[5px]'>
-                                    <img className="h-[20px] w-[24px]" src={'/icons/checkmark.png'} />
-                                    <div className='text-white/80'>{el}</div>
+                                <div key={i} className='flex gap-4 p-2'>
+                                    <img className="h-[18px] w-[20px] sm:h-[20px] sm:w-[24px]" src={'/icons/checkmark.png'} />
+                                    <div className='text-sm sm:text-base text-white/80'>{el}</div>
                                 </div>
                             ))
                         }

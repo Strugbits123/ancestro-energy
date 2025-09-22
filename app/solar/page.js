@@ -33,7 +33,7 @@ export default function Solar() {
             </div>
 
             {/*Hero section - Main content*/}
-            <div className="container-2xl mx-auto px-[55px] text-center relative z-10 py-20">
+            <div className="container-2xl mx-auto px-[10px] sm:px-[55px] text-center relative z-10 py-30 md:py-20">
                 <div className=" mx-auto flex flex-col xl:flex-row gap-10 items-stretch p-4 md:p-20">
                     {/* Left Side: Heading + Flags */}
                     <div className="flex-3 flex flex-col items-start justify-center gap-4 w-full xl:w-[45%]">
@@ -86,7 +86,7 @@ export default function Solar() {
         {/*OUR CASE STUDY*/}
         <section className="flex flex-col bg-black  py-10 items-center">
             {/* <h2 className="text-center font-lato font-bold text-[25px] font-lato leading-relaxed text-white p-5">OUR CASE STUDY</h2> */}
-            <div className="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-[82%] justify-items-center mb-10 gap-7">
+            <div className="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-[95%] sm:w-[82%] justify-items-center mb-10 gap-7">
                 {
                     SolarCaseStudy.map((study, i) => i < 3 && (
                         <CaseStudy

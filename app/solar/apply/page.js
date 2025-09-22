@@ -26,8 +26,8 @@ export default function Apply() {
             </div>
 
             {/*Hero section - Main content*/}
-            <div className="container-2xl mx-auto w-[80%] text-center relative z-10 py-20">
-                <div className="flex flex-col xl:flex-row items-stretch py-5 md:p-20">
+            <div className="container-2xl mx-auto w-[80%] text-center relative z-10 pt-30 md:py-20 ">
+                <div className="flex flex-col xl:flex-row items-stretch py-5 md:p-20 space-y-10 md:space-y-1">
                     {/* Left Side: Heading */}
                     <div className="flex-3 flex flex-col items-start justify-center gap-4 w-full xl:w-[45%]">
                         <div className="px-4 py-3 bg-yellow-400 flex gap-2 rounded-[17px]">

@@ -140,7 +140,7 @@ export default function Donate() {
                                 <div className="flex flex-col gap-2 w-[400px] my-1">
                                     <div className="flex justify-between">
                                         <div className="hidden md:block bg-white px-2 py-0 md:py-1 rounded-lg text-sm max-h-6 max-w-12 flex justify-around">Solar</div>
-                                        <div className="text-white/30 text-sm">
+                                        <div className="text-white/30 text-[10px] sm:text-sm">
                                             Aug 4, 2025 • 3344 views
                                         </div>
                                     </div>

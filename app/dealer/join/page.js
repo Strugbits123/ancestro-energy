@@ -25,7 +25,7 @@ export default function Join() {
 
 
             {/*Hero section - Main content*/}
-            <div className="container-2xl mx-auto px-[10px] md:px-[55px] text-center relative z-10 py-20">
+            <div className="container-2xl mx-auto px-[10px] md:px-[55px] text-center relative z-10 py-30 md:py-20">
                 <div className="w-full mx-auto flex flex-col xl:flex-row gap-25 items-center p-2 md:p-10">
                     {/* Left Side: Heading + MAP */}
                     <div className="w-[50%] flex flex-col items-start justify-center gap-4 w-full xl:w-[45%]">
@@ -42,7 +42,7 @@ export default function Join() {
                     </div>
 
                     {/* Right Side: Image */}
-                    <div className="w-[90%] md:w-[50%] min-h-[300px] md:min-h-[500px] max-h-[664px]">
+                    <div className="w-[87%] md:w-[50%] min-h-[300px] md:min-h-[500px] max-h-[664px] mr-auto sm:mr-[1px]">
                         <div className="w-full h-full flex justify-center overflow-hidden relative rounded-[5%]">
                             <img
                                 src="/images/map-hero-video.png"

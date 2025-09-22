@@ -71,7 +71,7 @@ export default function Header() {
 
       <header className="fixed top-0 left-0 right-0 z-50 py-10">
         {/* Navigation Bar */}
-        <nav className="container-2xl mx-auto px-[55px] py-4 flex justify-between items-center">
+        <nav className="container-2xl mx-auto px-[55px] py-4 flex justify-between items-center mb-20">
           {/* Logo */}
           <div className="flex items-center">
             <Image src={logo} alt="Logo" />

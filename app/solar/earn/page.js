@@ -13,7 +13,7 @@ export default function Earn() {
                         `,
                 }}
             >
-                <div className="container-2xl mx-auto px-[55px] text-center h-full flex flex-col mt-60 w-[88%]">
+                <div className="container-2xl mx-auto px-[55px] text-center h-full flex flex-col mt-60 w-full sm:w-[88%]">
                     <div className="flex flex-col gap-4 w-full items-center justify-start mt-10">
                         <h1 className="text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl">
                             ways to earn with ancestro
@@ -38,7 +38,7 @@ export default function Earn() {
                                         <SunButton
                                             text="yellow-400"
                                             redirect={'/dealer/apply'}
-                                            className="text-base py-4 border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
+                                            className="text-[11px] sm:text-base py-4 border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
                                         >
                                             APPLY NOW — JOIN THE SOLAR TRIBE
                                         </SunButton>
@@ -54,7 +54,7 @@ export default function Earn() {
                         Our Companies
                     </h1>
                 </div>
-                <div className="mx-20 flex flex-wrap justify-center items-center gap-4 md:gap-8 p-6 bg-gradient-to-r from-white/36 to-gray-500/0 border border-white/30 backdrop-blur-sm rounded-lg mb-6">
+                <div className="mx-[10px] sm:mx-20 flex flex-wrap justify-center items-center gap-4 md:gap-8 p-6 bg-gradient-to-r from-white/36 to-gray-500/0 border border-white/30 backdrop-blur-sm rounded-lg mb-6">
                     {[
                         "Ancestro-Capital",
                         "Ancestro-Charge",

@@ -2,7 +2,7 @@ import FormCalendar from '../../calendar/FormCalendar';
 import SunButton from '../../ui/SunButton';
 
 const ScheduleCallForm = ({ onNext }) => (
-    <form className="w-full py-8 max-w-[400px] mx-auto overflow-hidden relative rounded-[20px] bg-gradient-to-r from-white/5 via-white/10 to-white/20 border border-white/30 backdrop-blur-lg p-10 space-y-[5px]">
+    <form className="w-full py-8 max-w-[400px] mx-auto overflow-hidden relative rounded-[20px] bg-gradient-to-r from-white/5 via-white/10 to-white/20 border border-white/30 backdrop-blur-lg p-5 md:p-10 space-y-[5px]">
         {/* Step Heading */}
         <h3 className="text-[20px] font-bold font-lato text-white">STEP 05: SCHEDULE CALL</h3>
 

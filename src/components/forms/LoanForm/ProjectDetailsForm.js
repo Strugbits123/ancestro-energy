@@ -42,7 +42,7 @@ const CompanyForm = ({ onNext }) => (
         </div>
         <div>
             <div className="italic uppercase text-white/90 text-[14px] text-left mt-4 mb-2">(If no: Who is building it?)</div>
-            <input placeholder="WRITE ABOUT YOUR PROJECT" className="text-white border border-white/20 h-[97px] w-full rounded-[10px] placeholder:text-white placeholder:text-[10px] placeholder:italic placeholder:pb-15  placeholder:px-2" />
+            <textarea placeholder="WRITE ABOUT YOUR PROJECT" className="px-2 py-3 text-white border border-white/20 h-[97px] w-full rounded-[10px] placeholder:text-white placeholder:text-[10px] placeholder:italic placeholder:pb-15  placeholder:px-2" />
         </div>
 
         {/* NEXT Button */}

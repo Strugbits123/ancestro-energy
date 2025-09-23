@@ -31,7 +31,7 @@ const CompanyForm = ({ onNext }) => (
 
         <div className="space-y-3">
             <div className="uppercase text-white/90 text-[13px] text-left">(Optional text field if “Need xit buyer” is selected) ancestro capital may act as your buyer or connect you with one. please explain your plan:</div>
-            <input placeholder="WRITE ABOUT YOUR PROJECT" className="text-white border border-white/20 h-[97px] w-full rounded-[10px] placeholder:text-white placeholder:text-[10px] placeholder:italic placeholder:pb-15  placeholder:px-2" />
+            <textarea placeholder="WRITE ABOUT YOUR PROJECT" className="px-2 py-3 text-white border border-white/20 h-[97px] w-full rounded-[10px] placeholder:text-white placeholder:text-[10px] placeholder:italic placeholder:pb-15  placeholder:px-2" />
         </div>
 
         {/* NEXT Button */}

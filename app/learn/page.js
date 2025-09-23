@@ -145,7 +145,7 @@ export default function Learn() {
                 }}
             >
                 <h3 className='py-6 text-center text-white font-[700] font-lato tracking-[2px] text-md'>TRUSTED BY DEALERS ACROSS LATAM</h3>
-                <CarouselComponent />
+                <CarouselComponent variant='stats'/>
                 <div className='w-full flex flex-col items-center justify-center mt-5'>
                     <div className='max-w-[678px] w-full'>
                         <h2 className='my-2 text-center text-white font-[700] font-lato text-5xl tracking-[2px]'>Get the Edge in Solar Sales</h2>

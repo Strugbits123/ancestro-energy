@@ -27,12 +27,12 @@ export default function DiscoverMore() {
                             <SunButton
                                 redirect={'/solar/casestudies'}
                                 variant="secondary"
-                                font="bold" text="white"
+                                text="white"
                                 className="uppercase text-[15px] bg-gradient-to-r from-white/10 via-white/20 to-white/30 border border-white/30 backdrop-blur-lg text-base"
                             >
                                 Case Studies
                             </SunButton>
-                            <SunButton
+                            <SunButton text="yellow-400"
                                 redirect={'/solar/apply'}
                                 className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
                             >
@@ -63,7 +63,7 @@ export default function DiscoverMore() {
             </div>
             <div className='w-full items-center justify-center mt-20'>
                 <h3 className='text-center text-white font-[700] font-lato text-md'>TRUSTED BY DEALERS ACROSS LATAM</h3>
-                <CarouselComponent />
+                <CarouselComponent variant="stats"/>
             </div>
             <div className='w-full flex flex-col items-center justify-center mt-20'>
                 <div className='max-w-[540px] w-full'>

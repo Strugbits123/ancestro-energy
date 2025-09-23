@@ -57,7 +57,15 @@ const ProjectMaturityForm = ({ onNext }) => (
                             <input
                                 type="radio"
                                 name="option"
-                                className="appearance-none h-4 w-4 border border-white rounded-sm bg-transparent checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none"
+                                // className="appearance-none h-4 w-4 border border-white rounded-sm bg-transparent checked:bg-yellow-500 checked:border-yellow-500 focus:outline-none"
+                                className="
+      appearance-none h-4 w-4 border border-white rounded-sm 
+      bg-transparent focus:outline-none 
+      checked:bg-yellow-500 checked:border-yellow-500
+      relative
+      before:content-['✔'] before:absolute before:text-[10px] before:text-white before:inset-0 before:flex before:items-center before:justify-center
+      before:opacity-0 checked:before:opacity-100
+    "
                             />
                             {label}
                         </label>

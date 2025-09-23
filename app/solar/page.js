@@ -41,7 +41,7 @@ export default function Solar() {
                             Join LATAM’s Fastest-Growing Solar Subscription Network.
                         </h1>
                         <span className="text-md text-left text-white font-lato">$0 upfront. Day-one savings. Long-term stability. Available now in 14 countries.</span>
-                        <div className="flex flex-wrap justify-center items-center gap-3 mb-4">
+                        <div className="flex flex-wrap justify-center items-center gap-1 mb-4">
                             {SolarCaseStudy.map((study, i) => (
                                 <FlagHover
                                     key={i}
@@ -52,6 +52,33 @@ export default function Solar() {
                                     }}
                                 />
                             ))}
+                            <div
+                                className="relative inline-block w-25 h-10 mt-3"
+                            >
+                                <img
+                                    src={'/images/belize.png'}
+                                    alt={'belize'}
+                                    className="w-20 h-13 rounded-sm object-cover shadow"
+                                />
+                            </div>
+                            <div
+                                className="relative inline-block w-25 h-10 mt-3"
+                            >
+                                <img
+                                    src={'/images/ecuador.png'}
+                                    alt={'ecuador'}
+                                    className="w-20 h-13 rounded-sm object-cover shadow"
+                                />
+                            </div>
+                            <div
+                                className="relative inline-block w-25 h-10 mt-3"
+                            >
+                                <img
+                                    src={'/images/paraguay.png'}
+                                    alt={'paraguay'}
+                                    className="w-20 h-13 rounded-sm object-cover shadow"
+                                />
+                            </div>
                         </div>
                         <div className="flex justify-start mt-4 w-full xl:w-[35%]"><SunButton redirect={'/solar/apply'} className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton></div>
                     </div>
@@ -86,7 +113,7 @@ export default function Solar() {
         {/*OUR CASE STUDY*/}
         <section className="flex flex-col bg-black  py-10 items-center">
             {/* <h2 className="text-center font-lato font-bold text-[25px] font-lato leading-relaxed text-white p-5">OUR CASE STUDY</h2> */}
-            <div className="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-[95%] sm:w-[82%] justify-items-center mb-10 gap-7">
+            <div className="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-[95%] md:w-[90%] lg:w-[82%] justify-items-center mb-10 gap-7">
                 {
                     SolarCaseStudy.map((study, i) => i < 3 && (
                         <CaseStudy

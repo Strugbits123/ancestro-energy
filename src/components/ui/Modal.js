@@ -9,7 +9,7 @@ export default function Modal({ isOpen, onClose, width = 'auto', height = 'auto'
             onClick={onClose}
         >
             <div
-                className="mt-30 sm:mt-auto rounded-lg overflow-hidden  relative max-h-full"
+                className="mt-30 sm:mt-0 rounded-lg overflow-hidden  relative max-h-full"
                 style={{
                     width: width,
                     maxWidth: '95vw',

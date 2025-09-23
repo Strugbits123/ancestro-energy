@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import logo from "@/src/assets/logo.png";
+// import logo from "@/src/assets/logo.png";
 
 export default function Footer() {
   const gradientStyle = {
@@ -17,12 +17,12 @@ export default function Footer() {
         <div className="text-center mb-12">
           {/* Ancestro Logo */}
           <div className="inline-block mb-8">
-            <Image src={logo} alt="Logo" className='h-28 w-72' />
+            <Image src={'/assets/Logo2.png'} alt="Logo" width={314} height={111} />
           </div>
         </div>
 
         {/* Footer Links Grid */}
-        <div className="mx-auto md:ml-20 px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-1 xl:mb-12">
+        <div className="mx-auto xl:ml-20 px-20 md:px-30 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-1 xl:mb-12">
           {/* Solutions Column */}
           <div>
             <h3
@@ -90,26 +90,51 @@ export default function Footer() {
 
         {/* Powered by Section */}
         <div className="text-center mb-8">
-          <p className="text-sm font-bold mb-6 tracking-wider uppercase text-white">
+          <p className="text-sm font-bold my-6 tracking-wider uppercase text-white">
             Powered by Ancestro Ecosystem
           </p>
 
           {/* Partner Logos */}
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 p-6 bg-gradient-to-r from-white/36 to-gray-500/0 border border-white/30 backdrop-blur-sm rounded-lg mb-6">
-            {[
+          <div className="w-fit mx-auto flex flex-wrap justify-between items-center gap-2 md:gap-4 px-15 py-6 bg-gradient-to-r from-white/36 to-gray-500/0 border border-white/30 backdrop-blur-sm rounded-lg mb-6">
+            {/* {[
               "Ancestro-Capital",
               "Ancestro-Charge",
-              "Ancestro-Foundation",
-              "Ancestro-Sustainability",
               "AncestroProject",
+              "Ancestro-Sustainability",
+              "Ancestro-Foundation",
             ].map((country, i) => (
               <img
                 key={i}
                 src={`/images/${country}.png`}
                 alt={`${country} flag`}
-                className="w-80 h-16 rounded-sm  shadow"
+                className="w-[324px] h-[40px] rounded-sm  shadow"
               />
-            ))}
+            ))} */}
+            <img
+                src={`/images/Ancestro-Capital.png`}
+                alt={`flag`}
+                className="w-[324px] h-[40px] rounded-sm  shadow"
+              />
+              <img
+                src={`/images/Ancestro-Charge.png`}
+                alt={`flag`}
+                className="w-[244px] h-[40px] rounded-sm  shadow"
+              />
+              <img
+                src={`/images/AncestroProject.png`}
+                alt={`flag`}
+                className="w-[235px] h-[40px] rounded-sm  shadow"
+              />
+              <img
+                src={`/images/Ancestro-Sustainability.png`}
+                alt={` flag`}
+                className="w-[215px] h-[40px] rounded-sm  shadow"
+              />
+              <img
+                src={`/images/Ancestro-Foundation.png`}
+                alt={`flag`}
+                className="w-[164px] h-[40px] rounded-sm shadow"
+              />
           </div>
 
           {/* Country Flags */}
@@ -138,7 +163,7 @@ export default function Footer() {
                 key={i}
                 src={`/images/${country}.png`}
                 alt={`${country} flag`}
-                className="w-18 h-12 rounded-sm object-cover shadow"
+                className="w-17 h-10 rounded-sm object-cover shadow"
               />
             ))}
           </div>
@@ -153,7 +178,7 @@ export default function Footer() {
           background: 'linear-gradient(129.65deg, #C4952D -68.94%, #AE7F2A -37.03%, #F5DC7B 0.2%, #AE7F2A 189.02%)'
         }}
       >
-        <div className="container-2xl mx-auto px-20">
+        <div className="container-2xl mx-auto px-20 sm:px-30 md:px-40">
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
             {/* Legal Links */}
             <div className="flex flex-wrap justify-center lg:justify-start items-center gap-4 text-sm font-bold tracking-wider uppercase text-black">
@@ -170,7 +195,7 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm font-bold tracking-wider uppercase text-black">
               <a href="mailto:info@ancestroenergy.com" className="flex items-center gap-2 hover:underline">
-                <img src={'/icons/mail.png'} /> <div>info@ancestroenergy.com</div>
+                <img src={'/icons/mail.png'} /> <div className='underline'>info@ancestroenergy.com</div>
               </a>
               <div className="flex items-center space-x-4">
                 <span><img src={'/icons/phone.png'} /></span>
@@ -178,12 +203,12 @@ export default function Footer() {
                 <span>+44 20 7946 0958</span>
               </div>
               {/* Social Icons */}
-              <div className="flex space-x-3">
-                <a href="#" className="w-6 h-6 rounded hover:opacity-70 transition-opacity">
-                  <img className='h-7 w-14' src={'/icons/linkedin.png'} />
+              <div className="flex space-x-3 mt-1">
+                <a href="#" className="w-10 h-10 rounded hover:opacity-70 transition-opacity">
+                  <img className='h-7 w-9' src={'/icons/linkedin.png'} />
                 </a>
-                <a href="#" className="w-6 h-6 rounded hover:opacity-70 transition-opacity">
-                  <img className='h-7 w-14' src={'/icons/youtube.png'} />
+                <a href="#" className="w-10 h-10 rounded hover:opacity-70 transition-opacity">
+                  <img className='h-7 w-9' src={'/icons/youtube.png'} />
                 </a>
               </div>
             </div>

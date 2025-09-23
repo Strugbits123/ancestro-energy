@@ -39,15 +39,36 @@ export default function Solar() {
                             Join the largest solar financing platform in Latin America                        </h1>
                         <span className="text-md text-left text-white font-lato">$0 upfront. Day-one savings. Long-term stability. Available now in 14 countries.</span>
                         <div className="flex flex-wrap justify-center items-center gap-5 mb-4">
-                            {DealerCaseStudy.map((study, i) => (
+                            {[
+                                "argentina",
+                                "belize",
+                                "bolivia",
+                                "brazil",
+                                "chile",
+                                "colombia",
+                                "costa rica",
+                                "dominican republic",
+                                "ecuador",
+                                "guatemala",
+                                "honduras",
+                                "mexico",
+                                "nicaragua",
+                                "panama",
+                                "paraguay",
+                                "peru",
+                                "el salvador",
+                                "uruguay",
+                            ].map((study, i) => (
                                 <img
                                     className="h-14 w-21"
                                     key={i}
-                                    src={study.flag}
+                                    src={`/images/${study}.png`}
                                 />
                             ))}
                         </div>
-                        <div className="flex justify-start mt-4 w-full xl:w-[35%]"><SunButton redirect={'/dealer/apply'} className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton></div>
+                        <div className="flex justify-start mt-4 w-full xl:w-[35%]">
+                            <SunButton redirect={'/dealer/apply'} text={'secondary'} className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
+                        </div>
                     </div>
 
                     {/* Right Side: Image */}
@@ -79,7 +100,7 @@ export default function Solar() {
 
         {/*OUR CASE STUDY*/}
         <section className="flex flex-col bg-black  py-10 items-center">
-            <div className="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-[95%] sm:w-[82%] justify-items-center mb-10 gap-7">
+            <div className="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-[95%] md:w-[90%] lg:w-[82%] justify-items-center mb-10 gap-7">
                 {
                     DealerCaseStudy.map((study, i) => i < 3 && (
                         <CaseStudy
@@ -92,7 +113,7 @@ export default function Solar() {
             </div>
             <div className="flex flex-col md:flex-row gap-3 mt-5">
                 <SunButton redirect={'/dealer/casestudies'}>SEE MORE CASE STUDIES.</SunButton>
-                <SunButton redirect={'/dealer/apply'} className="text-[15px] font-lato border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
+                <SunButton redirect={'/dealer/apply'} text={'secondary'} className="text-[15px] font-lato border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
             </div>
         </section>
 

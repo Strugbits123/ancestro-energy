@@ -25,7 +25,7 @@ export default function Apply() {
             </div>
 
             {/*Hero section - Main content*/}
-            <div className="container-2xl mx-auto w-full text-center relative z-10 p-20">
+            <div className="container-2xl mr-12 sm:mx-auto w-full text-center relative z-10 p-20">
                 <div className="flex items-stretch mt-15 py-5 md:px-15 md:py-10 items-start w-full md:max-w-[50%]">
                     <div className=" flex flex-col items-start gap-4 w-full">
 
@@ -163,7 +163,7 @@ export default function Apply() {
                             ].map((el, i) => (
                                 <div key={i} className='flex gap-4 p-2'>
                                     <img className="h-[18px] w-[20px] sm:h-[20px] sm:w-[24px]" src={'/icons/checkmark.png'} />
-                                    <div className='text-sm sm:text-base text-white/80'>{el}</div>
+                                    <div className='text-sm sm:text-[15px] text-white/80'>{el}</div>
                                 </div>
                             ))
                         }
@@ -226,7 +226,7 @@ export default function Apply() {
                             ].map((el, i) => (
                                 <div key={i} className='flex gap-4 p-2'>
                                     <img className="h-[18px] w-[20px] sm:h-[20px] sm:w-[24px]" src={'/icons/checkmark.png'} />
-                                    <div className='text-sm sm:text-base text-white/80'>{el}</div>
+                                    <div className='text-sm sm:text-[15px] text-white/80'>{el}</div>
                                 </div>
                             ))
                         }

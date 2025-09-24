@@ -82,7 +82,7 @@ export default function Learn() {
                                 src={card.img}
                             />
                             <div className="gap-1 absolute bottom-0 p-5">
-                                <h2 className="font-lato text-[22px] font-bold font-lato text-white">{card.title}</h2>
+                                <h2 className="font-lato text-[22px] font-bold font-lato text-white ">{card.title}</h2>
                                 <span className="font-lato text-white font-lato text-[12px]">{card.desc}</span>
                             </div>
                         </div>

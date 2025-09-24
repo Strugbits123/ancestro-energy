@@ -20,12 +20,12 @@ const CaseStudy = ({ content }) => {
             <div className="flex flex-wrap gap-[5px] justify-start w-full">
                 {content.investmentData.map((data, i) => (
                     <div key={i} className="flex items-center gap-2 font-lato text-lg text-white px-3 py-1 bg-gradient-to-r from-white/10 via-white/20 to-white/30 border border-white/30 backdrop-blur-lg rounded-full">
-                        <div key={i} className="uppercase text-sm font-bold">
+                        <div key={i} className="uppercase text-[10px] 2xl:text-sm font-bold">
                             {data.metric} :
                         </div>
                         <div className="flex w-fit items-center gap-2 pb-[5px]">
-                            <div className="text-lg font-bold text-green-400">↑</div>
-                            <div className="text-lg text-white">{data.magnitude}</div>
+                            <div className="text-sm 2xl:text-lg font-bold text-green-400">↑</div>
+                            <div className="text-sm 2xl:text-lg text-white">{data.magnitude}</div>
                         </div>
                     </div>))}
             </div>

@@ -26,19 +26,20 @@ export default function Apply() {
 
             {/*Hero section - Main content*/}
             <div className="container-2xl mr-12 sm:mx-auto w-full text-center relative z-10 p-20">
-                <div className="flex items-stretch mt-15 py-5 md:px-15 md:py-10 items-start w-full md:max-w-[50%]">
+                <div className="flex items-stretch mt-15 py-5 md:px-15 md:py-10 items-start w-full lg:max-w-[50%]">
                     <div className=" flex flex-col items-start gap-4 w-full">
 
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-xl mx-auto">
-                            ONE DECISION
-                            ETERNAL IMPACT.
+                        <h1 className="flex flex-col gap-1 text-3xl md:text-4xl lg:text-5xl xl:text-6xl  font-lato font-bold text-white leading-tight text-start tracking-wide uppercase ">
+                            {/* {"ONE DECISION\n ETERNAL IMPACT."} */}
+                            <div className="whitespace-nowrap text-3xl md:text-4xl lg:text-5xl xl:text-6xl  font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-xl ">ONE DECISION</div>
+                            <div className="whitespace-nowrap text-3xl md:text-4xl lg:text-5xl xl:text-6xl  font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-xl ">ETERNAL IMPACT</div>
                         </h1>
-                        <h3 className="text-white/70 text-md font-bold text-center uppercase tracking-[2px]">Apply to join LATAM’s largest dealer network.</h3>
+                        <h3 className="text-white/70 text-md font-bold text-left lg:text-center uppercase tracking-[2px]">Apply to join LATAM’s largest dealer network.</h3>
 
                     </div>
 
                 </div>
-                <div className='flex flex-col md:flex-row  md:max-w-[50%] md:px-15 gap-8 items-start'> {/**/}
+                <div className='flex flex-col xl:flex-row  md:max-w-[50%] md:px-15 gap-8 items-start'> {/**/}
                     {/*DONATE*/}
                     <div className='flex flex-col gap-4 '>
                         <div className=' h-[224px] w-[341px] flex flex-col justify-around rounded-[25px] py-5 px-6 bg-gradient-to-r from-white/20 via-white/10 to-white/5 border border-white/30 backdrop-blur-lg'>
@@ -104,7 +105,7 @@ export default function Apply() {
                     <p className='mt-1 mb-10 self-center text-center text-white/80 font-[500] font-lato text-md'>Choose the perfect plan for your business needs</p>
                 </div>
             </div>
-            <div className="max-w-[920px] mx-auto columns-1 lg:columns-2 gap-8 [column-fill:_balance]">
+            <div className="max-w-[920px] mx-auto flex flex-col gap-8 [column-fill:_balance] lg:block lg:columns-2">
 
                 <div className="active:border-yellow-400 inline-block w-[98%] mx-auto sm:w-[447px] h-[289px] mb-8 break-inside-avoid rounded-lg p-4 border border-white/10 
       bg-[linear-gradient(135deg,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.85)_calc(50%_-_120px),rgba(255,255,255,0.2)_50%,rgba(0,0,0,0.85)_calc(50%_+_120px),rgba(0,0,0,0.85)_100%)]">
@@ -120,15 +121,34 @@ export default function Apply() {
                         {
                             [
                                 'Sell solar subscriptions (PPA) in home country.',
-                                'Access to Dealer Portal + CRM ',
+                                'Access to Dealer Portal + CRM -(contract, proposals, lead input)',
                                 'Digital Training Library ',
                                 'Standard Seating at Ancestro Dealer Events'
-                            ].map((el, i) => (
-                                <div key={i} className='flex gap-4 p-2'>
-                                    <img className="h-[18px] w-[20px] sm:h-[20px] sm:w-[24px]" src={'/icons/checkmark.png'} />
-                                    <div className='text-sm sm:text-base text-white/80'>{el}</div>
-                                </div>
-                            ))
+                            ].map((el, i) => {
+                                let mainText = el;
+                                let extraText = null;
+
+                                if (el.includes('-(')) {
+                                    const [before, after] = el.split('-(');
+                                    mainText = before.trim();
+                                    extraText = `(${after.trim()}`;
+                                }
+                                return (
+                                    <div key={i} className='flex gap-4 p-2'>
+                                        <img className="h-[18px] w-[20px] sm:h-[20px] sm:w-[24px]" src={'/icons/checkmark.png'} />
+                                        {!el.includes('-(') ?
+                                            <div className='text-sm sm:text-base text-white/80'>{el}</div>
+                                            :
+                                            <div className="text-sm sm:text-base text-white/80">
+                                                {mainText}{' '}
+                                                {extraText && (
+                                                    <span className="text-[10px] text-white">{extraText}</span>
+                                                )}
+                                            </div>
+                                        }
+                                    </div>
+                                )
+                            })
                         }
                     </div>
 
@@ -151,21 +171,41 @@ export default function Apply() {
                                 'Sell solar subscriptions (PPA) across all LATAM Countries.',
                                 'Sell + build EV chargers across LATAM',
                                 'Offer insurance on solar + wind farm projects',
-                                'Access to Dealer Portal + CRM',
+                                'Access to Dealer Portal + CRM -(contract, proposals, lead input)',
                                 'Monthly private team training with Ancestro trainers',
                                 'Monthly 45-minute private strategy call for your business',
                                 '10 free leads per quarter + warm referrals from Ancestro marketing partners',
-                                '1 free project assignment per quarter',
+                                '1 free project assignment per quarter -(pre-approved + ready-to-build)',
                                 'VIP + backstage access at Ancestro Dealer Events',
                                 'Featured spotlight on Ancestro social, press + YouTube',
-                                'Free construction loan applications',
+                                'Free construction loan applications (save $500 each)',
                                 'Invite-only access to equity co-development pool'
-                            ].map((el, i) => (
-                                <div key={i} className='flex gap-4 p-2'>
-                                    <img className="h-[18px] w-[20px] sm:h-[20px] sm:w-[24px]" src={'/icons/checkmark.png'} />
-                                    <div className='text-sm sm:text-[15px] text-white/80'>{el}</div>
-                                </div>
-                            ))
+                            ].map((el, i) => {
+                                let mainText = el;
+                                let extraText = null;
+
+                                if (el.includes('-(')) {
+                                    const [before, after] = el.split('-(');
+                                    mainText = before.trim();
+                                    extraText = `(${after.trim()}`;
+                                }
+                                return (
+                                    <div key={i} className='flex gap-4 p-2'>
+                                        <img className="h-[18px] w-[20px] sm:h-[20px] sm:w-[24px]" src={'/icons/checkmark.png'} />
+                                        {
+                                            !el.includes('-(') ?
+                                                <div className='text-sm sm:text-[15px] text-white/80'>{el}</div> :
+                                                <div className="text-sm sm:text-[15px] text-white/80">
+                                                    {mainText}{' '}
+                                                    {extraText && (
+                                                        <span className="text-[10px] text-white">{extraText}</span>
+                                                    )}
+                                                </div>
+
+                                        }
+                                    </div>
+                                )
+                            })
                         }
                     </div>
 
@@ -187,16 +227,35 @@ export default function Apply() {
                                 'Sell solar subscriptions (PPA) in home country.',
                                 'Sell+build  EV Chargers in home country. ',
                                 'Offer Insurance on solar+wind farm projects',
-                                'Access to Dealer Portal + CRM ',
-                                'Digital Training Library ',
+                                'Access to Dealer Portal + CRM -(contract, proposals, lead input)',
+                                'Digital Training Library -(Self-learning)',
                                 'Preferred Seating at Ancestro Dealer Events',
                                 'Listed on Ancestro “Find a Dealer” map'
-                            ].map((el, i) => (
-                                <div key={i} className='flex gap-4 p-2'>
-                                    <img className="h-[18px] w-[20px] sm:h-[20px] sm:w-[24px]" src={'/icons/checkmark.png'} />
-                                    <div className='text-sm sm:text-base text-white/80'>{el}</div>
-                                </div>
-                            ))
+                            ].map((el, i) => {
+                                let mainText = el;
+                                let extraText = null;
+
+                                if (el.includes('-(')) {
+                                    const [before, after] = el.split('-(');
+                                    mainText = before.trim();
+                                    extraText = `(${after.trim()}`;
+                                }
+                                return (
+                                    <div key={i} className='flex gap-4 p-2'>
+                                        <img className="h-[18px] w-[20px] sm:h-[20px] sm:w-[24px]" src={'/icons/checkmark.png'} />
+                                        {!el.includes('-(') ?
+                                            <div className='text-sm sm:text-base text-white/80'>{el}</div>
+                                            :
+                                            <div className="text-sm sm:text-base text-white/80">
+                                                {mainText}{' '}
+                                                {extraText && (
+                                                    <span className="text-[10px] text-white">{extraText}</span>
+                                                )}
+                                            </div>
+                                        }
+                                    </div>
+                                )
+                            })
                         }
                     </div>
                 </div>
@@ -217,18 +276,36 @@ export default function Apply() {
                                 'Sell solar subscriptions (PPA) across all LATAM Countries.',
                                 'Sell + build EV chargers across LATAM ',
                                 'Offer insurance on solar + wind farm projects',
-                                'Access to Dealer Portal + CRM ',
+                                'Access to Dealer Portal + CRM -(contract, proposals, lead input)',
                                 'Monthly private team training with Ancestro trainers ',
                                 'Monthly LATAM strategy webinar (group)',
                                 '5 free leads per quarter',
                                 'Reserved seating at Ancestro Dealer Events',
                                 'Regional recognition across Ancestro marketing + dealer map'
-                            ].map((el, i) => (
-                                <div key={i} className='flex gap-4 p-2'>
-                                    <img className="h-[18px] w-[20px] sm:h-[20px] sm:w-[24px]" src={'/icons/checkmark.png'} />
-                                    <div className='text-sm sm:text-[15px] text-white/80'>{el}</div>
-                                </div>
-                            ))
+                            ].map((el, i) => {
+                                let mainText = el;
+                                let extraText = null;
+
+                                if (el.includes('-(')) {
+                                    const [before, after] = el.split('-(');
+                                    mainText = before.trim();
+                                    extraText = `(${after.trim()}`;
+                                }
+                                return (
+                                    <div key={i} className='flex gap-4 p-2'>
+                                        <img className="h-[18px] w-[20px] sm:h-[20px] sm:w-[24px]" src={'/icons/checkmark.png'} />
+                                        {!el.includes('-(') ?
+                                            <div className='text-sm sm:text-[15px] text-white/80'>{el}</div>
+                                            : <div className="text-sm sm:text-[15px] text-white/80">
+                                                {mainText}{' '}
+                                                {extraText && (
+                                                    <span className="text-[10px] text-white">{extraText}</span>
+                                                )}
+                                            </div>
+                                        }
+                                    </div>
+                                )
+                            })
                         }
                     </div>
                 </div>

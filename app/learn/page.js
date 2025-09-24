@@ -29,7 +29,7 @@ export default function Learn() {
                             <SunButton
                                 redirect={'/dealer/apply'}
                                 text={"secondary"}
-                                className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
+                                className=" text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
                             >
                                 APPLY NOW — JOIN THE SOLAR TRIBE
                             </SunButton>
@@ -51,7 +51,7 @@ export default function Learn() {
                                     icon: '/icons/18-country.png', desc: '18-Country Network — LATAM’s largest dealer platform.'
                                 }
                             ].map((obj, i) => (
-                                <div key={i} className='z-50 flex flex-col gap-1 md:gap-4 max-w-[323px] items-center px-7 py-2'>
+                                <div key={i} className='z-50 flex flex-col gap-1 justify-between md:gap-4 max-w-[323px] items-center px-7 py-2'>
                                     <img src={obj.icon} className='w-12 h-12' />
                                     <div className='uppercase text-white/90 text-base font-bold'>{obj.desc}</div>
                                 </div>
@@ -82,7 +82,7 @@ export default function Learn() {
                                 src={card.img}
                             />
                             <div className="gap-1 absolute bottom-0 p-5">
-                                <h2 className="font-lato text-[22px] font-bold font-lato text-white ">{card.title}</h2>
+                                <h2 className="font-lato text-[22px] font-bold font-lato text-white uppercase">{card.title}</h2>
                                 <span className="font-lato text-white font-lato text-[12px]">{card.desc}</span>
                             </div>
                         </div>
@@ -118,10 +118,14 @@ export default function Learn() {
             <div className="flex flex-col md:flex-row gap-3 mt-5">
                 <SunButton text='secondary' redirect={'/solar/apply'} className="py-5 text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
             </div>
-            <div className='w-[74%] mt-20 py-10'>
-                <div className='max-h-[352px] w-auto p-7 md:p-15 flex flex-col items-center gap-10 rounded-4xl border border-secondary text-base text-yellow-200 bg-gradient-to-r from-yellow-300/20 via-yellow-100/20 to-black/20'>
-                    <h1 className='uppercase text-center text-xl  md:text-3xl lg:text-5xl xl:text-6xl text-white font-bold tracking-[2px]'>Your Time is Now. Join the Largest Dealer Network in Latin America.</h1>
-                    <SunButton text='secondary' redirect={'/solar/apply'} className="py-5 text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
+            <div className='w-[87%] md:w-[74%] mt-20 py-10'>
+                <div className='max-h-fit p-6 2xl:max-h-[352px] w-auto 2xl:px-7 2xl:py-10 md:p-15 flex flex-col items-center gap-10 rounded-4xl border border-secondary text-base text-yellow-200 bg-gradient-to-r from-yellow-300/20 via-yellow-100/20 to-black/20'>
+                    <h1 className='uppercase text-center text-xl  md:text-3xl lg:text-4xl xl:text-5xl text-white font-bold tracking-[2px]'>Your Time is Now. Join the Largest Dealer Network in Latin America.</h1>
+                    <SunButton text='secondary' redirect={'/solar/apply'}
+                        className="2xl:min-h-[63px] [@media(min-width:1800px)]:min-h-[58px] py-5 text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
+                        textClassName=" whitespace-nowrap text-sm lg:text-base xl:text-[15px]"
+
+                    >APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
 
                 </div>
             </div>
@@ -145,10 +149,10 @@ export default function Learn() {
                 }}
             >
                 <h3 className='py-6 text-center text-white font-[700] font-lato tracking-[2px] text-md'>TRUSTED BY DEALERS ACROSS LATAM</h3>
-                <CarouselComponent variant='stats'/>
+                <CarouselComponent variant='stats' />
                 <div className='w-full flex flex-col items-center justify-center mt-5'>
                     <div className='max-w-[678px] w-full'>
-                        <h2 className='my-2 text-center text-white font-[700] font-lato text-5xl tracking-[2px]'>Get the Edge in Solar Sales</h2>
+                        <h2 className='my-2 text-center text-white font-[700] font-lato text-5xl tracking-[2px] uppercase'>Get the Edge in Solar Sales</h2>
                         <p className='my-5 mx-10 self-center text-center text-white/80 font-[500] font-lato text-lg'>Monthly LATAM Market Report + Growth Projections
                             (Exclusive from Ancestro)</p>
                     </div>

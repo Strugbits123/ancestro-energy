@@ -195,10 +195,11 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="flex flex-col lg:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm font-bold tracking-wider uppercase text-black">
               <a href="mailto:info@ancestroenergy.com" className="flex items-center gap-2 hover:underline">
-                <span><img src={'/icons/mail.png'} className='h-full w-full'/></span> <div className='underline'>info@ancestroenergy.com</div>
+                <span className='w-fit h-fit'><img src={'/icons/mail.png'} className='h-7 w-7'/></span> 
+                <div className='underline'>info@ancestroenergy.com</div>
               </a>
               <div className="flex items-center space-x-4">
-                <span><img src={'/icons/phone.png'} className='h-full w-full'/></span>
+                <span className='w-fit h-fit'><img src={'/icons/phone.png'} className='h-7 w-7'/></span>
                 <div className='flex flex-col md:flex-row gap-2'>
                 <div>+1 (555) 123-45675</div>
                 <span>+44 20 7946 0958</span>

@@ -15,6 +15,7 @@ export default function SunButton({
   size = "default",
   text = "default",
   font = 'regular',
+  textClassName = '',
   ...props
 }) {
   const router = useRouter();
@@ -90,7 +91,7 @@ export default function SunButton({
       rel={Component === "a" && target === "_blank" ? "noopener noreferrer" : undefined}
       {...props}
     >
-      <span className={`relative z-10 ${textColor[text] || `text-${text}`} ${font === 'regular' ? 'font-[400]' : 'font-[600]'}`}>{children}</span>
+      <span className={`relative z-10 ${textColor[text] || `text-${text}`} ${font === 'regular' ? 'font-[400]' : 'font-[600]'} ${textClassName}`}>{children}</span>
       {/* sun circle rising */}
       <span className="absolute inset-0 flex items-end justify-center">
         <span className={`${sunSizes[size]} rounded-full bg-yellow-500 opacity-0 translate-y-full transition-all duration-500 ${sunPositions[size]} group-hover:opacity-100 blur-[2px]`}></span>

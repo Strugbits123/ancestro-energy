@@ -40,7 +40,7 @@ export default function Solar() {
                         <h1 className="w-full text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl mx-auto">
                             Join LATAM’s Fastest-Growing Solar Subscription Network.
                         </h1>
-                        <span className="text-md text-left text-white font-lato">$0 upfront. Day-one savings. Long-term stability. Available now in 14 countries.</span>
+                        <span className="text-md text-left text-white font-lato">$0 upfront. Day-one savings. Long-term stability. Available now in 18 countries.</span>
                         <div className="flex flex-wrap justify-center items-center gap-1 mb-4">
                             {SolarCaseStudy.map((study, i) => (
                                 <FlagHover
@@ -80,7 +80,11 @@ export default function Solar() {
                                 />
                             </div>
                         </div>
-                        <div className="flex justify-start mt-4 w-full xl:w-[35%]"><SunButton redirect={'/solar/apply'} className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton></div>
+                        <div className="flex justify-start mt-4 w-full ">
+                            <SunButton redirect={'/solar/apply'} text={'secondary'} className="p-1 whitespace-nowrap text-[10px] lg:text-[12px] xl:text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">
+                                APPLY NOW — JOIN THE SOLAR TRIBE
+                            </SunButton>
+                        </div>
                     </div>
 
                     {/* Right Side: Image */}

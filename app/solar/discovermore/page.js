@@ -32,7 +32,7 @@ export default function DiscoverMore() {
                             >
                                 Case Studies
                             </SunButton>
-                            <SunButton text="yellow-400"
+                            <SunButton text="[#FFCD28]"
                                 redirect={'/solar/apply'}
                                 className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
                             >

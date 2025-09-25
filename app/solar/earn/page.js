@@ -36,7 +36,7 @@ export default function Earn() {
                                     <div className="font-bold text-2xl text-white max-w-[160px]">{el.title}</div>
                                     <div className="flex flex-col md:flex-row gap-2 max-w-6xl ">
                                         <SunButton
-                                            text="yellow-400"
+                                            text="[#FFCD28]"
                                             redirect={'/dealer/apply'}
                                             textClassName='whitespace-nowrap sm:text-base'
                                             className="text-[11px] sm:text-base py-4 border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"

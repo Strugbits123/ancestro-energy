@@ -81,7 +81,7 @@ export default function Solar() {
                             </div>
                         </div>
                         <div className="flex justify-start mt-4 w-full">
-                            <SunButton redirect={'/solar/apply'} text={'secondary'}
+                            <SunButton redirect={'/solar/apply'} text={'[#FFCD28]'}
                                 className="p-1 whitespace-nowrap text-[10px] lg:text-[12px] xl:text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
                                 textClassName=" whitespace-nowrap text-sm lg:text-base xl:text-[15px]"
                             >
@@ -136,7 +136,7 @@ export default function Solar() {
                 <SunButton redirect={'/solar/casestudies'} textClassName=" whitespace-nowrap text-sm lg:text-base xl:text-[15px]"
                 >SEE MORE CASE STUDIES.
                 </SunButton>
-                <SunButton redirect={'/solar/apply'} text={'yellow-400'}
+                <SunButton redirect={'/solar/apply'} text={'[#FFCD28]'}
                     className="text-[15px] font-lato border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
                     textClassName=" whitespace-nowrap text-sm lg:text-base xl:text-[15px]"
                 >APPLY NOW — JOIN THE SOLAR TRIBE
@@ -171,7 +171,7 @@ export default function Solar() {
             <div className="flex flex-col md:flex-row gap-3 mt-5">
                 <SunButton redirect={'/solar/discovermore'}>DISCOVER MORE.</SunButton>
                 <SunButton redirect={'/solar/apply'}
-                    text={'yellow-400'}
+                    text={"[#FFCD28]"}
                     className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
                     textClassName=" whitespace-nowrap text-sm lg:text-base xl:text-[15px]"
                 >APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>

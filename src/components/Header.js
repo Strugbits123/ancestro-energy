@@ -10,14 +10,12 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleCloseMenu = (e) => {
-    console.log('Close button clicked!');
     e.preventDefault();
     e.stopPropagation();
     setIsMenuOpen(false);
   };
 
   const handleToggleMenu = () => {
-    console.log('Toggle menu clicked, current state:', isMenuOpen);
     setIsMenuOpen(!isMenuOpen);
   };
 
@@ -125,7 +123,8 @@ export default function Header() {
               style={{
                 top: '2.5rem',
                 bottom: '2.5rem',
-                height: 'calc(100vh - 5rem)',
+                maxHeight: 'calc(100vh - 5rem)',
+                
                 zIndex: 10000
               }}
             >
@@ -146,8 +145,8 @@ export default function Header() {
                 {[
                   { title: 'HOME', link: '/' },
                   { title: 'LEARN', link: '/learn' },
-                  { title: 'CASE STUDIES', link: '/solar/casestudies' },
-                  { title: 'APPLY', link: '/solar/apply' },
+                  { title: 'CASE STUDIES', link: '/dealer/casestudies' },
+                  { title: 'APPLY', link: '/dealer/apply' },
                   { title: 'DONATE', link: '/donate' },
                   { title: 'EARN', link: '/solar/earn' }
                 ].map((path, i) => (

@@ -54,7 +54,7 @@ export default function Learn() {
                             ].map((obj, i) => (
                                 <div key={i} className='z-50 flex flex-col gap-1 justify-between md:gap-4 max-w-[323px] items-center px-7 py-2'>
                                     <img src={obj.icon} className='w-12 h-12' />
-                                    <div className='uppercase text-white/90 text-base font-bold'>{obj.desc}</div>
+                                    <div className='uppercase text-white/90 text-xs xl:text-sm 2xl:text-base font-bold'>{obj.desc}</div>
                                 </div>
                             ))
                         }
@@ -92,7 +92,7 @@ export default function Learn() {
                 }
             </div>
             <div className="flex flex-col md:flex-row gap-3 mt-5">
-                <SunButton text='secondary' redirect={'/solar/apply'} className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
+                <SunButton text='secondary' redirect={'/dealer/apply'} className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
             </div>
         </section>
 
@@ -117,12 +117,12 @@ export default function Learn() {
                 }
             </div>
             <div className="flex flex-col md:flex-row gap-3 mt-5">
-                <SunButton text='secondary' redirect={'/solar/apply'} className="py-5 text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
+                <SunButton text='secondary' redirect={'/dealer/apply'} className="py-5 text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
             </div>
             <div className='w-[87%] md:w-[74%] mt-20 py-10'>
                 <div className='max-h-fit p-6 2xl:max-h-[352px] w-auto 2xl:px-7 2xl:py-10 md:p-15 flex flex-col items-center gap-10 rounded-4xl border border-secondary text-base text-yellow-200 bg-gradient-to-r from-yellow-300/20 via-yellow-100/20 to-black/20'>
                     <h1 className='uppercase text-center text-xl  md:text-3xl lg:text-4xl xl:text-5xl text-white font-bold tracking-[2px]'>Your Time is Now. Join the Largest Dealer Network in Latin America.</h1>
-                    <SunButton text='secondary' redirect={'/solar/apply'}
+                    <SunButton text='secondary' redirect={'/dealer/apply'}
                         className="2xl:min-h-[63px] [@media(min-width:1800px)]:min-h-[58px] py-5 text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
                         textClassName=" whitespace-nowrap text-sm lg:text-base xl:text-[15px]"
 

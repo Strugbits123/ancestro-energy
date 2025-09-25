@@ -26,7 +26,7 @@ export default function CaseStudies() {
                         <div className="flex flex-col md:flex-row gap-2 max-w-6xl items-center">
                             <SunButton
                                 redirect={'/solar/apply'}
-                                text={'yellow-400'}
+                                text={'[#FFCD28]'}
                                 className="max-w-[392px] w-full px-4 flex justify-around py-2 md:py-5 text-sm md:text-base border-yellow-300 text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
                                 textClassName="[@media(max-width:450px)]:text-[10px] whitespace-nowrap text-sm lg:text-base"
                             >

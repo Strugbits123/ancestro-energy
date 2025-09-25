@@ -14,9 +14,9 @@ const CaseStudy = ({ content }) => {
 
                 <img className="h-full w-full transition-transform duration-2000 group-hover:scale-125" src={'/images/solar-panel-case-study.png'} />
             </div>
-            <div className="mt-2 flex w-full justify-start items-center gap-3">
+            <div className="mt-2 flex w-full justify-start items-center gap-1 lg:gap-3">
                 <h1 className="[@media(max-width:400px)]:whitespace-nowrap xl:whitespace-nowrap font-lato text-white text-lg lg:text-xl xl:text-2xl font-bold">{`${content.alt.toUpperCase()}`} </h1>
-                <p className="font-lato uppercase text-white/80 text-[9px] md:text-[10px]  xl:text-[13px] mt-1 italic">{`${content.study.category}`} </p>
+                <p className=" font-lato uppercase text-white/80 text-[8px] whitespace-nowrap lg:whitespace-normal lg:text-[10px] 2xl:text-[12px] mt-1 italic">{`${content.study.category}`} </p>
             </div>
             <div className="flex flex-wrap gap-[5px] justify-start w-full">
                 {content.study.investmentData.map((data, i) => (

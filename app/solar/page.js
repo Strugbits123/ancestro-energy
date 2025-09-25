@@ -33,7 +33,7 @@ export default function Solar() {
             </div>
 
             {/*Hero section - Main content*/}
-            <div className="container-2xl mx-auto px-[10px] sm:px-[55px] text-center relative z-10 py-30 md:py-20">
+            <div className="container-2xl mx-auto px-[10px] sm:px-[55px] text-center relative z-10 pt-20 [@media(max-width:550px)]:pt-35 md:pt-35 lg:py-30 ">
                 <div className=" mx-auto flex flex-col xl:flex-row gap-10 items-stretch p-4 md:p-20">
                     {/* Left Side: Heading + Flags */}
                     <div className="flex-3 flex flex-col items-start justify-center gap-4 w-full xl:w-[45%]">

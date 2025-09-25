@@ -98,7 +98,7 @@ export default function Donate() {
         <section >
             <div className="w-[95%] md:w-[66%] container-2xl mx-auto px-[55px] z-10 flex flex-col items-center gap-10">
                 <div>
-                    <div className="flex flex-col gap-4 w-full items-center justify-start mt-10 md:mt-30 lg:mt-60">
+                    <div className="flex flex-col gap-4 w-full items-center justify-start mt-10 lg:mt-30 xl:mt-60">
                         <h1 className="text-center text-lg md:text-xl lg:text-2xl xl:text-3xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl">
                             OUR BLOGS
                         </h1>

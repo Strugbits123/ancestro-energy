@@ -31,8 +31,8 @@ export default function Solar() {
                 <div></div>
             </div>
             {/*Hero section - Main content*/}
-            <div className="container-2xl mx-auto px-[10px] sm:px-[55px] text-center relative z-10 py-30 md:py-20">
-                <div className=" mx-auto flex flex-col xl:flex-row gap-10 items-stretch p-4 md:p-20">
+            <div className="container-2xl mx-auto px-[10px] sm:px-[55px] text-center relative z-10 pt-30  lg:py-20">
+                <div className=" mx-auto flex flex-col xl:flex-row gap-10 items-stretch p-4 md:p-8 lg:p-20">
                     {/* Left Side: Heading + Flags */}
                     <div className="flex-3 flex flex-col items-start justify-center gap-4 w-full xl:w-[45%]">
                         <h1 className="w-full text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl mx-auto">
@@ -66,7 +66,7 @@ export default function Solar() {
                                 />
                             ))}
                         </div>
-                        <div className="flex justify-start mt-4 w-full xl:w-[35%]">
+                        <div className="flex justify-start mt-4 w-full ">
                             <SunButton redirect={'/dealer/apply'}
                                 text={'secondary'}
                                 className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"

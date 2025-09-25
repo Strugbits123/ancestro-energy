@@ -103,7 +103,7 @@ export const DealerCaseStudy = [
             },
             {
                 metric: 'Market Share',
-                magnitude: '9%'
+                magnitude: '19%'
             }
         ],
         description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
@@ -115,14 +115,14 @@ export const DealerCaseStudy = [
         investmentData: [
             {
                 metric: 'Revenue',
-                magnitude: '54%'
+                magnitude: '58%'
             },
             {
                 metric: 'Market Share',
-                magnitude: '9%'
+                magnitude: '21%'
             }
         ],
-        description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
+        description: 'With Ancestro, I stopped losing projects. Before, clients loved the idea of solar but couldn’t pay upfront. Now, every meeting ends with a clear path forward, and my close rate has jumped dramatically'
     },
     {
         image: '/images/dealer-case-study-2.png',
@@ -131,14 +131,14 @@ export const DealerCaseStudy = [
         investmentData: [
             {
                 metric: 'Revenue',
-                magnitude: '54%'
+                magnitude: '61%'
             },
             {
                 metric: 'Market Share',
-                magnitude: '9%'
+                magnitude: '24%'
             }
         ],
-        description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
+        description: 'Joining Ancestro gave me the credibility I was missing. Instead of competing on price, I compete with solutions. My reputation in the market has completely shifted—I’m now seen as a trusted provider.'
     },
     {
         image: '/images/solar-panel-case-study.png',
@@ -154,7 +154,7 @@ export const DealerCaseStudy = [
                 magnitude: '22%'
             }
         ],
-        description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
+        description: 'With Ancestro, I stopped losing projects. Before, clients loved the idea of solar but couldn’t pay upfront. Now, every meeting ends with a clear path forward, and my close rate has jumped dramatically'
     },
     {
         image: '/images/dealer-case-study-5.png',
@@ -163,14 +163,14 @@ export const DealerCaseStudy = [
         investmentData: [
             {
                 metric: 'Revenue',
-                magnitude: '54%'
+                magnitude: '52%'
             },
             {
                 metric: 'Market Share',
-                magnitude: '9%'
+                magnitude: '18%'
             }
         ],
-        description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
+        description: 'Ancestro turned my small operation into a serious business. The tools make me look bigger, more professional, and my clients trust me with projects that used to go to large companies.'
     },
     {
         image: '/images/dealer-case-study-6.png',
@@ -179,14 +179,14 @@ export const DealerCaseStudy = [
         investmentData: [
             {
                 metric: 'Revenue',
-                magnitude: '54%'
+                magnitude: '55%'
             },
             {
                 metric: 'Market Share',
-                magnitude: '9%'
+                magnitude: '20%'
             }
         ],
-        description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
+        description: 'Joining Ancestro was the best move I ever made. My projects have multiplied, my confidence with clients is higher, and I finally feel like I’m building a sustainable business.'
     },
     {
         image: '/images/dealer-case-study-6.png',
@@ -195,14 +195,14 @@ export const DealerCaseStudy = [
         investmentData: [
             {
                 metric: 'Revenue',
-                magnitude: '54%'
+                magnitude: '55%'
             },
             {
                 metric: 'Market Share',
-                magnitude: '9%'
+                magnitude: '20%'
             }
         ],
-        description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
+        description: 'Joining Ancestro was the best move I ever made. My projects have multiplied, my confidence with clients is higher, and I finally feel like I’m building a sustainable business.'
     },
     {
         image: '/images/dealer-case-study-6.png',
@@ -211,14 +211,14 @@ export const DealerCaseStudy = [
         investmentData: [
             {
                 metric: 'Revenue',
-                magnitude: '54%'
+                magnitude: '55%'
             },
             {
                 metric: 'Market Share',
-                magnitude: '9%'
+                magnitude: '20%'
             }
         ],
-        description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
+        description: 'Joining Ancestro was the best move I ever made. My projects have multiplied, my confidence with clients is higher, and I finally feel like I’m building a sustainable business.'
     },
     {
         image: '/images/dealer-case-study-6.png',
@@ -227,14 +227,14 @@ export const DealerCaseStudy = [
         investmentData: [
             {
                 metric: 'Revenue',
-                magnitude: '54%'
+                magnitude: '55%'
             },
             {
                 metric: 'Market Share',
-                magnitude: '9%'
+                magnitude: '20%'
             }
         ],
-        description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
+        description: 'Joining Ancestro was the best move I ever made. My projects have multiplied, my confidence with clients is higher, and I finally feel like I’m building a sustainable business.'
     },
     {
         image: '/images/dealer-case-study-6.png',
@@ -243,14 +243,14 @@ export const DealerCaseStudy = [
         investmentData: [
             {
                 metric: 'Revenue',
-                magnitude: '54%'
+                magnitude: '55%'
             },
             {
                 metric: 'Market Share',
-                magnitude: '9%'
+                magnitude: '20%'
             }
         ],
-        description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
+        description: 'Joining Ancestro was the best move I ever made. My projects have multiplied, my confidence with clients is higher, and I finally feel like I’m building a sustainable business.'
     },
     {
         image: '/images/dealer-case-study-6.png',
@@ -259,14 +259,14 @@ export const DealerCaseStudy = [
         investmentData: [
             {
                 metric: 'Revenue',
-                magnitude: '54%'
+                magnitude: '55%'
             },
             {
                 metric: 'Market Share',
-                magnitude: '9%'
+                magnitude: '20%'
             }
         ],
-        description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
+        description: 'Joining Ancestro was the best move I ever made. My projects have multiplied, my confidence with clients is higher, and I finally feel like I’m building a sustainable business.'
     },
     {
         image: '/images/dealer-case-study-6.png',
@@ -275,14 +275,14 @@ export const DealerCaseStudy = [
         investmentData: [
             {
                 metric: 'Revenue',
-                magnitude: '54%'
+                magnitude: '55%'
             },
             {
                 metric: 'Market Share',
-                magnitude: '9%'
+                magnitude: '20%'
             }
         ],
-        description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
+        description: 'Joining Ancestro was the best move I ever made. My projects have multiplied, my confidence with clients is higher, and I finally feel like I’m building a sustainable business.'
     },
     {
         image: '/images/dealer-case-study-6.png',
@@ -291,14 +291,14 @@ export const DealerCaseStudy = [
         investmentData: [
             {
                 metric: 'Revenue',
-                magnitude: '54%'
+                magnitude: '55%'
             },
             {
                 metric: 'Market Share',
-                magnitude: '9%'
+                magnitude: '20%'
             }
         ],
-        description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
+        description: 'Joining Ancestro was the best move I ever made. My projects have multiplied, my confidence with clients is higher, and I finally feel like I’m building a sustainable business.'
     },
     {
         image: '/images/dealer-case-study-6.png',
@@ -307,14 +307,14 @@ export const DealerCaseStudy = [
         investmentData: [
             {
                 metric: 'Revenue',
-                magnitude: '54%'
+                magnitude: '55%'
             },
             {
                 metric: 'Market Share',
-                magnitude: '9%'
+                magnitude: '20%'
             }
         ],
-        description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
+        description: 'Joining Ancestro was the best move I ever made. My projects have multiplied, my confidence with clients is higher, and I finally feel like I’m building a sustainable business.'
     },
     {
         image: '/images/dealer-case-study-6.png',
@@ -323,13 +323,13 @@ export const DealerCaseStudy = [
         investmentData: [
             {
                 metric: 'Revenue',
-                magnitude: '54%'
+                magnitude: '55%'
             },
             {
                 metric: 'Market Share',
-                magnitude: '9%'
+                magnitude: '20%'
             }
         ],
-        description: 'Ancestro transformed my business. I used to struggle with proposals that went nowhere, but now I have a system that wins. Clients see me as more professional, and deals are closing faster than ever.'
+        description: 'Joining Ancestro was the best move I ever made. My projects have multiplied, my confidence with clients is higher, and I finally feel like I’m building a sustainable business.'
     },
 ]

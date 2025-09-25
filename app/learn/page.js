@@ -24,11 +24,12 @@ export default function Learn() {
                             Grow With Ancestro — More Deals, More Revenue.
                         </h1>
 
-                        <span className="text-md text-left text-white font-lato">Sell what no one else can: $0 down solar subscriptions across 18 countries. Higher close rates, recurring revenue, and the tools to scale your business.</span>
+                        <span className="text-sm md:text-base lg:text-md text-left text-white font-lato">Sell what no one else can: $0 down solar subscriptions across 18 countries. Higher close rates, recurring revenue, and the tools to scale your business.</span>
                         <div className="flex flex-col md:flex-row gap-2 max-w-6xl">
                             <SunButton
                                 redirect={'/dealer/apply'}
                                 text={"secondary"}
+                                 textClassName=" whitespace-nowrap text-[11px] lg:text-base xl:text-[15px]"
                                 className=" text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
                             >
                                 APPLY NOW — JOIN THE SOLAR TRIBE
@@ -64,7 +65,7 @@ export default function Learn() {
 
         </section>
 
-        <section className="flex flex-col bg-black  py-10 items-center  lg:-mt-[350px] xl:-mt-[500px]">
+        <section className="flex flex-col bg-black  py-10 items-center pt-45 [@media(min-width:365px)]:pt-35 sm:!pt-0 sm:-mt-[350px] xl:-mt-[500px]">
             <h2 className="text-center font-lato font-bold text-[25px] font-lato leading-relaxed text-white p-5 mb-10">SEE HOW IT WORKS</h2>
             <div className="w-[82%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-10">
                 {

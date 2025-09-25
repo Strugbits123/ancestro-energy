@@ -107,7 +107,7 @@ export default function Apply() {
             </div>
             <div className="max-w-[920px] mx-auto flex flex-col gap-8 [column-fill:_balance] lg:block lg:columns-2">
 
-                <div className="active:border-yellow-400 inline-block w-[98%] mx-auto sm:w-[447px] h-[289px] mb-8 break-inside-avoid rounded-lg p-4 border border-white/10 
+                <div className="active:border-yellow-400 inline-block w-[98%] mx-auto h-fit sm:h-auto sm:w-[447px] h-[289px] mb-8 break-inside-avoid rounded-lg p-4 border border-white/10 
       bg-[linear-gradient(135deg,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.85)_calc(50%_-_120px),rgba(255,255,255,0.2)_50%,rgba(0,0,0,0.85)_calc(50%_+_120px),rgba(0,0,0,0.85)_100%)]">
                     <div className='flex justify-between  items-center'>
                         <h6 className='text-white font-bold'>Bronze</h6>
@@ -155,7 +155,7 @@ export default function Apply() {
                 </div>
 
 
-                <div className="active:border-yellow-400 border border-white/10  inline-block mx-auto w-[98%] sm:w-[447px] h-[663px] mb-8 break-inside-avoid rounded-lg p-4 
+                <div className="active:border-yellow-400 border border-white/10  inline-block mx-auto h-fit sm:h-auto w-[98%] sm:w-[447px] h-[663px] mb-8 break-inside-avoid rounded-lg p-4 
       bg-[linear-gradient(135deg,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.85)_calc(50%_-_250px),rgba(255,255,255,0.2)_50%,rgba(0,0,0,0.85)_calc(50%_+_250px),rgba(0,0,0,0.85)_100%)]">
                     <div className='flex justify-between  items-center'>
                         <h6 className='text-white font-bold'>Platinum</h6>
@@ -194,8 +194,8 @@ export default function Apply() {
                                         <img className="h-[18px] w-[20px] sm:h-[20px] sm:w-[24px]" src={'/icons/checkmark.png'} />
                                         {
                                             !el.includes('-(') ?
-                                                <div className='text-sm sm:text-[15px] text-white/80'>{el}</div> :
-                                                <div className="text-sm sm:text-[15px] text-white/80">
+                                                <div className='text-[13px] sm:text-[15px] text-white/80'>{el}</div> :
+                                                <div className="text-[13px] sm:text-[15px] text-white/80">
                                                     {mainText}{' '}
                                                     {extraText && (
                                                         <span className="text-[10px] text-white">{extraText}</span>
@@ -211,7 +211,7 @@ export default function Apply() {
 
                 </div>
 
-                <div className="active:border-yellow-400 border border-white/10  inline-block mx-auto w-[98%] sm:w-[447px] h-[409px] mb-8 break-inside-avoid rounded-lg p-4 
+                <div className="active:border-yellow-400 border border-white/10  inline-block h-fit sm:h-auto mx-auto w-[98%] sm:w-[447px] h-[409px] mb-8 break-inside-avoid rounded-lg p-4 
       bg-[linear-gradient(135deg,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.85)_calc(50%_-_150px),rgba(255,255,255,0.2)_50%,rgba(0,0,0,0.85)_calc(50%_+_150px),rgba(0,0,0,0.85)_100%)]">
                     <div className='flex justify-between  items-center'>
                         <h6 className='text-white font-bold'>Silver</h6>
@@ -260,7 +260,7 @@ export default function Apply() {
                     </div>
                 </div>
 
-                <div className="active:border-yellow-400 border border-white/10  inline-block mx-auto w-[98%] sm:w-[447px] h-[513px] mb-8 break-inside-avoid rounded-lg p-4 
+                <div className="active:border-yellow-400 border border-white/10  inline-block mx-auto h-fit sm:h-auto w-[98%] sm:w-[447px] h-[513px] mb-8 break-inside-avoid rounded-lg p-4 
       bg-[linear-gradient(135deg,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.85)_calc(50%_-_150px),rgba(255,255,255,0.2)_50%,rgba(0,0,0,0.85)_calc(50%_+_150px),rgba(0,0,0,0.85)_100%)]">
                     <div className='flex justify-between  items-center'>
                         <h6 className='text-white font-bold'>Gold</h6>

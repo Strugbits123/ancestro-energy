@@ -30,7 +30,7 @@ export default function Learn() {
                                 redirect={'/dealer/apply'}
                                 text={"secondary"}
                                  textClassName=" whitespace-nowrap text-[11px] lg:text-base xl:text-[15px]"
-                                className=" text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
+                                className="text-[10px] lg:text-base xl:text-[15px] border-yellow-300  text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
                             >
                                 APPLY NOW — JOIN THE SOLAR TRIBE
                             </SunButton>

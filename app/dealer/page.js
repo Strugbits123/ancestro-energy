@@ -88,7 +88,7 @@ export default function Solar() {
                         </div>
                     </div> */}
                     <div className="flex-[2] min-h-[300px] md:min-h-[500px] w-full">
-                        <div className="w-full h-full overflow-hidden relative rounded-[5%]">
+                        <div className="w-full xl:aspect-[716/664] overflow-hidden relative rounded-[5%]">
                             <img
                                 src="/images/map-hero-video.png"
                                 alt="solar"

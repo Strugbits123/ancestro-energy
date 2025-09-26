@@ -96,20 +96,6 @@ export default function Footer() {
 
           {/* Partner Logos */}
           <div className="w-fit mx-auto flex flex-wrap justify-between items-center gap-2 md:gap-4 px-15 py-6 bg-gradient-to-r from-white/36 to-gray-500/0 border border-white/30 backdrop-blur-sm rounded-lg mb-6">
-            {/* {[
-              "Ancestro-Capital",
-              "Ancestro-Charge",
-              "AncestroProject",
-              "Ancestro-Sustainability",
-              "Ancestro-Foundation",
-            ].map((country, i) => (
-              <img
-                key={i}
-                src={`/images/${country}.png`}
-                alt={`${country} flag`}
-                className="w-[324px] h-[40px] rounded-sm  shadow"
-              />
-            ))} */}
             <img
                 src={`/images/Ancestro-Capital.png`}
                 alt={`flag`}
@@ -195,23 +181,23 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="flex flex-col lg:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm font-bold tracking-wider uppercase text-black">
               <a href="mailto:info@ancestroenergy.com" className="flex items-center gap-2 hover:underline">
-                <span className='w-fit h-fit'><img src={'/icons/mail.png'} className='h-7 w-7'/></span> 
+                <span className='w-fit h-fit'><img src={'/icons/mail.png'} className='h-full w-full'/></span> 
                 <div className='underline'>info@ancestroenergy.com</div>
               </a>
               <div className="flex items-center space-x-4">
-                <span className='w-fit h-fit'><img src={'/icons/phone.png'} className='h-7 w-7'/></span>
+                <span className='w-fit h-fit'><img src={'/icons/phone.png'} className='h-full w-full'/></span>
                 <div className='flex flex-col md:flex-row gap-2'>
                 <div>+1 (555) 123-45675</div>
                 <span>+44 20 7946 0958</span>
                 </div>
               </div>
               {/* Social Icons */}
-              <div className="flex space-x-3 mt-1">
+              <div className="flex space-x-3">
                 <a href="#" className="w-10 h-10 rounded hover:opacity-70 transition-opacity">
-                  <img className='h-7 w-9' src={'/icons/linkedin.png'} />
+                  <img className='h-full w-full' src={'/icons/linkedin.png'} />
                 </a>
                 <a href="#" className="w-10 h-10 rounded hover:opacity-70 transition-opacity">
-                  <img className='h-7 w-9' src={'/icons/youtube.png'} />
+                  <img className='h-full w-full' src={'/icons/youtube.png'} />
                 </a>
               </div>
             </div>

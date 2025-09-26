@@ -20,8 +20,6 @@ export default function Home() {
             playsInline
           />
 
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black" />
         </div>
 
         <div className="container-2xl mx-auto px-[55px] text-center relative z-10 py-20"

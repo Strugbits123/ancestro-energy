@@ -146,7 +146,7 @@ export default function Solar() {
 
         {/*LEARN MORE ABOUT ANCESTRO*/}
         <section className="flex flex-col bg-black  py-10 items-center">
-            <h2 className="text-center font-lato font-bold text-[25px] font-lato leading-relaxed text-white p-5 mb-10">LERAN MORE ABOUT ANCESTRO</h2>
+            <h2 className="text-center font-lato font-bold text-[25px] font-lato leading-relaxed text-white p-5 mb-10">LEARN MORE ABOUT ANCESTRO</h2>
             <div className="w-[82%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-10">
                 {
                     [

@@ -9,19 +9,19 @@ export default function Apply() {
 
             {/* Background */}
 
-            <div className="absolute inset-0">
-                <div
-                    className="w-full h-full"
-                    style={{
-                        backgroundImage: `
-                        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,1)),
-                            url('/assets/dealer-apply.gif')
-                            `,
-                        backgroundRepeat: 'no-repeat',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                    }}
+            <div className="absolute inset-0 overflow-hidden z-0">
+                {/* Background Video */}
+                <video
+                    className="w-full h-full object-cover"
+                    src="/assets/dealer-apply.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
                 />
+
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black" />
             </div>
 
             {/*Hero section - Main content*/}

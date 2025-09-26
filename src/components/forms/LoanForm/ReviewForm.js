@@ -8,14 +8,15 @@ const CompanyForm = ({ onNext }) => (
 
         {/* Input Fields */}
         <div className="space-y-5 mb-2 mt-7">
-            {['non-refundable loan review fee: $500 usd', 'payment required to access document upload portal.'].map((placeholder, i, arr) => (
-                <input
-                    key={i}
-                    type={placeholder === 'EMAIL' ? 'email' : placeholder === 'PHONE NUMBER' ? 'tel' : 'text'}
-                    placeholder={placeholder}
-                    className={`w-full px-1 py-4 text-sm font-lato bg-transparent border-b border-white/30 text-white placeholder-white placeholder:uppercase focus:outline-none focus:ring-0 focus:border-white ${i === arr.length - 1 ? 'last:mb-1' : ''}`}
-                />
-            ))}
+            <input
+                type="text" placeholder={'non-refundable loan review fee: $500 usd'}
+                className={`w-full px-1 py-4 text-sm font-lato bg-transparent border-b border-white/30 text-white placeholder-white placeholder:uppercase focus:outline-none focus:ring-0 focus:border-white `}
+            />
+            <textarea
+                type={'text'}
+                placeholder={'payment required to access document upload portal.'}
+                className={` w-full px-1 py-4 text-sm font-lato bg-transparent border-b border-white/30 text-white placeholder-white placeholder:uppercase focus:outline-none focus:ring-0 focus:border-white mb-1`}
+            />
         </div>
 
         <h3 className="text-left italic text-white/90 uppercase text-[14px] mt-7">After payment, you will receive login

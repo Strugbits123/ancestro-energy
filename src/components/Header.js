@@ -10,14 +10,12 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleCloseMenu = (e) => {
-    console.log('Close button clicked!');
     e.preventDefault();
     e.stopPropagation();
     setIsMenuOpen(false);
   };
 
   const handleToggleMenu = () => {
-    console.log('Toggle menu clicked, current state:', isMenuOpen);
     setIsMenuOpen(!isMenuOpen);
   };
 
@@ -69,18 +67,23 @@ export default function Header() {
         }
       `}</style>
 
-      <header className="fixed top-0 left-0 right-0 z-50 py-10">
+      <header className="absolute top-0 left-0 right-0 z-50 py-10">
         {/* Navigation Bar */}
-        <nav className="container-2xl mx-auto px-[55px] py-4 flex justify-between items-center mb-20">
+        <nav className="container-2xl mx-auto px-[25px] md:px-[55px] py-4 flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
             <Image src={logo} alt="Logo" />
           </div>
 
           {/* Right Side Controls */}
-          {!isMenuOpen && <div className="flex items-center gap-6">
+          {!isMenuOpen && <div className="flex items-center gap-6 [@media(min-width:360px)]:gap-3">
             {/* Sign In Button */}
-            <SunButton>SIGN IN</SunButton>
+            <SunButton
+              className="[@media(min-width:360px)]:text-[10px] [@media(min-width:360px)]:whitespace-nowrap sm:text-base md:text-lg lg:text-[40px]"
+              textClassName='sm:text-base md:text-lg lg:text-[17px]'
+            >
+              SIGN IN
+            </SunButton>
 
             {/* Hamburger Menu Button */}
             <button
@@ -102,7 +105,7 @@ export default function Header() {
             <div
               className="absolute inset-0 bg-black/50 backdrop-blur-sm cursor-pointer animate-fade-in"
               onClick={handleCloseMenu}
-              style={{ 
+              style={{
                 position: 'fixed',
                 top: 0,
                 left: 0,
@@ -117,10 +120,11 @@ export default function Header() {
             <div
               onClick={(e) => e.stopPropagation()}
               className="absolute right-0 w-80 bg-white/10 backdrop-blur-xl border-l border-white/20 shadow-2xl rounded-tl-[20px] rounded-bl-[20px] animate-slide-in"
-              style={{ 
+              style={{
                 top: '2.5rem',
                 bottom: '2.5rem',
-                height: 'calc(100vh - 5rem)',
+                maxHeight: 'calc(100vh - 5rem)',
+                
                 zIndex: 10000
               }}
             >
@@ -137,23 +141,17 @@ export default function Header() {
                 </button>
               </div>
 
-              <div className="p-6 space-y-6 pt-8 overflow-y-auto max-h-full">
+              <div className="p-6 mt-2 flex flex-col justify-around h-[75%] md:justify-center gap-4 md:gap-8  overflow-y-auto  max-h-[95%]">
                 {[
                   { title: 'HOME', link: '/' },
                   { title: 'LEARN', link: '/learn' },
-                  { title: 'CASE STUDIES', link: '/solar/casestudies' },
-                  { title: 'APPLY', link: '/solar/apply' },
+                  { title: 'CASE STUDIES', link: '/dealer/casestudies' },
+                  { title: 'APPLY', link: '/dealer/apply' },
                   { title: 'DONATE', link: '/donate' },
                   { title: 'EARN', link: '/solar/earn' }
                 ].map((path, i) => (
-                  <Link key={i} href={path.link} className='block'>
-                    <button 
-                      onClick={() => setIsMenuOpen(false)}
-                      className=" w-full text-left px-4 py-3 text-white font-medium text-sm tracking-wider uppercase rounded-lg  relative overflow-hidden hover:cursor-pointer"
-                    >
-                      <span className="relative z-10 text-2xl transition-transform duration-300 group-hover:scale-105">{path.title}</span>
-                      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-yellow-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-100%] group-hover:translate-x-0"></div>
-                    </button>
+                  <Link key={i} onClick={() => setIsMenuOpen(false)} href={path.link} className='block w-full text-left px-2 py-1 md:px-4 md:py-3 text-white font-medium  tracking-wider uppercase rounded-lg  relative overflow-hidden hover:cursor-pointer'>
+                    <span className="relative z-10 text-lg md:text-2xl transition-transform duration-300 group-hover:scale-105">{path.title}</span>
                   </Link>
                 ))}
               </div>

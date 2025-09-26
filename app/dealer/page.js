@@ -31,13 +31,13 @@ export default function Solar() {
                 <div></div>
             </div>
             {/*Hero section - Main content*/}
-            <div className="container-2xl mx-auto px-[10px] sm:px-[55px] text-center relative z-10 py-30 md:py-20">
-                <div className=" mx-auto flex flex-col xl:flex-row gap-10 items-stretch p-4 md:p-20">
+            <div className="container-2xl mx-auto px-[10px] sm:px-[55px] text-center relative z-10 pt-30  lg:py-20">
+                <div className=" mx-auto flex flex-col xl:flex-row gap-10 items-stretch p-4 md:p-8 lg:p-20">
                     {/* Left Side: Heading + Flags */}
                     <div className="flex-3 flex flex-col items-start justify-center gap-4 w-full xl:w-[45%]">
                         <h1 className="w-full text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl mx-auto">
                             Join the largest solar financing platform in Latin America                        </h1>
-                        <span className="text-md text-left text-white font-lato">$0 upfront. Day-one savings. Long-term stability. Available now in 14 countries.</span>
+                        <span className="text-md text-left text-white font-lato">$0 upfront. Day-one savings. Long-term stability. Available now in 18 countries.</span>
                         <div className="flex flex-wrap justify-center items-center gap-5 mb-4">
                             {[
                                 "argentina",
@@ -66,8 +66,14 @@ export default function Solar() {
                                 />
                             ))}
                         </div>
-                        <div className="flex justify-start mt-4 w-full xl:w-[35%]">
-                            <SunButton redirect={'/dealer/apply'} text={'secondary'} className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
+                        <div className="flex justify-start mt-4 w-full ">
+                            <SunButton redirect={'/dealer/apply'}
+                                text={'secondary'}
+                                className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
+                                textClassName=" whitespace-nowrap text-sm lg:text-base xl:text-[15px]"
+                            >
+                                APPLY NOW — JOIN THE SOLAR TRIBE
+                            </SunButton>
                         </div>
                     </div>
 
@@ -82,7 +88,7 @@ export default function Solar() {
                         </div>
                     </div> */}
                     <div className="flex-[2] min-h-[300px] md:min-h-[500px] w-full">
-                        <div className="w-full h-full overflow-hidden relative rounded-[5%]">
+                        <div className="w-full xl:aspect-[716/664] overflow-hidden relative rounded-[5%]">
                             <img
                                 src="/images/map-hero-video.png"
                                 alt="solar"
@@ -142,7 +148,7 @@ export default function Solar() {
                 }
             </div>
             <div className="flex flex-col md:flex-row gap-3 mt-5">
-                <SunButton redirect={'/dealer/discovermore'}>DISCOVER MORE.</SunButton>
+                <SunButton redirect={'/learn'}>DISCOVER MORE.</SunButton>
                 <SunButton redirect={'/dealer/apply'} className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
             </div>
         </section>

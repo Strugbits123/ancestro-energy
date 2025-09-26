@@ -22,20 +22,20 @@ export default function Footer() {
         </div>
 
         {/* Footer Links Grid */}
-        <div className="mx-auto xl:ml-20 px-20 md:px-30 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-1 xl:mb-12">
+        <div className="mx-auto xl:ml-20 px-10 sm:px-20 md:px-30 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 2xl:gap-12 mb-1 xl:mb-12">
           {/* Solutions Column */}
           <div>
             <h3
               className="font-bold text-sm mb-6 tracking-wider uppercase"
               style={gradientStyle}
             >
-              Solutions (Customer-Focused)
+              Customers
             </h3>
             <ul className="list-disc  space-y-3 mx-auto">
-              <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">$0 Down Solar Subscriptions</a></li>
-              <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Customer Support & Help Center</a></li>
-              <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Customer Portal Access</a></li>
-              <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">EV Charging & Storage Applications</a></li>
+              <li><a href="#" className="2xl:whitespace-nowrap text-[10px] sm:text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">$0 Down Solar Subscriptions</a></li>
+              <li><a href="#" className="2xl:whitespace-nowrap text-[10px] sm:text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Customer Support & Help Center</a></li>
+              <li><a href="#" className="2xl:whitespace-nowrap text-[10px] sm:text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Customer Portal Access</a></li>
+              <li><a href="#" className=" text-[10px] sm:text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">EV Charging & Storage Applications</a></li>
             </ul>
           </div>
 
@@ -48,10 +48,10 @@ export default function Footer() {
               Dealers
             </h3>
             <ul className="list-disc  space-y-3 mx-auto">
-              <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Join Dealer Network</a></li>
-              <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Dealer Portal Login</a></li>
-              <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Dealer Training & Tools</a></li>
-              <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Dealer Case Studies</a></li>
+              <li><a href="#" className="2xl:whitespace-nowrap text-[10px] sm:text-sm  hover:text-yellow-300 transition-colors tracking-wider uppercase">Join Dealer Network</a></li>
+              <li><a href="#" className="2xl:whitespace-nowrap text-[10px] sm:text-sm  hover:text-yellow-300 transition-colors tracking-wider uppercase">Dealer Portal Login</a></li>
+              <li><a href="#" className="2xl:whitespace-nowrap text-[10px] sm:text-sm  hover:text-yellow-300 transition-colors tracking-wider uppercase">Construction Loan</a></li>
+              <li><a href="#" className="2xl:whitespace-nowrap text-[10px] sm:text-sm  hover:text-yellow-300 transition-colors tracking-wider uppercase">Dealer Case Studies</a></li>
             </ul>
           </div>
 
@@ -64,10 +64,10 @@ export default function Footer() {
               Investors
             </h3>
             <ul className="list-disc  space-y-3 mx-auto">
-              <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Why Invest With Ancestro Capital</a></li>
-              <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Investor Portal Login</a></li>
-              <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Market Reports & Projections</a></li>
-              <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">ESG / Carbon Credits</a></li>
+              <li><a href="#" className="2xl:whitespace-nowrap text-[10px] sm:text-sm  hover:text-yellow-300 transition-colors tracking-wider uppercase">Why Invest With Ancestro Capital</a></li>
+              <li><a href="#" className="2xl:whitespace-nowrap text-[10px] sm:text-sm  hover:text-yellow-300 transition-colors tracking-wider uppercase">Investor Portal Login</a></li>
+              <li><a href="#" className="2xl:whitespace-nowrap text-[10px] sm:text-sm  hover:text-yellow-300 transition-colors tracking-wider uppercase">Market Reports & Projections</a></li>
+              <li><a href="#" className="2xl:whitespace-nowrap text-[10px] sm:text-sm  hover:text-yellow-300 transition-colors tracking-wider uppercase">ESG / Carbon Credits</a></li>
             </ul>
           </div>
 
@@ -80,17 +80,17 @@ export default function Footer() {
               Company
             </h3>
             <ul className="list-disc  space-y-3 mx-auto">
-              <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">About Ancestro</a></li>
-              <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Press & Media</a></li>
-              <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Careers (future)</a></li>
-              <li><a href="#" className="text-sm hover:text-yellow-300 transition-colors tracking-wider uppercase">Contact Us</a></li>
+              <li><a href="#" className="2xl:whitespace-nowrap text-[10px] sm:text-sm  hover:text-yellow-300 transition-colors tracking-wider uppercase">About Ancestro</a></li>
+              <li><a href="#" className="2xl:whitespace-nowrap text-[10px] sm:text-sm  hover:text-yellow-300 transition-colors tracking-wider uppercase">Press & Media</a></li>
+              <li><a href="#" className="2xl:whitespace-nowrap text-[10px] sm:text-sm  hover:text-yellow-300 transition-colors tracking-wider uppercase">Careers</a></li>
+              <li><a href="#" className="2xl:whitespace-nowrap text-[10px] sm:text-sm  hover:text-yellow-300 transition-colors tracking-wider uppercase">Donate</a></li>
             </ul>
           </div>
         </div>
 
         {/* Powered by Section */}
         <div className="text-center mb-8">
-          <p className="text-sm font-bold my-6 tracking-wider uppercase text-white">
+          <p className="text-sm font-bold mt-10 mb-7 md:my-6 tracking-wider uppercase text-white">
             Powered by Ancestro Ecosystem
           </p>
 
@@ -193,14 +193,17 @@ export default function Footer() {
             </div>
 
             {/* Contact Info */}
-            <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm font-bold tracking-wider uppercase text-black">
+            <div className="flex flex-col lg:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm font-bold tracking-wider uppercase text-black">
               <a href="mailto:info@ancestroenergy.com" className="flex items-center gap-2 hover:underline">
-                <img src={'/icons/mail.png'} /> <div className='underline'>info@ancestroenergy.com</div>
+                <span className='w-fit h-fit'><img src={'/icons/mail.png'} className='h-7 w-7'/></span> 
+                <div className='underline'>info@ancestroenergy.com</div>
               </a>
               <div className="flex items-center space-x-4">
-                <span><img src={'/icons/phone.png'} /></span>
+                <span className='w-fit h-fit'><img src={'/icons/phone.png'} className='h-7 w-7'/></span>
+                <div className='flex flex-col md:flex-row gap-2'>
                 <div>+1 (555) 123-45675</div>
                 <span>+44 20 7946 0958</span>
+                </div>
               </div>
               {/* Social Icons */}
               <div className="flex space-x-3 mt-1">

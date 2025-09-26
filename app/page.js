@@ -9,26 +9,26 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-800 via-gray-900 to-black py-20 md:py-1">
-        {/* Background Pattern/Texture */}
-        <div className="absolute inset-0">
-          <div
-            className="w-full h-full"
-            style={{
-              backgroundImage: `url('/assets/hero-section.gif')`,
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          >
+        <div className="absolute inset-0 overflow-hidden z-0">
+          {/* Background Video */}
+          <video
+            className="w-full h-full object-cover"
+            src="/assets/hero-section.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
 
-          </div>
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black" />
         </div>
 
         <div className="container-2xl mx-auto px-[55px] text-center relative z-10 py-20"
 
         >
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-lato font-bold text-white mb-8 md:mb-12 leading-tight tracking-wide uppercase max-w-6xl mx-auto">
+          <h1 className="text-2xl md:text-5xl lg:text-6xl xl:text-7xl font-lato font-bold text-white mt-4 md:mt-16 mb-8 md:mb-12 leading-tight tracking-wide uppercase max-w-6xl mx-auto">
             Where Solar Power meets ancestral Wisdom
           </h1>
 
@@ -80,7 +80,7 @@ export default function Home() {
               </div>
 
               {/* CTA Button */}
-              <SunButton redirect={"/solar"} className="w-full">I WANT SOLAR</SunButton>
+              <SunButton redirect={"/solar"} className="w-full" textClassName='whitespace-nowrap text-sm md:text-base lg:text-lg '>I WANT SOLAR</SunButton>
             </div>
 
             {/* Right Card - Dealer */}
@@ -120,7 +120,7 @@ export default function Home() {
               </div>
 
               {/* CTA Button */}
-              <SunButton redirect={'/dealer'} className="w-full">I WANT TO BECOME A DEALER</SunButton>
+              <SunButton redirect={'/dealer'} className="w-full" textClassName='whitespace-nowrap text-sm md:text-base lg:text-lg '>I WANT TO BECOME A DEALER</SunButton>
             </div>
           </div>
         </div>

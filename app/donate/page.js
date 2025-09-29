@@ -25,7 +25,7 @@ export default function Donate() {
             <div className="relative container-2xl mx-auto px-[55px] -mt-[853px] z-10 flex flex-col items-center gap-10">
                 <div className=''>
                     <div className="flex flex-col gap-4 w-full items-center justify-start mt-60">
-                        <h1 className="text-center text-lg md:text-xl lg:text-2xl xl:text-3xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl">
+                        <h1 className="text-center [@media(max-width:430px)]:text-base text-lg md:text-xl lg:text-2xl xl:text-3xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl">
                             Ancestro Foundation Supports
                         </h1>
                     </div>
@@ -81,7 +81,9 @@ export default function Donate() {
                                     {card.description}
                                 </span>
                                 <div className="my-2 ">
-                                    <SunButton className="w-[133px] py-3 px-4 text-white border border-white text-md font-bold rounded-full bg-gradient-to-r from-white/30 via-white/20 to-white/10 backdrop-blur-lg">
+                                    <SunButton className="w-[133px] py-3 px-4 text-white border border-white text-md font-bold rounded-full bg-gradient-to-r from-white/30 via-white/20 to-white/10 backdrop-blur-lg active:text-bold"
+                                    textClassName='active:text-black active:font-bold'
+                                    >
                                         Donate
                                     </SunButton>
                                 </div>
@@ -96,7 +98,7 @@ export default function Donate() {
         <section >
             <div className="w-[95%] md:w-[66%] container-2xl mx-auto px-[55px] z-10 flex flex-col items-center gap-10">
                 <div>
-                    <div className="flex flex-col gap-4 w-full items-center justify-start mt-60">
+                    <div className="flex flex-col gap-4 w-full items-center justify-start mt-10 lg:mt-30 xl:mt-60">
                         <h1 className="text-center text-lg md:text-xl lg:text-2xl xl:text-3xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl">
                             OUR BLOGS
                         </h1>

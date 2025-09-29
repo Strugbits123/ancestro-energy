@@ -101,7 +101,7 @@ const CarouselComponent = ({ variant = "default" }) => {
             </ul>
 
             {/* Dots Navigation */}
-            <div className="flex justify-center gap-2 mt-4">
+            {/* <div className="flex justify-center gap-2 mt-4">
                 {Array(pageCount)
                     .fill(null)
                     .map((_, index) => (
@@ -112,7 +112,7 @@ const CarouselComponent = ({ variant = "default" }) => {
                                 }`}
                         />
                     ))}
-            </div>
+            </div> */}
         </div>
     );
 };

@@ -14,9 +14,9 @@ const CaseStudy = ({ content }) => {
 
                 <img className="h-full w-full transition-transform duration-2000 group-hover:scale-125" src={'/images/solar-panel-case-study.png'} />
             </div>
-            <div className="mt-2 flex w-full justify-start items-center gap-3">
-                <h1 className="font-lato text-white text-[25px] font-bold">{`${content.alt.toUpperCase()}`} </h1>
-                <p className="font-lato uppercase text-white/80 text-[13px] mt-1 italic">{`${content.study.category}`} </p>
+            <div className="mt-2 flex w-full justify-start items-center gap-1 lg:gap-3">
+                <h1 className="[@media(max-width:400px)]:whitespace-nowrap xl:whitespace-nowrap font-lato text-white text-lg lg:text-xl xl:text-2xl font-bold">{`${content.alt.toUpperCase()}`} </h1>
+                <p className=" font-lato uppercase text-white/80 text-[8px] whitespace-nowrap lg:whitespace-normal lg:text-[10px] 2xl:text-[12px] mt-1 italic">{`${content.study.category}`} </p>
             </div>
             <div className="flex flex-wrap gap-[5px] justify-start w-full">
                 {content.study.investmentData.map((data, i) => (
@@ -25,7 +25,7 @@ const CaseStudy = ({ content }) => {
                     </div>
                 ))}
             </div>
-            <div className="px-1 pb-2 pt-1 mt-2 font-lato text-white/80 text-[14px] text-start leading-[22px]">
+            <div className="px-1 pb-2 pt-1 mt-2 font-lato text-white/80 text-[14px] text-start leading-[22px] whitespace-pre-line">
                 {content.study.description}
             </div>
             <div onClick={()=>setOpen(true)} className="flex justify-between w-full cursor-pointer">

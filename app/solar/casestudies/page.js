@@ -26,13 +26,15 @@ export default function CaseStudies() {
                         <div className="flex flex-col md:flex-row gap-2 max-w-6xl items-center">
                             <SunButton
                                 redirect={'/solar/apply'}
-                                className="py-2 md:py-5 text-sm md:text-base border-yellow-300 text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
+                                text={'[#FFCD28]'}
+                                className="max-w-[392px] w-full px-4 flex justify-around py-2 md:py-5 text-sm md:text-base border-yellow-300 text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
+                                textClassName="[@media(max-width:450px)]:text-[10px] whitespace-nowrap text-sm lg:text-base"
                             >
                                 APPLY NOW — JOIN THE SOLAR TRIBE
                             </SunButton>
 
                             <button
-                                className="rounded-full uppercase font-bold py-1 max-h-[90px] md:max-h-[50px] px-3 text-[10px] bg-white md:text-base shadow"
+                                className="rounded-full uppercase font-bold py-1 max-h-[90px] md:max-h-fit px-3 text-[10px] bg-white md:text-base shadow"
                             >
                                 25 YeaRS of warranty + Guarantees Insurance from ancestro protect.
                             </button>
@@ -66,8 +68,8 @@ export default function CaseStudies() {
                     <h2 className='my-2 text-center text-white font-[700] font-lato text-4xl tracking-[2px]'>SAVE 100 TREES PER YEAR</h2>
                     <p className='my-5 self-center uppercase text-center text-white/80 font-[500] font-lato text-sm'>How to make subtle changes in your home/business that have a big environmental impact</p>
                 </div>
-                
-                <DownloadButton/>
+
+                <DownloadButton />
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-5'>
                     {
                         ['/images/save-trees-1.png', '/images/save-trees-2.png', '/images/save-trees-3.png', '/images/save-trees-4.png'].map((image, i) => (

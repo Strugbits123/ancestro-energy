@@ -35,7 +35,7 @@ export default function Apply() {
                             <ClockIcon height={28} width={28}/>
                             <div className="font-lato text-xl font-bold tracking-[2px]">IT WILL TAKE ONLY 5 MINUTES</div>
                         </div>
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl mx-auto">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl mb-6 xl:mb-0 font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl mx-auto">
                             FIND OUT IF YOUR PROPERTY QUALIFIES.
                         </h1>
 

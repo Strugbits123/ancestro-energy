@@ -6,7 +6,13 @@ const VideoTestimonial = ({ open, setOpen }) => {
 
     return (<>
         <Modal isOpen={open} onClose={() => { setOpen(false) }}>
-            <img src={'/assets/video-testimonial.gif'} />
+            <video
+                src="/assets/video-testimonial.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+            />
         </Modal>
     </>)
 }

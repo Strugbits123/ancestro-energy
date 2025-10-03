@@ -1,39 +1,4 @@
-// 'use client'
-// import React, { useState } from 'react';
-// import CustomCheckbox from './CustomCheckbox'; 
 
-// const CheckboxList = () => {
-//   // State to track checked options
-//   const [checkedOptions, setCheckedOptions] = useState([]);
-
-//   // Handle checkbox change
-//   const handleCheckboxChange = (option) => (event) => {
-//     if (event.target.checked) {
-//       setCheckedOptions((prev) => [...prev, option]);
-//     } else {
-//       setCheckedOptions((prev) => prev.filter((item) => item !== option));
-//     }
-//   };
-
-//   return (
-//     <div className="flex flex-wrap justify-start gap-6 text-white">
-//       {["BUSINESS", "HOUSE", "SOLAR FARM"].map((option) => (
-//         <label
-//           key={option}
-//           className="flex items-center gap-2 cursor-pointer font-lato font-bold text-[15px]"
-//         >
-//           <CustomCheckbox
-//             checked={checkedOptions.includes(option)}
-//             onChange={handleCheckboxChange(option)}
-//           />
-//           <span>{option}</span>
-//         </label>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default CheckboxList;
 "use client";
 import React, { useState } from "react";
 import CustomCheckbox from "./CustomCheckbox";

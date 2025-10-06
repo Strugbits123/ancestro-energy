@@ -342,7 +342,7 @@ export default function Home() {
               {Array.from({ length: 18 }).map((_, i) => (
                 <div
                   key={i}
-                  className="relative w-full aspect-[3/2] max-w-[60px] md:w-[40px] md:h-[27px]"
+                  className="relative w-full aspect-[3/2] max-w-[60px] md:w-[48px] md:h-[27px]"
                 >
                   <Image
                     src={`/flags/flag${i}.png`}

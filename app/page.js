@@ -193,7 +193,7 @@ export default function Home() {
         onClick={() => setIsModalOpen(true)}
         className="fixed right-1 bottom-[35%] rotate-90 animate-top-to-bottom-hop z-50 
                    tracking-[2px] font-lato font-bold text-[16px] px-8 py-2 
-                   shadow-[0_10px_30px_rgba(248,176,59,0.8)] text-white"
+                   shadow-[0_10px_30px_rgba(248,176,59,0.8)] text-white border-1 border-[#F8B03B] "
         style={{ backgroundColor: "rgba(248,176,59,0.5)" }}
       >
         {t("fixedButton.applyButton").toUpperCase()}

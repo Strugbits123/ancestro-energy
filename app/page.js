@@ -170,7 +170,7 @@ export default function Home() {
       {/* Language Toggle Button */}
       <button
         onClick={toggleLanguage}
-        className="fixed top-4 right-4 z-50 bg-[#F8B03B] text-black font-lato font-bold px-4 py-2 rounded-full text-sm shadow-[0_4px_10px_rgba(248,176,59,0.5)]"
+        className="fixed top-4 right-4 z-50 bg-[#F8B03B] text-black font-lato font-bold px-4 py-2 rounded-full text-sm shadow-[0_4px_10px_rgba(248,176,59,0.5)] cursor-pointer"
       >
         {i18n.language === "en" ? "Español" : "English"}
       </button>
@@ -332,7 +332,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/70" />
         <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between py-20 px-6 relative z-10">
           <div className="md:w-[60%] text-white space-y-10">
-            <h1 className="text-3xl md:text-[45px] font-lato font-bold leading-tight">
+            <h1 className="text-3xl md:text-[45px] font-lato font-bold leading-tight ">
               {t("hero.title")}
             </h1>
             <p className="text-base font-lato md:text-xl max-w-3xl">
@@ -504,7 +504,7 @@ export default function Home() {
           <p className="text-base md:text-[30px] font-helvetica text-white max-w-3xl mx-auto">
             {t("energyTransition.description")}
           </p>
-          <Button variant="white">
+          <Button variant="white_yellow">
             {t("energyTransition.button")}
           </Button>
         </div>

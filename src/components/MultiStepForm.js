@@ -331,7 +331,7 @@ const MultiStepForm = () => {
             {/* Navigation */}
             <button
               onClick={nextStep}
-              className="w-full px-8 py-3 rounded-full font-bold text-sm md:text-[18px] font-lato"
+              className="w-full px-8 py-3 rounded-full font-bold text-sm md:text-[18px] font-lato cursor-pointer"
               style={{
                 backgroundColor: "#F8B03B",
                 color: "#000000",

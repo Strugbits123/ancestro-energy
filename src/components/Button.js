@@ -15,6 +15,7 @@ const Button = ({
       "border-[#F8B03B] text-[#F8B03B] bg-transparent  hover:bg-[#F8B03B] hover:text-black hover:shadow-[0_10px_30px_rgba(248,176,59,0.8)]",
     white:
       "border-white text-white bg-transparent  hover:bg-white hover:text-black hover:shadow-[0_10px_30px_rgba(255,255,255,0.7)]",
+      white_yellow:"border-white text-white bg-transparent  hover:bg-[#F8B03B] hover:text-black hover:shadow-[0_10px_30px_rgba(248,176,59,0.8)] hover:border-[#F8B03B]",
   };
 
   return (

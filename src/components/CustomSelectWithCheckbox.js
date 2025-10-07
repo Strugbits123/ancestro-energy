@@ -52,7 +52,7 @@ const CustomSelectWithCheckbox = ({
       {/* Dropdown */}
       {open && (
         <ul
-          className="absolute left-0 mt-1 w-full rounded-md shadow-lg bg-black/50 backdrop-blur-sm z-40 bg-[#FFFFFF1A]"
+          className="absolute left-0 mt-1 w-full rounded-md shadow-lg bg-black/50 backdrop-blur-md z-40 bg-[#FFFFFF1A]"
           style={{ borderColor: "#FFFFFF1A" }}
         >
           {options.map((opt) => (

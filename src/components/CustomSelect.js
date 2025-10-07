@@ -39,7 +39,7 @@ const CustomSelect = () => {
       {/* Dropdown */}
       {open && (
         <ul
-          className="absolute left-0 mt-1 w-full rounded-md shadow-lg backdrop-blur-lg z-10 bg-[#FFFFFF1A]"
+          className="absolute left-0 mt-1 w-full rounded-md shadow-lg bg-black/20 backdrop-blur-md z-10 bg-[#FFFFFF1A]"
           style={{
             borderColor: "#FFFFFF1A",
           }}

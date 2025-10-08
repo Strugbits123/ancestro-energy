@@ -124,7 +124,7 @@ export default function Header() {
                 top: '2.5rem',
                 bottom: '2.5rem',
                 maxHeight: 'calc(100vh - 5rem)',
-                
+
                 zIndex: 10000
               }}
             >
@@ -150,7 +150,7 @@ export default function Header() {
                   { title: 'DONATE', link: '/donate' },
                   { title: 'EARN', link: '/solar/earn' }
                 ].map((path, i) => (
-                  <Link key={i} onClick={() => setIsMenuOpen(false)} href={path.link} className='block w-full text-left px-2 py-1 md:px-4 md:py-3 text-white font-medium  tracking-wider uppercase rounded-lg  relative overflow-hidden hover:cursor-pointer'>
+                  <Link key={i} onClick={() => setIsMenuOpen(false)} href={path.link} className='block w-full text-left px-2 py-1 md:px-4 md:py-3 text-white font-medium  tracking-wider uppercase rounded-lg  relative hover:cursor-pointer'>
                     <span className="relative z-10 text-lg md:text-2xl transition-transform duration-300 group-hover:scale-105">{path.title}</span>
                   </Link>
                 ))}

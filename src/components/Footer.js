@@ -97,30 +97,30 @@ export default function Footer() {
           {/* Partner Logos */}
           <div className="w-fit mx-auto flex flex-wrap justify-between items-center gap-2 md:gap-4 px-15 py-6 bg-gradient-to-r from-white/36 to-gray-500/0 border border-white/30 backdrop-blur-sm rounded-lg mb-6">
             <img
-                src={`/images/Ancestro-Capital.png`}
-                alt={`flag`}
-                className="w-[324px] h-[40px] rounded-sm  shadow"
-              />
-              <img
-                src={`/images/Ancestro-Charge.png`}
-                alt={`flag`}
-                className="w-[244px] h-[40px] rounded-sm  shadow"
-              />
-              <img
-                src={`/images/AncestroProject.png`}
-                alt={`flag`}
-                className="w-[235px] h-[40px] rounded-sm  shadow"
-              />
-              <img
-                src={`/images/Ancestro-Sustainability.png`}
-                alt={` flag`}
-                className="w-[215px] h-[40px] rounded-sm  shadow"
-              />
-              <img
-                src={`/images/Ancestro-Foundation.png`}
-                alt={`flag`}
-                className="w-[164px] h-[40px] rounded-sm shadow"
-              />
+              src={`/images/Ancestro-Capital.png`}
+              alt={`flag`}
+              className="w-[324px] h-[40px] rounded-sm  shadow"
+            />
+            <img
+              src={`/images/Ancestro-Charge.png`}
+              alt={`flag`}
+              className="w-[244px] h-[40px] rounded-sm  shadow"
+            />
+            <img
+              src={`/images/AncestroProject.png`}
+              alt={`flag`}
+              className="w-[235px] h-[40px] rounded-sm  shadow"
+            />
+            <img
+              src={`/images/Ancestro-Sustainability.png`}
+              alt={` flag`}
+              className="w-[215px] h-[40px] rounded-sm  shadow"
+            />
+            <img
+              src={`/images/Ancestro-Foundation.png`}
+              alt={`flag`}
+              className="w-[164px] h-[40px] rounded-sm shadow"
+            />
           </div>
 
           {/* Country Flags */}
@@ -164,7 +164,7 @@ export default function Footer() {
           background: 'linear-gradient(129.65deg, #C4952D -68.94%, #AE7F2A -37.03%, #F5DC7B 0.2%, #AE7F2A 189.02%)'
         }}
       >
-        <div className="container-2xl mx-auto px-20 sm:px-30 md:px-40">
+        <div className="container-2xl mx-auto px-20 sm:px-30 md:px-20 md:px-40">
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
             {/* Legal Links */}
             <div className="flex flex-wrap justify-center lg:justify-start items-center gap-4 text-sm font-bold tracking-wider uppercase text-black">
@@ -181,14 +181,21 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="flex flex-col lg:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm font-bold tracking-wider uppercase text-black">
               <a href="mailto:info@ancestroenergy.com" className="flex items-center gap-2 hover:underline">
-                <span className='w-fit h-fit'><img src={'/icons/mail.png'} className='h-full w-full'/></span> 
+                
+                <span className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0">
+                  <img src="/icons/mail.png" alt="mail" className="w-full h-full object-contain" />
+                </span>
+
                 <div className='underline'>info@ancestroenergy.com</div>
               </a>
               <div className="flex items-center space-x-4">
-                <span className='w-fit h-fit'><img src={'/icons/phone.png'} className='h-full w-full'/></span>
+                
+                <span className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0">
+                  <img src="/icons/phone.png" alt="mail" className="w-full h-full object-contain" />
+                </span>
                 <div className='flex flex-col md:flex-row gap-2'>
-                <div>+1 (555) 123-45675</div>
-                <span>+44 20 7946 0958</span>
+                  <div>+1 (555) 123-45675</div>
+                  <span>+44 20 7946 0958</span>
                 </div>
               </div>
               {/* Social Icons */}

@@ -18,7 +18,7 @@ export default function DiscoverMore() {
                 <div className="container-2xl mx-auto px-[55px] h-[416px] max-w-[1004px] text-center h-full flex items-start w-[88%] mt-60">
                     <div className="flex flex-col gap-4 w-full">
                         <div className="gap-2 w-full items-center mb-5">
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-lato font-bold text-white leading-tight text-center tracking-wide uppercase max-w-6xl">
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-lato font-bold text-white leading-tight text-center tracking-wide uppercase max-w-6xl">
                                 Learn How solar can help your wallet & your planet.
                             </h1>
                             <h3 className="text-white/70 text-xl font-bold text-center">Watch the videos in the education library</h3>

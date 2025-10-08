@@ -31,9 +31,9 @@ export default function Home() {
           </h1>
 
           {/* CTA Cards Container */}
-          <div className="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-8 mt-8 md:mt-16 max-w-4xl mx-auto">
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-8 mt-8 md:mt-16 max-w-[759px] mx-auto">
             {/* Left Card - Customer */}
-            <div className="flex flex-col justify-between items-center h-[313px] p-6  md:p-8 gap-8 w-full max-w-sm bg-gradient-to-r from-white/30 via-white/20 to-white/10 border border-white/30 backdrop-blur-lg rounded-3xl shadow-2xl">
+            <div className="flex-[4] flex flex-col justify-between items-center h-[313px] px-6 py-4 md:py-6 md:px-8 gap-8 w-full max-w-sm bg-gradient-to-r from-white/30 via-white/20 to-white/10 border border-white/30 backdrop-blur-lg rounded-3xl shadow-2xl">
               {/* Features List */}
               <div className="flex flex-col items-start gap-4 w-full">
                 {/* $0 Investment */}
@@ -78,11 +78,11 @@ export default function Home() {
               </div>
 
               {/* CTA Button */}
-              <SunButton redirect={"/solar"} className="w-full" textClassName='whitespace-nowrap text-sm md:text-base lg:text-lg '>I WANT SOLAR</SunButton>
+              <SunButton redirect={"/solar"} className="w-fit" textClassName='whitespace-nowrap text-sm md:text-base lg:text-lg '>I WANT SOLAR</SunButton>
             </div>
 
             {/* Right Card - Dealer */}
-            <div className="flex flex-col justify-between items-center h-[313px] p-6 md:p-8 gap-8 w-full max-w-sm bg-gradient-to-r from-white/10 via-white/20 to-white/30 border border-white/30 backdrop-blur-lg rounded-3xl shadow-2xl">
+            <div className="flex-[5] flex flex-col justify-between items-center h-fit md:h-[313px] px-6 py-4 md:py-6 md:px-8 gap-8 w-full max-w-sm bg-gradient-to-r from-white/10 via-white/20 to-white/30 border border-white/30 backdrop-blur-lg rounded-3xl shadow-2xl">
               {/* Features List */}
               <div className="flex flex-col items-start gap-4 w-full">
                 {/* Grow Your Business */}
@@ -118,7 +118,7 @@ export default function Home() {
               </div>
 
               {/* CTA Button */}
-              <SunButton redirect={'/dealer'} className="w-full" textClassName='whitespace-nowrap text-sm md:text-base lg:text-lg '>I WANT TO BECOME A DEALER</SunButton>
+              <SunButton redirect={'/dealer'} className="w-fit" textClassName='whitespace-nowrap text-sm md:text-base lg:text-lg '>I WANT TO BECOME A DEALER</SunButton>
             </div>
           </div>
         </div>

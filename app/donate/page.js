@@ -13,9 +13,9 @@ export default function Donate() {
                         `,
                 }}
             >
-                <div className="container-2xl mx-auto px-[55px] text-center h-full flex flex-col mt-60 w-[88%]">
+                <div className="container-2xl mx-auto px-[55px] text-center h-full flex flex-col mt-60 w-full sm:w-[88%]">
                     <div className="flex flex-col gap-4 w-full items-center justify-start mt-60">
-                        <h1 className="text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl">
+                        <h1 className="text-center text-[22px] sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl">
                             LET'S SAVE THE WORLD
                         </h1>
                     </div>
@@ -30,7 +30,7 @@ export default function Donate() {
                         </h1>
                     </div>
                 </div>
-                <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
                     {[
                         {
                             img: '/images/donate-1.png',
@@ -70,13 +70,13 @@ export default function Donate() {
                             <div className="absolute bottom-0 p-5 w-full">
                                 <h2
                                     className="font-lato text-xl tracking-[2px] font-bold uppercase text-white
-          transition-all duration-500 group-hover:-translate-y-4"
+          transition-all duration-1500 group-hover:-translate-y-4"
                                 >
                                     {card.title}
                                 </h2>
                                 <span
                                     className="opcaity:100 md:opacity-0 max-h-0 overflow-hidden block font-lato text-white text-sm
-          transition-all duration-500 group-hover:opacity-100 group-hover:max-h-[200px] group-hover:mt-2"
+          transition-all duration-1500 group-hover:opacity-100 group-hover:max-h-[200px] group-hover:mt-2"
                                 >
                                     {card.description}
                                 </span>

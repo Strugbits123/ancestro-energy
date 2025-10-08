@@ -44,17 +44,14 @@ const LatinAmericaMap = () => {
     useEffect(() => {
         const loadMapData = async () => {
             try {
-                // console.log("Loading map data from:", WORLD_MAP);
                 const response = await fetch(WORLD_MAP);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
-                // console.log("Map data loaded successfully:", data);
                 setMapData(data);
                 setLoading(false);
             } catch (err) {
-                // console.error("Error loading map data:", err);
                 setError(err.message);
                 setLoading(false);
             }
@@ -80,7 +77,6 @@ const LatinAmericaMap = () => {
                 <div className="text-center text-red-600">
                     <p className="font-semibold">Error loading map:</p>
                     <p className="text-sm">{error}</p>
-                    {/* <p className="text-xs mt-2">Check console for more details</p> */}
                 </div>
             </div>
         );
@@ -122,17 +118,13 @@ const LatinAmericaMap = () => {
 
                 <Geographies geography={mapData}>
                     {({ geographies }) => {
-                        // console.log("All geographies count:", geographies.length);
                         const latinAmericaGeos = geographies.filter((geo) => {
                             const countryName = geo.properties.name;
                             const isLatinAmerica = LATIN_AMERICA_NAMES.includes(countryName);
-                            // if (isLatinAmerica) {
-                            //     console.log("Found Latin America country:", countryName);
-                            // }
+                            
                             return isLatinAmerica;
                         });
 
-                        // console.log("Latin America countries found:", latinAmericaGeos.length);
 
                         return latinAmericaGeos.map((geo) => {
                             const countryName = geo.properties.name;
@@ -146,7 +138,6 @@ const LatinAmericaMap = () => {
                                     geography={geo}
                                     onMouseEnter={() => {
                                         setHovered(countryName);
-                                        // console.log("Hovered:", countryName);
                                     }}
                                     onMouseLeave={() => setHovered(null)}
                                     style={{

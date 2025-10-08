@@ -15,7 +15,7 @@ export default function Earn() {
             >
                 <div className="container-2xl mx-auto px-[55px] text-center h-full flex flex-col mt-60 w-full sm:w-[88%]">
                     <div className="flex flex-col gap-4 w-full items-center justify-start mt-10">
-                        <h1 className="md:whitespace-nowrap text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl">
+                        <h1 className="whitespace-nowrap text-center text-[22px] [@media(min-width:500px)]:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl">
                             ways to earn with ancestro
                         </h1>
                     </div>
@@ -33,7 +33,7 @@ export default function Earn() {
                                     <div className="h-30 w-30 lg:h-40 lg:w-40 flex justify-around items-center rounded-[30px] bg-gradient-to-r from-white/20 via-white/10 to-white/5 border border-white/30 backdrop-blur-lg">
                                         <img className="h-13 w-13 lg:h-20 lg:w-20" src={el.img} />
                                     </div>
-                                    <div className="font-bold text-2xl text-white max-w-[160px]">{el.title}</div>
+                                    <div className="font-bold text-2xl text-white max-w-[320px] sm:max-w-[160px] whitespace-nowrap text-center sm:whitespace-normal">{el.title}</div>
                                     <div className="flex flex-col md:flex-row gap-2 max-w-6xl ">
                                         <SunButton
                                             text="[#FFCD28]"

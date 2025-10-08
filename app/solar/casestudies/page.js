@@ -58,8 +58,8 @@ export default function CaseStudies() {
                 </div>
             </div>
 
-            <div className='w-full items-center justify-center mt-20'>
-                <h3 className='text-center text-white font-[700] font-lato text-md'>TRUSTED BY MANY</h3>
+            <div className='w-full items-center justify-center mt-30'>
+                <h3 className='text-center text-white font-semibold font-lato text-xl'>TRUSTED BY MANY</h3>
                 <CarouselComponent />
             </div>
 

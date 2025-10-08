@@ -1,4 +1,5 @@
 'use client'
+import { redirect } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
 
 const CarouselComponent = ({ variant = "default" }) => {
@@ -48,9 +49,9 @@ const CarouselComponent = ({ variant = "default" }) => {
 
     return (
         <div className="w-full overflow-hidden relative pb-15 mt-5 border-none">
-            {/* Left fade - Large Screens */}
+            {/* Left fade - Small Screens */}
             <div className="hidden md:block pointer-events-none absolute top-0 left-0 h-full w-[250px] bg-gradient-to-r from-black to-transparent z-10" />
-            {/* Right fade - Large Screens */}
+            {/* Right fade - Small Screens */}
             <div className="hidden md:block pointer-events-none absolute top-0 right-0 h-full w-[250px] bg-gradient-to-l from-black to-transparent z-10" />
 
             {/* Left fade - Large Screens */}
@@ -95,7 +96,14 @@ const CarouselComponent = ({ variant = "default" }) => {
                             </div>
                         </div>
 
-                        <div className="text-white mt-2 underline">Read More</div>
+                        <div onClick={() => {
+                            if (variant === "default") {
+                                redirect('/dealer/casestudies')
+                            }
+                        }}
+                            className="text-white mt-2 underline">
+                            Read More
+                        </div>
                     </li>
                 ))}
             </ul>

@@ -30,9 +30,8 @@ export default function Apply() {
                     <div className=" flex flex-col items-start gap-4 w-full">
 
                         <h1 className="flex flex-col gap-1 text-3xl md:text-4xl lg:text-5xl xl:text-6xl  font-lato font-bold text-white leading-tight text-start tracking-wide uppercase ">
-                            {/* {"ONE DECISION\n ETERNAL IMPACT."} */}
                             <div className="whitespace-nowrap text-3xl md:text-4xl lg:text-5xl xl:text-6xl  font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-xl ">ONE DECISION</div>
-                            <div className="whitespace-nowrap text-3xl md:text-4xl lg:text-5xl xl:text-6xl  font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-xl ">ETERNAL IMPACT</div>
+                            <div className="whitespace-nowrap text-3xl md:text-4xl lg:text-5xl xl:text-6xl  font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-xl ">ETERNAL IMPACT.</div>
                         </h1>
                         <h3 className="text-white/70 text-md font-bold text-left lg:text-center uppercase tracking-[2px]">Apply to join LATAM’s largest dealer network.</h3>
 
@@ -322,7 +321,7 @@ export default function Apply() {
                     <p className='mt-1 mb-10 self-center text-center text-white/80 font-[500] font-lato text-md'>Choose the perfect plan for your business needs</p>
                 </div>
             </div>
-            <div className="max-w-[1348px] mx-auto flex flex-wrap justify-center md:justify-end gap-4">
+            <div className="max-w-[1348px] mx-auto flex flex-wrap justify-center lg:justify-end gap-4">
 
                 {
                     ['$2,000', '$3,000', '$5,000', '$10,000'].map((el, i) => (

@@ -293,7 +293,7 @@ export default function Home() {
                   {t("modal.checkboxOptions", { returnObjects: true }).map((item, index) => (
                     <label
                       key={item}
-                      className="flex items-start gap-1 cursor-pointer min-w-[140px] sm:min-w-[180px]"
+                      className="flex items-start gap-2 cursor-pointer min-w-[140px] sm:min-w-[180px]"
                     >
                       <CustomCheckbox
                         checked={checkboxState.includes(item)}

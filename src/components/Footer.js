@@ -23,7 +23,6 @@ export default function Footer() {
 
         {/* Footer Links Grid */}
         <div className="mx-auto xl:ml-20 px-10 sm:px-20 md:px-30 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 2xl:gap-12 mb-1 xl:mb-12">
-          {/* Solutions Column */}
           <div>
             <h3
               className="font-bold text-sm mb-6 tracking-wider uppercase"
@@ -39,7 +38,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Dealers Column */}
           <div>
             <h3
               className="font-bold text-sm mb-6 tracking-wider uppercase"
@@ -55,7 +53,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Investors Column */}
           <div>
             <h3
               className="font-bold text-sm mb-6 tracking-wider uppercase"
@@ -71,7 +68,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company Column */}
           <div>
             <h3
               className="font-bold text-sm mb-6 tracking-wider uppercase"
@@ -86,7 +82,9 @@ export default function Footer() {
               <li><a href="#" className="2xl:whitespace-nowrap text-[10px] sm:text-sm  hover:text-yellow-300 transition-colors tracking-wider uppercase">Donate</a></li>
             </ul>
           </div>
-        </div>
+        </div> 
+       
+       
 
         {/* Powered by Section */}
         <div className="text-center mb-8">
@@ -181,7 +179,7 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="flex flex-col lg:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm font-bold tracking-wider uppercase text-black">
               <a href="mailto:info@ancestroenergy.com" className="flex items-center gap-2 hover:underline">
-                
+
                 <span className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0">
                   <img src="/icons/mail.png" alt="mail" className="w-full h-full object-contain" />
                 </span>
@@ -189,7 +187,7 @@ export default function Footer() {
                 <div className='underline'>info@ancestroenergy.com</div>
               </a>
               <div className="flex items-center space-x-4">
-                
+
                 <span className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0">
                   <img src="/icons/phone.png" alt="mail" className="w-full h-full object-contain" />
                 </span>

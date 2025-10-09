@@ -40,7 +40,7 @@ export default function Solar() {
                         <h1 className="w-full text-3xl md:text-4xl lg:text-5xl xl:text-[53px] 2xl:text-6xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl mx-auto">
                             Join LATAM’s Fastest-Growing Solar Subscription Network.
                         </h1>
-                        <span className="text-md text-left text-white font-lato">$0 upfront. Day-one savings. Long-term stability. Available now in 18 countries.</span>
+                        <span className="text-xl text-left text-white font-lato">$0 upfront. Day-one savings. Long-term stability. Available now in 18 countries.</span>
                         <div className="flex flex-wrap justify-center items-center gap-1 mb-4">
                             {SolarCaseStudy.map((study, i) => (
                                 <FlagHover
@@ -82,8 +82,8 @@ export default function Solar() {
                         </div>
                         <div className="flex justify-start mt-4 w-full">
                             <SunButton redirect={'/solar/apply'} text={'[#FFCD28]'}
-                                className="p-1 whitespace-nowrap text-[10px] lg:text-[12px] xl:text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
-                                textClassName=" whitespace-nowrap text-sm lg:text-base xl:text-[15px]"
+                                className="p-1 py-4 lg:ml-4 whitespace-nowrap text-[10px] lg:text-[12px] xl:text-[15px] border-yellow-300 text-base text-yellow-300 bg-gradient-to-r from-yellow-400/20  to-transparent"
+                                textClassName=" whitespace-nowrap text-sm lg:text-base xl:text-[14px] tracking-[2px]"
                             >
                                 APPLY NOW — JOIN THE SOLAR TRIBE
                             </SunButton>
@@ -91,15 +91,6 @@ export default function Solar() {
                     </div>
 
                     {/* Right Side: Image */}
-                    {/* <div className="flex-2">
-                        <div className="w-[100%] overflow-hidden relative max-w-2xl rounded-[5%]">
-                            <img
-                                src="/images/solar-video.png"
-                                alt="solar"
-                                className="w-full object-cover object-center scale-[1.35]"
-                            />
-                        </div>
-                    </div> */}
                     <div className="flex-[2] min-h-[300px] md:min-h-[500px] w-full">
                         <div className="w-full xl:aspect-[716/664] overflow-hidden relative rounded-[5%]">
                             <img
@@ -118,9 +109,8 @@ export default function Solar() {
         </section>
 
         {/*OUR CASE STUDY*/}
-        <section className="flex flex-col bg-black  py-10 items-center">
-            {/* <h2 className="text-center font-lato font-bold text-[25px] font-lato leading-relaxed text-white p-5">OUR CASE STUDY</h2> */}
-            <div className="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-[95%] md:w-[90%] lg:w-[82%] justify-items-center mb-10 gap-7">
+        <section className="flex flex-col bg-black  pt-10 py-20 items-center">
+            <div className="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-[95%] md:w-[90%] lg:w-[82%] justify-items-center mb-10 gap-10">
                 {
                     SolarCaseStudy.map((study, i) => i < 3 && (
                         <CaseStudy
@@ -133,12 +123,12 @@ export default function Solar() {
                 }
             </div>
             <div className="flex flex-col md:flex-row gap-3 mt-5">
-                <SunButton redirect={'/solar/casestudies'} textClassName=" whitespace-nowrap text-sm lg:text-base xl:text-[15px]"
+                <SunButton redirect={'/solar/casestudies'} className="py-4" textClassName="tracking-[2px] whitespace-nowrap text-sm lg:text-base xl:text-[14px]"
                 >SEE MORE CASE STUDIES.
                 </SunButton>
                 <SunButton redirect={'/solar/apply'} text={'[#FFCD28]'}
-                    className="text-[15px] font-lato border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
-                    textClassName=" whitespace-nowrap text-sm lg:text-base xl:text-[15px]"
+                    className="py-4 text-[14px] font-lato border-yellow-300 text-base text-yellow-200 bg-gradient-to-r from-yellow-400/20 to-transparent"
+                    textClassName=" whitespace-nowrap text-sm lg:text-base xl:text-[14px] tracking-[2px]"
                 >APPLY NOW — JOIN THE SOLAR TRIBE
                 </SunButton>
             </div>
@@ -146,7 +136,7 @@ export default function Solar() {
 
         {/*LEARN MORE ABOUT ANCESTRO*/}
         <section className="flex flex-col bg-black  py-10 items-center">
-            <h2 className="text-center font-lato font-bold text-[25px] font-lato leading-relaxed text-white p-5 mb-10">LEARN MORE ABOUT ANCESTRO</h2>
+            <h2 className="text-center font-lato font-bold text-[25px] font-lato leading-relaxed text-white p-5 mb-10 tracking-[2px]">LEARN MORE ABOUT ANCESTRO</h2>
             <div className="w-[82%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-10">
                 {
                     [
@@ -156,11 +146,11 @@ export default function Solar() {
                     ].map((card, i) => (
                         <div key={i} className="relative w-full h-[523px] overflow-hidden">
                             <img
-                                className="rounded-lg w-auto h-full object-cover transition-transform duration-1000 hover:scale-125 hover:rounded-lg"
+                                className="rounded-2xl w-auto h-full object-cover transition-transform duration-1000 hover:scale-125 hover:rounded-lg"
                                 src={card.img}
                             />
                             <div className="gap-1 absolute bottom-0 p-5">
-                                <h2 className="font-lato text-[22px] font-bold font-lato text-white uppercase uppercase">{card.title}</h2>
+                                <h2 className="font-lato text-[22px] font-bold font-lato text-white uppercase uppercase tracking-[2px]">{card.title}</h2>
                                 <span className="font-lato text-white font-lato text-[12px]">{card.desc}</span>
                             </div>
                         </div>
@@ -169,11 +159,16 @@ export default function Solar() {
                 }
             </div>
             <div className="flex flex-col md:flex-row gap-3 mt-5">
-                <SunButton redirect={'/solar/discovermore'}>DISCOVER MORE.</SunButton>
+                <SunButton redirect={'/solar/discovermore'}
+                    className="text-[14px] py-4"
+                    textClassName="tracking-[2px]"
+                >
+                    DISCOVER MORE.
+                </SunButton>
                 <SunButton redirect={'/solar/apply'}
                     text={"[#FFCD28]"}
-                    className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
-                    textClassName=" whitespace-nowrap text-sm lg:text-base xl:text-[15px]"
+                    className=" border-yellow-300 text-base text-yellow-200 bg-gradient-to-r from-yellow-400/20 to-transparent"
+                    textClassName=" whitespace-nowrap text-sm lg:text-base xl:text-[14px] tracking-[2px]"
                 >APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
             </div>
         </section>

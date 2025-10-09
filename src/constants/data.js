@@ -3,7 +3,7 @@ export const SolarCaseStudy = [
         country: 'COLOMBIA',
         category: 'FACTORY/INDUSTRIAL PLANT',
         investmentData: ['Immediate Savings: 36%'],
-        description: "Our factory's energy bills were suffocating us. With Ancestro, we started saving from day one—no upfront costs. In just two months, the system was running, and we now project hundreds of thousands in lifetime savings. It has given us financial stability, room to expand production, and the confidence to plan long-term.\n — Carlos M., Factory Owner, Colombia"
+        description: "“Our factory's energy bills were suffocating us. With Ancestro, we started saving from day one—no upfront costs. In just two months, the system was running, and we now project hundreds of thousands in lifetime savings. It has given us financial stability, room to expand production, and the confidence to plan long-term.”\n — Carlos M., Factory Owner, Colombia"
     },
     {
         country: 'MEXICO',

@@ -19,22 +19,22 @@ export default function CaseStudies() {
             >
                 <div className="container-2xl mx-auto px-[55px] text-center h-full flex mt-60 w-[88%]">
                     <div className="flex flex-col gap-4 w-full">
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl">
                             REAL PEOPLE, REAL RESULTS
                         </h1>
 
-                        <div className="flex flex-col md:flex-row gap-2 max-w-6xl items-center">
+                        <div className="flex flex-col lg:flex-row gap-2 max-w-6xl items-center">
                             <SunButton
                                 redirect={'/solar/apply'}
                                 text={'[#FFCD28]'}
-                                className="max-w-[392px] w-full px-4 flex justify-around py-2 md:py-5 text-sm md:text-base border-yellow-300 text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
-                                textClassName="[@media(max-width:450px)]:text-[10px] whitespace-nowrap text-sm lg:text-base"
+                                className="max-w-[385px] w-full px-2 flex justify-around py-2 md:py-4 text-sm md:text-base lg:text-xl border-yellow-400 text-yellow-400 bg-gradient-to-r from-yellow-400/20 to-transparent"
+                                textClassName="tracking-[1px] xl:tracking-[2px] text-[10px] whitespace-nowrap sm:text-xs md:text-sm xl:text-sm"
                             >
                                 APPLY NOW — JOIN THE SOLAR TRIBE
                             </SunButton>
 
                             <button
-                                className="rounded-full uppercase font-bold py-1 max-h-[90px] md:max-h-fit px-3 text-[10px] bg-white md:text-base shadow"
+                                className="rounded-full uppercase tracking-[2px] font-bold py-1 max-h-[90px] md:max-h-fit px-3 text-[9px] bg-white sm:text-[10px] md:text-xs lg:text-sm shadow py-[2px] lg:py-[6px]"
                             >
                                 25 YeaRS of warranty + Guarantees Insurance from ancestro protect.
                             </button>

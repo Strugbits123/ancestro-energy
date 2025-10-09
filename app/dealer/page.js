@@ -69,8 +69,8 @@ export default function Solar() {
                         <div className="flex justify-start mt-4 w-full ">
                             <SunButton redirect={'/dealer/apply'}
                                 text={'secondary'}
-                                className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
-                                textClassName=" whitespace-nowrap text-sm lg:text-base xl:text-[15px]"
+                                className="text-[14px] py-4 border-yellow-300 text-base text-yellow-200 bg-gradient-to-r from-yellow-400/20 to-transparent"
+                                textClassName="tracking-[2px] whitespace-nowrap text-sm lg:text-base xl:text-[14px]"
                             >
                                 APPLY NOW — JOIN THE SOLAR TRIBE
                             </SunButton>
@@ -78,15 +78,6 @@ export default function Solar() {
                     </div>
 
                     {/* Right Side: Image */}
-                    {/* <div className="flex-2">
-                        <div className="w-[100%] overflow-hidden relative max-w-2xl rounded-[5%]">
-                            <img
-                                src="/images/dealer-hero.png"
-                                alt="solar"
-                                className="w-full object-cover object-center scale-[1.35]"
-                            />
-                        </div>
-                    </div> */}
                     <div className="flex-[2] min-h-[300px] md:min-h-[500px] w-full">
                         <div className="w-full xl:aspect-[716/664] overflow-hidden relative rounded-[5%]">
                             <img
@@ -99,7 +90,7 @@ export default function Solar() {
                 </div>
             </div>
 
-            <h2 className="z-50 text-center font-lato font-bold text-[25px] font-lato leading-relaxed text-white p-5">OUR CASE STUDY</h2>
+            <h2 className="z-50 text-center font-lato font-bold text-[25px] font-lato leading-relaxed text-white p-5 tracking-[2px]">OUR CASE STUDY</h2>
 
 
         </section>
@@ -118,8 +109,21 @@ export default function Solar() {
                 }
             </div>
             <div className="flex flex-col md:flex-row gap-3 mt-5">
-                <SunButton redirect={'/dealer/casestudies'}>SEE MORE CASE STUDIES.</SunButton>
-                <SunButton redirect={'/dealer/apply'} text={'secondary'} className="text-[15px] font-lato border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
+                <SunButton
+                    redirect={'/dealer/casestudies'}
+                    className="py-4"
+                    textClassName="tracking-[2px] text-[14px]"
+                >
+                    SEE MORE CASE STUDIES.
+                </SunButton>
+                <SunButton
+                    redirect={'/dealer/apply'}
+                    text={'secondary'}
+                    className="text-[14px] py-4 font-lato border-yellow-300 text-base text-yellow-200 bg-gradient-to-r from-yellow-400/20 to-transparent"
+                    textClassName="tracking-[2px]"
+                >
+                    APPLY NOW — JOIN THE SOLAR TRIBE
+                </SunButton>
             </div>
         </section>
 
@@ -139,7 +143,7 @@ export default function Solar() {
                                 src={card.img}
                             />
                             <div className="gap-1 absolute bottom-0 p-5">
-                                <h2 className="font-lato text-[22px] font-bold font-lato text-white">{card.title}</h2>
+                                <h2 className="font-lato text-[22px] font-bold font-lato text-white tracking-[2px] uppercase">{card.title}</h2>
                                 <span className="font-lato text-white font-lato text-[12px]">{card.desc}</span>
                             </div>
                         </div>
@@ -148,9 +152,21 @@ export default function Solar() {
                 }
             </div>
             <div className="flex flex-col md:flex-row gap-3 mt-5">
-                <SunButton redirect={'/learn'}>DISCOVER MORE.</SunButton>
-                <SunButton redirect={'/dealer/apply'} className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
-            </div>
+                <SunButton
+                    redirect={'/learn'}
+                    className="py-4"
+                    textClassName="tracking-[2px] text-[14px]"
+                >
+                    DISCOVER MORE.
+                </SunButton>
+                <SunButton
+                    redirect={'/dealer/apply'}
+                    text={'secondary'}
+                    className="text-[14px] py-4 font-lato border-yellow-300 text-base text-yellow-200 bg-gradient-to-r from-yellow-400/20 to-transparent"
+                    textClassName="tracking-[2px]"
+                >
+                    APPLY NOW — JOIN THE SOLAR TRIBE
+                </SunButton></div>
         </section>
     </div>);
 }

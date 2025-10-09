@@ -82,7 +82,7 @@ export default function SunButton({
 
   return (
     <Component
-      className={`relative group border ${sizeClasses[size]} ${variantClasses[variant]} rounded-full font-medium overflow-hidden transition-opacity active:bg-yellow-500 active:text-black transition duration-500 ease-in-out ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'} ${className}`}
+      className={`relative group/btn border ${sizeClasses[size]} ${variantClasses[variant]} rounded-full font-medium overflow-hidden transition-all duration-500 ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'} ${className}`}
       onClick={handleClick}
       disabled={disabled}
       type={Component === "button" ? type : undefined}
@@ -91,11 +91,17 @@ export default function SunButton({
       rel={Component === "a" && target === "_blank" ? "noopener noreferrer" : undefined}
       {...props}
     >
-      <span className={`relative z-10 ${textColor[text] || `text-${text}`} ${font === 'regular' ? 'font-[400]' : 'font-[600]'} ${textClassName} group-active:text-black`}>{children}</span>
-      {/* sun circle rising */}
+      <span className={`relative z-10 ${textColor[text] || `text-${text}`} ${font === 'regular' ? 'font-[400]' : 'font-[600]'} ${textClassName} group-active/btn:text-black`}>
+        {children}
+      </span>
+
+      {/* Sun circle rising */}
       <span className="absolute inset-0 flex items-end justify-center">
-        <span className={`${sunSizes[size]} rounded-full bg-yellow-500 opacity-0 translate-y-full transition-all duration-500 ${sunPositions[size]} group-hover:opacity-100 blur-[2px]`}></span>
+        <span
+          className={`${sunSizes[size]} rounded-full bg-yellow-500 opacity-0 translate-y-full transition-all duration-500 hover:opacity-100 hover:translate-y-[18px] blur-[2px] group-hover/btn:opacity-100 group-hover/btn:translate-y-[18px]`}
+        ></span>
       </span>
     </Component>
+
   );
 }

@@ -15,11 +15,11 @@ export default function Earn() {
             >
                 <div className="container-2xl mx-auto px-[55px] text-center h-full flex flex-col mt-60 w-full sm:w-[88%]">
                     <div className="flex flex-col gap-4 w-full items-center justify-start mt-10">
-                        <h1 className="md:whitespace-nowrap text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl">
+                        <h1 className="whitespace-nowrap text-center text-[22px] md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl">
                             ways to earn with ancestro
                         </h1>
                     </div>
-                    <div className="flex flex-col md:flex-row gap-15 lg:gap-50 items-center justify-center my-20">
+                    <div className="flex flex-col xl:flex-row gap-15 lg:gap-50 items-center justify-center my-20">
                         {
                             [{
                                 img: '/icons/host-ev-charger.png',
@@ -33,13 +33,13 @@ export default function Earn() {
                                     <div className="h-30 w-30 lg:h-40 lg:w-40 flex justify-around items-center rounded-[30px] bg-gradient-to-r from-white/20 via-white/10 to-white/5 border border-white/30 backdrop-blur-lg">
                                         <img className="h-13 w-13 lg:h-20 lg:w-20" src={el.img} />
                                     </div>
-                                    <div className="font-bold text-2xl text-white max-w-[160px]">{el.title}</div>
+                                    <div className="font-bold text-2xl text-white max-w-[320px] sm:max-w-[160px] whitespace-nowrap text-center sm:whitespace-normal">{el.title}</div>
                                     <div className="flex flex-col md:flex-row gap-2 max-w-6xl ">
                                         <SunButton
                                             text="[#FFCD28]"
                                             redirect={'/dealer/apply'}
-                                            textClassName='whitespace-nowrap sm:text-base'
-                                            className="text-[11px] sm:text-base py-4 border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
+                                            textClassName='whitespace-nowrap sm:text-base tracking-[2px]'
+                                            className="text-[11px] sm:text-base py-4 border-yellow-300 text-base text-yellow-200 bg-gradient-to-r from-yellow-400/20 to-transparent"
                                         >
                                             APPLY NOW — JOIN THE SOLAR TRIBE
                                         </SunButton>
@@ -51,7 +51,7 @@ export default function Earn() {
                 </div>
                 {/* Partner Logos */}
                 <div className="flex justify-center items-center w-full my-10">
-                    <h1 className="flex justify-center text-center text-lg md:text-xl lg:text-2xl xl:text-3xl font-lato font-bold text-white leading-tight text-start tracking-wide uppercase max-w-6xl">
+                    <h1 className="flex justify-center text-center text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-lato font-bold text-white leading-tight text-start tracking-[2px] uppercase max-w-6xl">
                         Our Companies
                     </h1>
                 </div>

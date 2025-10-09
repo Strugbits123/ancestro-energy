@@ -24,7 +24,8 @@ export default function CaseStudies() {
                         <div className="flex flex-col md:flex-row gap-2 max-w-6xl">
                             <SunButton
                                 redirect={'/dealer/apply'} text='yellow-400'
-                                className="max-w-[392px] whitespace-nowrap text-[10px] lg:text-[12px] xl:text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
+                                className="md:max-w-[392px] !px-2 md:!px-6 py-4 whitespace-nowrap text-[8px] lg:text-[12px] xl:text-[14px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-r from-yellow-400/20  to-transparent"
+                                textClassName='font-lato tracking-[2px]'
                             >
                                 APPLY NOW — JOIN THE SOLAR TRIBE
                             </SunButton>
@@ -34,8 +35,8 @@ export default function CaseStudies() {
             </div>
 
             {/* Case Study Grid */}
-            <div className="container-2xl mx-auto px-[10px] sm:px-[20px] md:px-[55px] -mt-[853px] z-10 flex flex-col items-center gap-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-items-center gap-12">
+            <div className="container-2xl mx-auto px-[10px] sm:px-[20px] md:px-[55px] -mt-[920px] z-10 flex flex-col items-center gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-items-center gap-14">
                     {DealerCaseStudy.map((study, i) => (
                         <CaseStudy
                             key={i}
@@ -48,7 +49,8 @@ export default function CaseStudies() {
                 <div className="flex items-center gap-2 mb-4">
                     <SunButton
                         redirect={'/dealer/apply'} text={'yellow-400'}
-                        className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
+                        className="text-[14px] py-4 border-yellow-300 text-base text-yellow-200 bg-gradient-to-r from-yellow-400/20  to-transparent"
+                        textClassName='tracking-[2px]'
                     >
                         APPLY NOW — JOIN THE SOLAR TRIBE
                     </SunButton>

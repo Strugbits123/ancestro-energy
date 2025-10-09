@@ -24,13 +24,13 @@ export default function Learn() {
                             Grow With Ancestro — More Deals, More Revenue.
                         </h1>
 
-                        <span className="text-sm md:text-base lg:text-md text-left text-white font-lato">Sell what no one else can: $0 down solar subscriptions across 18 countries. Higher close rates, recurring revenue, and the tools to scale your business.</span>
+                        <span className="text-sm md:text-base lg:text-lg text-left text-white font-lato">Sell what no one else can: $0 down solar subscriptions across 18 countries. Higher close rates, recurring revenue, and the tools to scale your business.</span>
                         <div className="flex flex-col md:flex-row gap-2 max-w-6xl">
                             <SunButton
                                 redirect={'/dealer/apply'}
                                 text={"secondary"}
-                                 textClassName=" whitespace-nowrap text-[11px] lg:text-base xl:text-[15px]"
-                                className="text-[10px] lg:text-base xl:text-[15px] border-yellow-300  text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
+                                textClassName=" md:tracking-[2px] whitespace-nowrap text-[11px] lg:text-base xl:text-[15px]"
+                                className="py-4 text-[10px] lg:text-base xl:text-[14px] border-yellow-300  text-yellow-200 bg-gradient-to-r from-yellow-400/20 to-transparent"
                             >
                                 APPLY NOW — JOIN THE SOLAR TRIBE
                             </SunButton>
@@ -65,7 +65,7 @@ export default function Learn() {
 
         </section>
 
-        <section className="flex flex-col bg-black  py-10 items-center pt-45 [@media(min-width:365px)]:pt-35 sm:!pt-0 sm:-mt-[350px] xl:-mt-[500px]">
+        <section className="flex flex-col bg-black  py-10 items-center pt-45 [@media(min-width:365px)]:pt-35 sm:!pt-0 -mt-[250px] sm:-mt-[450px] xl:-mt-[500px]">
             <h2 className="text-center font-lato font-bold text-[25px] font-lato leading-relaxed text-white p-5 mb-10">SEE HOW IT WORKS</h2>
             <div className="w-[82%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-10">
                 {
@@ -83,7 +83,7 @@ export default function Learn() {
                                 src={card.img}
                             />
                             <div className="gap-1 absolute bottom-0 p-5">
-                                <h2 className="font-lato text-[22px] font-bold font-lato text-white uppercase">{card.title}</h2>
+                                <h2 className="font-lato text-[22px] font-bold font-lato text-white uppercase tracking-[2px]">{card.title}</h2>
                                 <span className="font-lato text-white font-lato text-[12px]">{card.desc}</span>
                             </div>
                         </div>
@@ -92,7 +92,9 @@ export default function Learn() {
                 }
             </div>
             <div className="flex flex-col md:flex-row gap-3 mt-5">
-                <SunButton text='secondary' redirect={'/dealer/apply'} className="text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
+                <SunButton text='secondary' redirect={'/dealer/apply'} className="py-4 text-[14px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-r from-yellow-400/20  to-transparent"
+                    textClassName='tracking-[2px]'
+                >APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
             </div>
         </section>
 
@@ -108,7 +110,7 @@ export default function Learn() {
                                 src={card.img}
                             />
                             <div className="gap-1 absolute bottom-0 p-5">
-                                <h2 className="font-lato text-[22px] font-bold font-lato text-white">{card.title}</h2>
+                                <h2 className="font-lato text-[22px] font-bold font-lato text-white tracking-[2px]">{card.title}</h2>
                                 <span className="font-lato text-white font-lato text-[12px]">{card.desc}</span>
                             </div>
                         </div>
@@ -117,14 +119,17 @@ export default function Learn() {
                 }
             </div>
             <div className="flex flex-col md:flex-row gap-3 mt-5">
-                <SunButton text='secondary' redirect={'/dealer/apply'} className="py-5 text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20">APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
+                <SunButton text='secondary' redirect={'/dealer/apply'}
+                    className="py-5 text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-r from-yellow-400/20  to-transparent"
+                    textClassName='tracking-[2px]'
+                >APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
             </div>
             <div className='w-[87%] md:w-[74%] mt-20 py-10'>
                 <div className='max-h-fit p-6 2xl:max-h-[352px] w-auto 2xl:px-7 2xl:py-10 md:p-15 flex flex-col items-center gap-10 rounded-4xl border border-secondary text-base text-yellow-200 bg-gradient-to-r from-yellow-300/20 via-yellow-100/20 to-black/20'>
                     <h1 className='uppercase text-center text-xl  md:text-3xl lg:text-4xl xl:text-5xl text-white font-bold tracking-[2px]'>Your Time is Now. Join the Largest Dealer Network in Latin America.</h1>
                     <SunButton text='secondary' redirect={'/dealer/apply'}
-                        className="2xl:min-h-[63px] [@media(min-width:1800px)]:min-h-[58px] py-5 text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-b from-yellow-100/20 via-yellow-300/20 to-yellow-500/20"
-                        textClassName=" whitespace-nowrap text-sm lg:text-base xl:text-[15px]"
+                        className="py-4 2xl:min-h-[63px] [@media(min-width:1800px)]:min-h-[58px] py-5 text-[15px] border-yellow-300 text-base text-yellow-200 bg-gradient-to-r from-yellow-400/20 to-transparent"
+                        textClassName="md:tracking-[2px] whitespace-nowrap text-sm lg:text-base xl:text-[14px]"
 
                     >APPLY NOW — JOIN THE SOLAR TRIBE</SunButton>
 

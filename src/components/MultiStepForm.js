@@ -42,9 +42,9 @@ const MultiStepForm = () => {
 
   const formData = watch();
 
-  useEffect(() => {
-    reset(formData, { keepValues: true, keepDirty: true, keepTouched: true });
-  }, [i18n.language]);
+  // useEffect(() => {
+  //   reset(formData, { keepValues: true, keepDirty: true, keepTouched: true });
+  // }, [i18n.language]);
 const handleCheckboxChange = (field, option) => {
   if (field === "projectType" || field === "propertyOwner" || field === "step2") {
     setValue(field, option, { shouldValidate: true });

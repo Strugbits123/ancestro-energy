@@ -236,7 +236,7 @@ export default function Home() {
           onClick={() => setIsModalOpen(false)}
         >
           <div
-            className="w-full max-w-[95vw] sm:w-5xl flex flex-col h-[85vh] sm:h-[80vh] min-h-[500px] rounded-2xl overflow-y-auto"
+            className="w-full max-w-[95vw] sm:w-5xl flex flex-col h-[85vh] sm:h-[83vh] min-h-[500px] rounded-2xl overflow-y-auto p-6 px-12"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Top Section: Background and Foreground Image with Heading */}
@@ -263,12 +263,12 @@ export default function Home() {
             </div>
 
             {/* Bottom Section: Card with Form */}
-            <div className="bg-[#FFFFFF1A] backdrop-blur-lg p-3 sm:p-6 md:p-8 flex-1 flex items-center justify-center">
-              <form onSubmit={handleSubmit(onModalSubmit)} className="w-full max-w-[95%] sm:max-w-2xl space-y-5 sm:space-y-5 bg-[#0000004D] p-3 sm:p-5 md:p-2 rounded-2xl">
+            <div className="bg-[#FFFFFF1A] backdrop-blur-lg p-3 sm:p-6 md:p-8  flex-1 flex items-center justify-center">
+              <form onSubmit={handleSubmit(onModalSubmit)} className="w-full max-w-[95%] sm:max-w-2xl space-y-5 sm:space-y-6 bg-[#0000004D] p-3 sm:p-5 md:p-12 rounded-2xl">
                 {/* Heading */}
                 <h4 className="text-base sm:text-lg md:text-xl font-bold text-white font-lato text-center">
                   {t("modal.subtitle")}
-                </h4>
+                </h4>   
 
                 {/* Submission Error */}
                 {submissionError && (

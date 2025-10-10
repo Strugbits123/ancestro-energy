@@ -80,7 +80,7 @@ async function sendNotificationEmails(formValues) {
   const adminMsg = {
     to: process.env.ADMIN_EMAIL || process.env.FROM_EMAIL,
     from: process.env.FROM_EMAIL,
-    templateId: "d-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", // ⬅️ replace with your SendGrid ADMIN template ID
+    templateId: "d-fd0ce1edc140402285c124b2df59db0c", // ⬅️ replace with your SendGrid ADMIN template ID
     dynamic_template_data: {
       fullName,
       email,
@@ -94,7 +94,7 @@ async function sendNotificationEmails(formValues) {
   const clientMsg = {
     to: email,
     from: process.env.FROM_EMAIL,
-    templateId: "d-yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy", // ⬅️ replace with your SendGrid CLIENT template ID
+    templateId: "d-2f12e6bcbba74309b740210f0893d95b", // ⬅️ replace with your SendGrid CLIENT template ID
     dynamic_template_data: {
       fullName,
       email,

@@ -130,7 +130,6 @@
 // }
 
 
-
 "use client";
 import Image from "next/image";
 import Button from "../src/components/Button";
@@ -144,8 +143,9 @@ import { useForm, Controller } from "react-hook-form";
 export default function Home() {
   const { t, i18n } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false); // Added for loading state
-  const [submissionError, setSubmissionError] = useState(null); // Added for error display
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionError, setSubmissionError] = useState(null);
+  const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const { register, handleSubmit, formState: { errors }, control, watch, reset } = useForm({
     mode: "onSubmit",
     defaultValues: {
@@ -181,17 +181,22 @@ export default function Home() {
 
       console.log("Form submitted:", data);
       setSubmissionError(null);
+      setSubmissionSuccess(true);
       reset({
         fullName: "",
         email: "",
         phone: "",
         address: "",
         checkboxOptions: [],
-      }); 
-      setIsModalOpen(false);
+      });
+      setTimeout(() => {
+        setIsModalOpen(false);
+        setSubmissionSuccess(false);
+      }, 2000); // Close modal after 2 seconds
     } catch (error) {
       console.error("Submission error:", error);
       setSubmissionError(error.message || "An error occurred while submitting the form");
+      setSubmissionSuccess(false);
     } finally {
       setIsSubmitting(false);
     }
@@ -227,7 +232,10 @@ export default function Home() {
       {/* Fixed Hopping Button */}
       <Button
         variant="yellow"
-        onClick={() => setIsModalOpen(true)}
+        onClick={() => {
+          setIsModalOpen(true);
+          setSubmissionSuccess(false); // Reset success message when opening modal
+        }}
         className="fixed right-[1px] bottom-[35%] rotate-90 animate-top-to-bottom-hop z-50 
                    tracking-[2px] font-lato font-bold text-[16px] px-8 py-2 
                    shadow-[0_10px_30px_rgba(248,176,59,0.8)] text-white border-1 border-[#F8B03B]"
@@ -270,122 +278,129 @@ export default function Home() {
             </div>
 
             {/* Bottom Section: Card with Form */}
-            <div className="bg-[#FFFFFF1A] backdrop-blur-lg p-3 sm:p-6 md:p-8  flex-1 flex items-center justify-center">
-              <form onSubmit={handleSubmit(onModalSubmit)} className="w-full max-w-[95%] sm:max-w-2xl space-y-5 sm:space-y-6 bg-[#0000004D] p-3 sm:p-5 md:p-12 rounded-2xl">
-                {/* Heading */}
-                <h4 className="text-base sm:text-lg md:text-xl font-bold text-white font-lato text-center">
-                  {t("modal.subtitle")}
-                </h4>   
-
-                {/* Submission Error */}
-                {submissionError && (
-                  <div className="text-red-500 text-center font-lato text-xs sm:text-sm">
-                    {submissionError}
-                  </div>
-                )}
-
-                {/* First Row */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-white">
-                  <div className="flex flex-col space-y-2">
-                    <label className="text-xs sm:text-sm font-lato font-bold text-[12px] sm:text-[14px]">
-                      {t("modal.fullName")}
-                    </label>
-                    <input
-                      {...register("fullName", { required: t("multiStepForm.errors.fullName") })}
-                      type="text"
-                      placeholder=" "
-                      className="bg-transparent border-b border-[#FFFFFF4D] outline-none text-white placeholder-gray-300 text-sm sm:text-base"
-                    />
-                    {errors.fullName && <p className="text-red-500 text-xs sm:text-sm">{errors.fullName.message}</p>}
-                  </div>
-                  <div className="flex flex-col space-y-2">
-                    <label className="text-xs sm:text-sm font-lato font-bold text-[12px] sm:text-[14px]">
-                      {t("modal.email")}
-                    </label>
-                    <input
-                      {...register("email", { required: t("multiStepForm.errors.email") })}
-                      type="email"
-                      placeholder=" "
-                      className="bg-transparent border-b border-[#FFFFFF4D] outline-none text-white placeholder-gray-300 text-sm sm:text-base"
-                    />
-                    {errors.email && <p className="text-red-500 text-xs sm:text-sm">{errors.email.message}</p>}
-                  </div>
+            <div className="bg-[#FFFFFF1A] backdrop-blur-lg p-3 sm:p-6 md:p-8 flex-1 flex items-center justify-center">
+              {submissionSuccess ? (
+                <div className="text-center space-y-4">
+                  <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-white font-lato">
+                    {t("modal.thankYou", "Thank You!")}
+                  </h4>
+                  <p className="text-white font-lato text-sm sm:text-base">
+                    {t("modal.thankYouMessage", "Your submission has been received successfully.")}
+                  </p>
                 </div>
+              ) : (
+                <form onSubmit={handleSubmit(onModalSubmit)} className="w-full max-w-[95%] sm:max-w-2xl space-y-5 sm:space-y-6 bg-[#0000004D] p-3 sm:p-5 md:p-12 rounded-2xl">
+                  {/* Heading */}
+                  <h4 className="text-base sm:text-lg md:text-xl font-bold text-white font-lato text-center">
+                    {t("modal.subtitle")}
+                  </h4>
 
-                {/* Second Row */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6 text-white">
-                  <div className="flex flex-col space-y-2">
-                    <label className="text-xs sm:text-sm font-lato font-bold text-[12px] sm:text-[14px]">
-                      {t("modal.phone")}
-                    </label>
-                    <input
-                      {...register("phone", { required: t("multiStepForm.errors.phone") })}
-                      type="tel"
-                      placeholder=" "
-                      className="bg-transparent border-b border-[#FFFFFF4D] outline-none text-white placeholder-gray-300 text-sm sm:text-base"
-                    />
-                    {errors.phone && <p className="text-red-500 text-xs sm:text-sm">{errors.phone.message}</p>}
-                  </div>
-                  <div className="flex flex-col space-y-2">
-                    <label className="text-xs sm:text-sm font-lato font-bold text-[12px] sm:text-[14px]">
-                      {t("modal.address")}
-                    </label>
-                    <input
-                      {...register("address", { required: t("multiStepForm.errors.address") })}
-                      type="text"
-                      placeholder=" "
-                      className="bg-transparent border-b border-[#FFFFFF4D] outline-none text-white placeholder-gray-300 text-sm sm:text-base"
-                    />
-                    {errors.address && <p className="text-red-500 text-xs sm:text-sm">{errors.address.message}</p>}
-                  </div>
-                </div>
-
-                {/* Checkbox Options */}
-                <Controller
-                  name="checkboxOptions"
-                  control={control}
-                  rules={{ validate: (value) => value.length > 0 || t("multiStepForm.errors.checkboxOptions") }}
-                  render={({ field }) => (
-                    <div className="flex flex-wrap gap-2 sm:gap-4 text-white items-start">
-                      {t("modal.checkboxOptions", { returnObjects: true }).map((item) => (
-                        <label
-                          key={item}
-                          className="flex items-start gap-2 cursor-pointer min-w-[140px] sm:min-w-[180px]"
-                        >
-                          <CustomCheckbox
-                            checked={field.value.includes(item)}
-                            onChange={(e) => {
-                              const updated = e.target.checked
-                                ? [...field.value, item]
-                                : field.value.filter((opt) => opt !== item);
-                              field.onChange(updated);
-                            }}
-                          />
-                          <span className="font-lato text-[10px] sm:text-[12px] md:text-[14px]">
-                            {item}
-                          </span>
-                        </label>
-                      ))}
+                  {/* Submission Error */}
+                  {submissionError && (
+                    <div className="text-red-500 text-center font-lato text-xs sm:text-sm">
+                      {submissionError}
                     </div>
                   )}
-                />
-                {errors.checkboxOptions && (
-                  <p className="text-red-500 text-xs sm:text-sm mt-2">{errors.checkboxOptions.message}</p>
-                )}
 
-                {/* Apply Now Button */}
-                <button
-                  type="submit"
-                  className="w-full px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full font-bold text-xs sm:text-sm md:text-[18px] font-lato cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
-                  style={{
-                    backgroundColor: "#F8B03B",
-                    color: "#000000",
-                  }}
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? t("multiStepForm.submittingButton") : t("modal.applyButton")}
-                </button>
-              </form>
+                  {/* First Row */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-white">
+                    <div className="flex flex-col space-y-2">
+                      <label className="text-xs sm:text-sm font-lato font-bold text-[12px] sm:text-[14px]">
+                        {t("modal.fullName")}
+                      </label>
+                      <input
+                        {...register("fullName", { required: t("multiStepForm.errors.fullName") })}
+                        type="text"
+                        placeholder=" "
+                        className="bg-transparent border-b border-[#FFFFFF4D] outline-none text-white placeholder-gray-300 text-sm sm:text-base"
+                      />
+                      {errors.fullName && <p className="text-red-500 text-xs sm:text-sm">{errors.fullName.message}</p>}
+                    </div>
+                    <div className="flex flex-col space-y-2">
+                      <label className="text-xs sm:text-sm font-lato font-bold text-[12px] sm:text-[14px]">
+                        {t("modal.email")}
+                      </label>
+                      <input
+                        {...register("email", { required: t("multiStepForm.errors.email") })}
+                        type="email"
+                        placeholder=" "
+                        className="bg-transparent border-b border-[#FFFFFF4D] outline-none text-white placeholder-gray-300 text-sm sm:text-base"
+                      />
+                      {errors.email && <p className="text-red-500 text-xs sm:text-sm">{errors.email.message}</p>}
+                    </div>
+                  </div>
+
+                  {/* Second Row */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6 text-white">
+                    <div className="flex flex-col space-y-2">
+                      <label className="text-xs sm:text-sm font-lato font-bold text-[12px] sm:text-[14px]">
+                        {t("modal.phone")}
+                      </label>
+                      <input
+                        {...register("phone", { required: t("multiStepForm.errors.phone") })}
+                        type="tel"
+                        placeholder=" "
+                        className="bg-transparent border-b border-[#FFFFFF4D] outline-none text-white placeholder-gray-300 text-sm sm:text-base"
+                      />
+                      {errors.phone && <p className="text-red-500 text-xs sm:text-sm">{errors.phone.message}</p>}
+                    </div>
+                    <div className="flex flex-col space-y-2">
+                      <label className="text-xs sm:text-sm font-lato font-bold text-[12px] sm:text-[14px]">
+                        {t("modal.address")}
+                      </label>
+                      <input
+                        {...register("address", { required: t("multiStepForm.errors.address") })}
+                        type="text"
+                        placeholder=" "
+                        className="bg-transparent border-b border-[#FFFFFF4D] outline-none text-white placeholder-gray-300 text-sm sm:text-base"
+                      />
+                      {errors.address && <p className="text-red-500 text-xs sm:text-sm">{errors.address.message}</p>}
+                    </div>
+                  </div>
+
+                  {/* Checkbox Options */}
+                  <Controller
+                    name="checkboxOptions"
+                    control={control}
+                    render={({ field }) => (
+                      <div className="flex flex-wrap gap-2 sm:gap-4 text-white items-start">
+                        {t("modal.checkboxOptions", { returnObjects: true }).map((item) => (
+                          <label
+                            key={item}
+                            className="flex items-start gap-2 cursor-pointer min-w-[140px] sm:min-w-[180px]"
+                          >
+                            <CustomCheckbox
+                              checked={field.value.includes(item)}
+                              onChange={(e) => {
+                                const updated = e.target.checked
+                                  ? [...field.value, item]
+                                  : field.value.filter((opt) => opt !== item);
+                                field.onChange(updated);
+                              }}
+                            />
+                            <span className="font-lato text-[10px] sm:text-[12px] md:text-[14px]">
+                              {item}
+                            </span>
+                          </label>
+                        ))}
+                      </div>
+                    )}
+                  />
+
+                  {/* Apply Now Button */}
+                  <button
+                    type="submit"
+                    className="w-full px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full font-bold text-xs sm:text-sm md:text-[18px] font-lato cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                    style={{
+                      backgroundColor: "#F8B03B",
+                      color: "#000000",
+                    }}
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? t("multiStepForm.submittingButton") : t("modal.applyButton")}
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </div>

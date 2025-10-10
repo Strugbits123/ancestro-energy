@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import CustomSelect from "./CustomSelect";
 import CustomSelectWithCheckbox from "./CustomSelectWithCheckbox";
@@ -9,7 +9,7 @@ import CheckboxList from "./CheckboxList";
 import { useTranslation } from "react-i18next";
 
 const MultiStepForm = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [step, setStep] = useState(1);
     const [isSubmitting, setIsSubmitting] = useState(false); 
   const [fileNames, setFileNames] = useState({
@@ -18,7 +18,7 @@ const MultiStepForm = () => {
     bill: "",
   });
   const [submissionError, setSubmissionError] = useState(null); 
-  const { register, handleSubmit, setValue, watch, control, formState: { errors } } = useForm({
+  const { register, handleSubmit, setValue, watch,reset, control, formState: { errors } } = useForm({
     mode: "onSubmit",
     defaultValues: {
       fullName: "",
@@ -42,7 +42,9 @@ const MultiStepForm = () => {
 
   const formData = watch();
 
-
+  useEffect(() => {
+    reset(formData, { keepValues: true, keepDirty: true, keepTouched: true });
+  }, [i18n.language]);
 const handleCheckboxChange = (field, option) => {
   if (field === "projectType" || field === "propertyOwner" || field === "step2") {
     setValue(field, option, { shouldValidate: true });

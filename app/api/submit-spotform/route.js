@@ -1,5 +1,56 @@
+// import { NextResponse } from "next/server";
+// import { MongoClient } from "mongodb";
+
+// // ---- MongoDB Setup ----
+// const uri = process.env.MONGODB_URI;
+// const client = new MongoClient(uri);
+
+// async function connectToDatabase() {
+//   if (!client.topology || !client.topology.isConnected()) {
+//     await client.connect();
+//   }
+//   const db = client.db(process.env.MONGO_DB_NAME || "ancestro");
+//   return db.collection("spotform");
+// }
+
+// export async function POST(request) {
+//   try {
+//     const data = await request.json();
+
+//     const documentToInsert = {
+//       ...data,
+//       createdAt: new Date(),
+//     };
+
+//     const collection = await connectToDatabase();
+//     const result = await collection.insertOne(documentToInsert);
+
+//     return NextResponse.json(
+//       {
+//         success: true,
+//         message: "Form submitted successfully!",
+//         id: result.insertedId,
+//       },
+//       { status: 200 }
+//     );
+//   } catch (error) {
+//     console.error("Form submission error:", error);
+//     return NextResponse.json(
+//       {
+//         success: false,
+//         message: "Error submitting form",
+//         error: error.message,
+//       },
+//       { status: 500 }
+//     );
+//   }
+// }
 import { NextResponse } from "next/server";
 import { MongoClient } from "mongodb";
+import sgMail from "@sendgrid/mail";
+
+// ---- SendGrid Config ----
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 // ---- MongoDB Setup ----
 const uri = process.env.MONGODB_URI;
@@ -13,6 +64,50 @@ async function connectToDatabase() {
   return db.collection("spotform");
 }
 
+// ---- Send Email Function ----
+async function sendNotificationEmails(formValues) {
+  const {
+    fullName = "Unknown",
+    email = "Unknown",
+    phone = "Unknown",
+    address = "Unknown",
+    checkboxOptions = [],
+  } = formValues;
+
+  const formatList = (arr) => (arr && arr.length ? arr.join(", ") : "N/A");
+
+  // 👨‍💼 Admin Email
+  const adminMsg = {
+    to: process.env.ADMIN_EMAIL || process.env.FROM_EMAIL,
+    from: process.env.FROM_EMAIL,
+    templateId: "d-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", // ⬅️ replace with your SendGrid ADMIN template ID
+    dynamic_template_data: {
+      fullName,
+      email,
+      phone,
+      address,
+      checkboxOptions: formatList(checkboxOptions),
+    },
+  };
+
+  // 👤 Client Email
+  const clientMsg = {
+    to: email,
+    from: process.env.FROM_EMAIL,
+    templateId: "d-yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy", // ⬅️ replace with your SendGrid CLIENT template ID
+    dynamic_template_data: {
+      fullName,
+      email,
+      phone,
+      address,
+      checkboxOptions: formatList(checkboxOptions),
+    },
+  };
+
+  await Promise.all([sgMail.send(adminMsg), sgMail.send(clientMsg)]);
+}
+
+// ---- POST Handler ----
 export async function POST(request) {
   try {
     const data = await request.json();
@@ -25,10 +120,13 @@ export async function POST(request) {
     const collection = await connectToDatabase();
     const result = await collection.insertOne(documentToInsert);
 
+    // Send emails
+    await sendNotificationEmails(documentToInsert);
+
     return NextResponse.json(
       {
         success: true,
-        message: "Form submitted successfully!",
+        message: "Form submitted and notifications sent successfully!",
         id: result.insertedId,
       },
       { status: 200 }

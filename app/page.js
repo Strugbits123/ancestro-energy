@@ -136,7 +136,7 @@ import Image from "next/image";
 import Button from "../src/components/Button";
 import MultiStepForm from "../src/components/MultiStepForm";
 import CaseStudySection from "../src/components/CaseStudySection";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CustomCheckbox from "../src/components/CustomCheckbox";
 import { useTranslation } from "react-i18next";
 import { useForm, Controller } from "react-hook-form";
@@ -146,7 +146,7 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false); // Added for loading state
   const [submissionError, setSubmissionError] = useState(null); // Added for error display
-  const { register, handleSubmit, formState: { errors }, control } = useForm({
+  const { register, handleSubmit, formState: { errors }, control, watch, reset } = useForm({
     mode: "onSubmit",
     defaultValues: {
       fullName: "",
@@ -156,6 +156,11 @@ export default function Home() {
       checkboxOptions: [],
     },
   });
+  const formData = watch();
+
+  useEffect(() => {
+    reset(formData, { keepValues: true, keepDirty: true, keepTouched: true });
+  }, [i18n.language]);
 
   const onModalSubmit = async (data) => {
     try {

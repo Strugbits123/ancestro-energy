@@ -1,5 +1,6 @@
+
 "use client";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import CustomSelect from "./CustomSelect";
 import CustomSelectWithCheckbox from "./CustomSelectWithCheckbox";
@@ -42,9 +43,7 @@ const MultiStepForm = () => {
 
   const formData = watch();
 
-  // useEffect(() => {
-  //   reset(formData, { keepValues: true, keepDirty: true, keepTouched: true });
-  // }, [i18n.language]);
+
 const handleCheckboxChange = (field, option) => {
   if (field === "projectType" || field === "propertyOwner" || field === "step2") {
     setValue(field, option, { shouldValidate: true });
@@ -199,7 +198,7 @@ const handleCheckboxChange = (field, option) => {
                   <Controller
                     name="projectType"
                     control={control}
-                    rules={{ required: t("multiStepForm.errors.projectType") }}
+                    rules={{ required: true }}
                     render={({ field }) => (
                       <CheckboxList
                         selectedOption={field.value}
@@ -207,7 +206,7 @@ const handleCheckboxChange = (field, option) => {
                       />
                     )}
                   />
-                  {errors.projectType && <p className="text-red-500 text-sm mt-2">{errors.projectType.message}</p>}
+                  {errors.projectType && <p className="text-red-500 text-sm mt-2">{t("multiStepForm.errors.projectType")}</p>}
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 my-4 md:my-8 gap-8 text-white">
                   <div className="flex flex-col space-y-2">
@@ -215,21 +214,21 @@ const handleCheckboxChange = (field, option) => {
                       {t("multiStepForm.fullName")}
                     </label>
                     <input
-                      {...register("fullName", { required: t("multiStepForm.errors.fullName") })}
+                      {...register("fullName", { required: true })}
                       className="bg-transparent border-b-1 border-[#FFFFFF4D] outline-none text-white placeholder-gray-300"
                     />
-                    {errors.fullName && <p className="text-red-500 text-sm">{errors.fullName.message}</p>}
+                    {errors.fullName && <p className="text-red-500 text-sm">{t("multiStepForm.errors.fullName")}</p>}
                   </div>
                   <div className="flex flex-col space-y-2">
                     <label className="text-sm font-lato font-bold text-[14px]">
                       {t("multiStepForm.email")}
                     </label>
                     <input
-                      {...register("email", { required: t("multiStepForm.errors.email") })}
+                      {...register("email", { required: true })}
                       type="email"
                       className="bg-transparent border-b-1 border-[#FFFFFF4D] outline-none text-white placeholder-gray-300"
                     />
-                    {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+                    {errors.email && <p className="text-red-500 text-sm">{t("multiStepForm.errors.email")}</p>}
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 my-4 md:my-8 gap-8 text-white">
@@ -238,7 +237,7 @@ const handleCheckboxChange = (field, option) => {
                       {t("multiStepForm.phone")}
                     </label>
                     <input
-                      {...register("phone", { required: t("multiStepForm.errors.phone") })}
+                      {...register("phone", { required: true })}
                       type="tel"
                       className="bg-transparent border-b-1 border-[#FFFFFF4D] outline-none text-white placeholder-gray-300"
                     />
@@ -249,10 +248,10 @@ const handleCheckboxChange = (field, option) => {
                       {t("multiStepForm.city")}
                     </label>
                     <input
-                      {...register("city", { required: t("multiStepForm.errors.city") })}
+                      {...register("city", { required: true })}
                       className="bg-transparent border-b-1 border-[#FFFFFF4D] outline-none text-white placeholder-gray-300"
                     />
-                    {errors.city && <p className="text-red-500 text-sm">{errors.city.message}</p>}
+                    {errors.city && <p className="text-red-500 text-sm">{t("multiStepForm.errors.city")}</p>}
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 my-4 md:my-8 gap-8 text-white">
@@ -261,16 +260,16 @@ const handleCheckboxChange = (field, option) => {
                       {t("multiStepForm.country")}
                     </label>
                     <input
-                      {...register("country", { required: t("multiStepForm.errors.country") })}
+                      {...register("country", { required: true })}
                       className="bg-transparent border-b-1 border-[#FFFFFF4D] outline-none text-white placeholder-gray-300 mt-4"
                     />
-                    {errors.country && <p className="text-red-500 text-sm">{errors.country.message}</p>}
+                    {errors.country && <p className="text-red-500 text-sm">{t("multiStepForm.errors.country")}</p>}
                   </div>
                   <div className="flex flex-col space-y-2">
                     <Controller
                       name="customSelect"
                       control={control}
-                      rules={{ required: t("multiStepForm.errors.customSelect") }}
+                      rules={{ required: true }}
                       render={({ field }) => (
                         <CustomSelect
                           value={field.value}
@@ -278,7 +277,7 @@ const handleCheckboxChange = (field, option) => {
                         />
                       )}
                     />
-                    {errors.customSelect && <p className="text-red-500 text-sm mt-2">{errors.customSelect.message}</p>}
+                    {errors.customSelect && <p className="text-red-500 text-sm mt-2">{t("multiStepForm.errors.customSelect")}</p>}
                   </div>
                 </div>
                 <div className="space-y-3 text-white my-4 md:my-8">
@@ -288,7 +287,7 @@ const handleCheckboxChange = (field, option) => {
                   <Controller
                     name="propertyOwner"
                     control={control}
-                    rules={{ required: t("multiStepForm.errors.propertyOwner") }}
+                    rules={{ required: true }}
                     render={({ field }) => (
                       <div className="flex gap-8">
                         {t("multiStepForm.propertyOwnerOptions", { returnObjects: true }).map((o) => (
@@ -303,7 +302,7 @@ const handleCheckboxChange = (field, option) => {
                       </div>
                     )}
                   />
-                  {errors.propertyOwner && <p className="text-red-500 text-sm mt-2">{errors.propertyOwner.message}</p>}
+                  {errors.propertyOwner && <p className="text-red-500 text-sm mt-2">{t("multiStepForm.errors.propertyOwner")}</p>}
                 </div>
               </>
             )}
@@ -316,7 +315,7 @@ const handleCheckboxChange = (field, option) => {
                       name="projectTypeSelect"
                       control={control}
                       rules={{
-                        validate: (value) => value.length > 0 || t("multiStepForm.errors.projectTypeSelect"),
+                        validate: (value) => value.length > 0,
                       }}
                       render={({ field }) => (
                         <CustomSelectWithCheckbox
@@ -327,7 +326,7 @@ const handleCheckboxChange = (field, option) => {
                         />
                       )}
                     />
-                    {errors.projectTypeSelect && <p className="text-red-500 text-sm mt-2">{errors.projectTypeSelect.message}</p>}
+                    {errors.projectTypeSelect && <p className="text-red-500 text-sm mt-2">{t("multiStepForm.errors.projectTypeSelect")}</p>}
                   </div>
                   <div className="flex flex-col space-y-2">
                     <label className="text-sm font-bold font-lato">
@@ -336,7 +335,7 @@ const handleCheckboxChange = (field, option) => {
                     <Controller
                       name="step2"
                       control={control}
-                      rules={{ required: t("multiStepForm.errors.step2") }}
+                      rules={{ required: true }}
                       render={({ field }) => (
                         <div className="flex gap-6">
                           {t("multiStepForm.roofReplacementOptions", { returnObjects: true }).map((o) => (
@@ -351,7 +350,7 @@ const handleCheckboxChange = (field, option) => {
                         </div>
                       )}
                     />
-                    {errors.step2 && <p className="text-red-500 text-sm mt-2">{errors.step2.message}</p>}
+                    {errors.step2 && <p className="text-red-500 text-sm mt-2">{t("multiStepForm.errors.step2")}</p>}
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 my-4 md:my-8 gap-8 text-white">
@@ -411,7 +410,7 @@ const handleCheckboxChange = (field, option) => {
                     </div>
                     <div className="flex items-center gap-1">
                       <input
-                        {...register("billAmount", { required: t("multiStepForm.errors.billAmount") })}
+                        {...register("billAmount", { required: true })}
                         type="number"
                         className="flex w-24 bg-transparent border-b border-[#FFFFFF4D] text-white text-sm font-lato px-2 py-1 focus:outline-none focus:border-[#F8B03B]"
                         placeholder="$/MO"
@@ -421,7 +420,7 @@ const handleCheckboxChange = (field, option) => {
                         {t("multiStepForm.billValueLabel")}
                       </span>
                     </div>
-                    {errors.billAmount && <p className="text-red-500 text-sm mt-2">{errors.billAmount.message}</p>}
+                    {errors.billAmount && <p className="text-red-500 text-sm mt-2">{t("multiStepForm.errors.billAmount")}</p>}
                     <div className="bg-transparent border-b-1 border-[#FFFFFF4D] outline-none mt-2"></div>
                   </div>
           
@@ -437,7 +436,7 @@ const handleCheckboxChange = (field, option) => {
   <Controller
     name="bill"
     control={control}
-    rules={{ required: t("multiStepForm.errors.bill") }}
+    rules={{ required: true }}
     render={({ field }) => (
       <label className="w-1/4 bg-[#FFFFFF33] px-2 py-2 rounded-xl mt-2 font-lato text-[12px] text-center cursor-pointer">
         {t("multiStepForm.uploadBill")}
@@ -456,7 +455,7 @@ const handleCheckboxChange = (field, option) => {
   {fileNames.bill && (
     <p className="text-sm text-gray-300 max-w-[200px] truncate">{fileNames.bill}</p>
   )}
-  {errors.bill && <p className="text-red-500 text-sm mt-2">{errors.bill.message}</p>}
+  {errors.bill && <p className="text-red-500 text-sm mt-2">{t("multiStepForm.errors.bill")}</p>}
   <div className="bg-transparent border-b-1 border-[#FFFFFF4D] outline-none mt-2"></div>
 </div>
                 </div>
@@ -467,7 +466,7 @@ const handleCheckboxChange = (field, option) => {
                 <Controller
                   name="step3"
                   control={control}
-                  rules={{ validate: (value) => value.length > 0 || t("multiStepForm.errors.step3") }}
+                  rules={{ validate: (value) => value.length > 0 }}
                   render={({ field }) => (
                     <>
                       {t("multiStepForm.step3Options", { returnObjects: true }).map((item) => (
@@ -484,7 +483,7 @@ const handleCheckboxChange = (field, option) => {
                     </>
                   )}
                 />
-                {errors.step3 && <p className="text-red-500 text-sm mt-2">{errors.step3.message}</p>}
+                {errors.step3 && <p className="text-red-500 text-sm mt-2">{t("multiStepForm.errors.step3")}</p>}
               </div>
             )}
 
@@ -529,4 +528,4 @@ const handleCheckboxChange = (field, option) => {
   );
 };
 
-export default MultiStepForm; 
+export default MultiStepForm;

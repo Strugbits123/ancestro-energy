@@ -17,7 +17,7 @@ const MultiStepForm = () => {
     electricPanel: "",
     bill: "",
   });
-  const [submissionError, setSubmissionError] = useState(null); // State for error handling
+  const [submissionError, setSubmissionError] = useState(null); 
   const { register, handleSubmit, setValue, watch, control, formState: { errors } } = useForm({
     mode: "onSubmit",
     defaultValues: {
@@ -509,16 +509,6 @@ const handleCheckboxChange = (field, option) => {
     </div>
   </div>
 )}
-            {/* <button
-              type="submit"
-              className="w-full px-8 py-3 rounded-full font-bold text-sm md:text-[18px] font-lato cursor-pointer"
-              style={{
-                backgroundColor: "#F8B03B",
-                color: "#000000",
-              }}
-            >
-              {step === 4 ? t("multiStepForm.submitButton") : t("multiStepForm.nextButton")}
-            </button> */}
                      <button
               type="submit"
               className="w-full px-8 py-3 rounded-full font-bold text-sm md:text-[18px] font-lato cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"

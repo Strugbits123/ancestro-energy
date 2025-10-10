@@ -131,8 +131,6 @@
 
 
 
-
-
 "use client";
 import Image from "next/image";
 import Button from "../src/components/Button";
@@ -141,23 +139,50 @@ import CaseStudySection from "../src/components/CaseStudySection";
 import { useState } from "react";
 import CustomCheckbox from "../src/components/CustomCheckbox";
 import { useTranslation } from "react-i18next";
+import { useForm, Controller } from "react-hook-form";
 
 export default function Home() {
   const { t, i18n } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [checkboxState, setCheckboxState] = useState([]);
+  const [isSubmitting, setIsSubmitting] = useState(false); // Added for loading state
+  const [submissionError, setSubmissionError] = useState(null); // Added for error display
+  const { register, handleSubmit, formState: { errors }, control } = useForm({
+    mode: "onSubmit",
+    defaultValues: {
+      fullName: "",
+      email: "",
+      phone: "",
+      address: "",
+      checkboxOptions: [],
+    },
+  });
 
-  const handleCheckboxChange = (option) => (event) => {
-    if (event.target.checked) {
-      setCheckboxState((prev) => [...prev, option]);
-    } else {
-      setCheckboxState((prev) => prev.filter((item) => item !== option));
+  const onModalSubmit = async (data) => {
+    try {
+      setIsSubmitting(true);
+      const response = await fetch("/api/submit-spotform", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Failed to submit form");
+      }
+
+      console.log("Form submitted:", data);
+      setSubmissionError(null);
+      setIsModalOpen(false);
+    } catch (error) {
+      console.error("Submission error:", error);
+      setSubmissionError(error.message || "An error occurred while submitting the form");
+    } finally {
+      setIsSubmitting(false);
     }
-  };
-
-  const handleApplyNow = () => {
-    console.log("Form submitted:", { checkboxState });
-    setIsModalOpen(false);
   };
 
   const toggleLanguage = () => {
@@ -191,9 +216,9 @@ export default function Home() {
       <Button
         variant="yellow"
         onClick={() => setIsModalOpen(true)}
-        className="fixed right-1 bottom-[35%] rotate-90 animate-top-to-bottom-hop z-50 
+        className="fixed right-[1px] bottom-[35%] rotate-90 animate-top-to-bottom-hop z-50 
                    tracking-[2px] font-lato font-bold text-[16px] px-8 py-2 
-                   shadow-[0_10px_30px_rgba(248,176,59,0.8)] text-white border-1 border-[#F8B03B] "
+                   shadow-[0_10px_30px_rgba(248,176,59,0.8)] text-white border-1 border-[#F8B03B]"
         style={{ backgroundColor: "rgba(248,176,59,0.5)" }}
       >
         {t("fixedButton.applyButton").toUpperCase()}
@@ -234,33 +259,44 @@ export default function Home() {
 
             {/* Bottom Section: Card with Form */}
             <div className="bg-[#FFFFFF1A] backdrop-blur-lg p-3 sm:p-6 md:p-8 flex-1 flex items-center justify-center">
-              <div className="w-full max-w-[95%] sm:max-w-2xl space-y-5 sm:space-y-8 bg-[#0000004D] p-3 sm:p-5 md:p-8 rounded-2xl">
+              <form onSubmit={handleSubmit(onModalSubmit)} className="w-full max-w-[95%] sm:max-w-2xl space-y-5 sm:space-y-5 bg-[#0000004D] p-3 sm:p-5 md:p-2 rounded-2xl">
                 {/* Heading */}
                 <h4 className="text-base sm:text-lg md:text-xl font-bold text-white font-lato text-center">
                   {t("modal.subtitle")}
                 </h4>
 
+                {/* Submission Error */}
+                {submissionError && (
+                  <div className="text-red-500 text-center font-lato text-xs sm:text-sm">
+                    {submissionError}
+                  </div>
+                )}
+
                 {/* First Row */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6 text-white">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-white">
                   <div className="flex flex-col space-y-2">
                     <label className="text-xs sm:text-sm font-lato font-bold text-[12px] sm:text-[14px]">
                       {t("modal.fullName")}
                     </label>
                     <input
+                      {...register("fullName", { required: t("multiStepForm.errors.fullName") })}
                       type="text"
                       placeholder=" "
                       className="bg-transparent border-b border-[#FFFFFF4D] outline-none text-white placeholder-gray-300 text-sm sm:text-base"
                     />
+                    {errors.fullName && <p className="text-red-500 text-xs sm:text-sm">{errors.fullName.message}</p>}
                   </div>
                   <div className="flex flex-col space-y-2">
                     <label className="text-xs sm:text-sm font-lato font-bold text-[12px] sm:text-[14px]">
                       {t("modal.email")}
                     </label>
                     <input
+                      {...register("email", { required: t("multiStepForm.errors.email") })}
                       type="email"
                       placeholder=" "
                       className="bg-transparent border-b border-[#FFFFFF4D] outline-none text-white placeholder-gray-300 text-sm sm:text-base"
                     />
+                    {errors.email && <p className="text-red-500 text-xs sm:text-sm">{errors.email.message}</p>}
                   </div>
                 </div>
 
@@ -271,58 +307,77 @@ export default function Home() {
                       {t("modal.phone")}
                     </label>
                     <input
+                      {...register("phone", { required: t("multiStepForm.errors.phone") })}
                       type="tel"
                       placeholder=" "
                       className="bg-transparent border-b border-[#FFFFFF4D] outline-none text-white placeholder-gray-300 text-sm sm:text-base"
                     />
+                    {errors.phone && <p className="text-red-500 text-xs sm:text-sm">{errors.phone.message}</p>}
                   </div>
                   <div className="flex flex-col space-y-2">
                     <label className="text-xs sm:text-sm font-lato font-bold text-[12px] sm:text-[14px]">
                       {t("modal.address")}
                     </label>
                     <input
+                      {...register("address", { required: t("multiStepForm.errors.address") })}
                       type="text"
                       placeholder=" "
                       className="bg-transparent border-b border-[#FFFFFF4D] outline-none text-white placeholder-gray-300 text-sm sm:text-base"
                     />
+                    {errors.address && <p className="text-red-500 text-xs sm:text-sm">{errors.address.message}</p>}
                   </div>
                 </div>
 
                 {/* Checkbox Options */}
-                <div className="flex flex-wrap gap-2 sm:gap-4 text-white items-start">
-                  {t("modal.checkboxOptions", { returnObjects: true }).map((item, index) => (
-                    <label
-                      key={item}
-                      className="flex items-start gap-2 cursor-pointer min-w-[140px] sm:min-w-[180px]"
-                    >
-                      <CustomCheckbox
-                        checked={checkboxState.includes(item)}
-                        onChange={handleCheckboxChange(item)}
-                      />
-                      <span className="font-lato text-[10px] sm:text-[12px] md:text-[14px]">
-                        {item}
-                      </span>
-                    </label>
-                  ))}
-                </div>
+                <Controller
+                  name="checkboxOptions"
+                  control={control}
+                  rules={{ validate: (value) => value.length > 0 || t("multiStepForm.errors.checkboxOptions") }}
+                  render={({ field }) => (
+                    <div className="flex flex-wrap gap-2 sm:gap-4 text-white items-start">
+                      {t("modal.checkboxOptions", { returnObjects: true }).map((item) => (
+                        <label
+                          key={item}
+                          className="flex items-start gap-2 cursor-pointer min-w-[140px] sm:min-w-[180px]"
+                        >
+                          <CustomCheckbox
+                            checked={field.value.includes(item)}
+                            onChange={(e) => {
+                              const updated = e.target.checked
+                                ? [...field.value, item]
+                                : field.value.filter((opt) => opt !== item);
+                              field.onChange(updated);
+                            }}
+                          />
+                          <span className="font-lato text-[10px] sm:text-[12px] md:text-[14px]">
+                            {item}
+                          </span>
+                        </label>
+                      ))}
+                    </div>
+                  )}
+                />
+                {errors.checkboxOptions && (
+                  <p className="text-red-500 text-xs sm:text-sm mt-2">{errors.checkboxOptions.message}</p>
+                )}
 
                 {/* Apply Now Button */}
                 <button
-                  onClick={handleApplyNow}
-                  className="w-full px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full font-bold text-xs sm:text-sm md:text-[18px] font-lato"
+                  type="submit"
+                  className="w-full px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full font-bold text-xs sm:text-sm md:text-[18px] font-lato cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{
                     backgroundColor: "#F8B03B",
                     color: "#000000",
                   }}
+                  disabled={isSubmitting}
                 >
-                  {t("modal.applyButton")}
+                  {isSubmitting ? t("multiStepForm.submittingButton") : t("modal.applyButton")}
                 </button>
-              </div>
+              </form>
             </div>
           </div>
         </div>
       )}
-
       {/* ========= HERO SECTION (with bg image) ========= */}
       <section className="relative min-h-screen flex flex-col justify-center">
         <div
@@ -354,7 +409,14 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <Button className={"font-sans"}>{t("hero.button")}</Button>
+            <Button 
+                 onClick={() => {
+          document.getElementById('multi-step-form')?.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start' 
+          });
+        }}
+            className={"font-sans"}>{t("hero.button")}</Button>
           </div>
           <div className="md:w-[40%] flex justify-center mt-10 md:mt-0">
             <div className="relative w-[267px] h-[347px] md:w-[534px] md:h-[694px] translate-y-6">
@@ -405,7 +467,14 @@ export default function Home() {
               <li key={index}>{item}</li>
             ))}
           </ul>
-          <Button>{t("solarSubscription.button")}</Button>
+          <Button 
+                          onClick={() => {
+          document.getElementById('multi-step-form')?.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start' 
+          });
+        }}
+          >{t("solarSubscription.button")}</Button>
         </div>
       </section>
 
@@ -433,7 +502,14 @@ export default function Home() {
               <li key={index}>{item}</li>
             ))}
           </ul>
-          <Button>{t("batterySubscription.button")}</Button>
+          <Button 
+                          onClick={() => {
+          document.getElementById('multi-step-form')?.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start' 
+          });
+        }}
+          >{t("batterySubscription.button")}</Button>
         </div>
         <div className="md:w-[48%] flex justify-center mt-10 md:mt-0">
           <div className="relative w-[315px] h-[276px] md:w-[631px] md:h-[552px]">
@@ -483,7 +559,14 @@ export default function Home() {
               <li key={index}>{item}</li>
             ))}
           </ul>
-          <Button variant="white" className="mt-2">
+          <Button variant="white" className="mt-2" 
+                          onClick={() => {
+          document.getElementById('multi-step-form')?.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start' 
+          });
+        }}
+          >
             {t("allInOneApp.button")}
           </Button>
         </div>
@@ -504,7 +587,14 @@ export default function Home() {
           <p className="text-base md:text-[30px] font-helvetica text-white max-w-3xl mx-auto">
             {t("energyTransition.description")}
           </p>
-          <Button variant="white_yellow">
+          <Button variant="white_yellow" 
+                          onClick={() => {
+          document.getElementById('multi-step-form')?.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start' 
+          });
+        }}
+          >
             {t("energyTransition.button")}
           </Button>
         </div>

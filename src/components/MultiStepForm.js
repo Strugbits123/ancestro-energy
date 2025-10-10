@@ -145,7 +145,7 @@ const handleCheckboxChange = (field, option) => {
   const prevStep = () => setStep((prev) => Math.max(prev - 1, 1));
 
   return (
-    <section className="w-full max-w-7xl mx-auto flex flex-col items-center gap-12 py-20 px-6">
+    <section id="multi-step-form" className="w-full max-w-7xl mx-auto flex flex-col items-center gap-12 py-20 px-6">
       <h2 className="text-2xl md:text-[30px] font-bold text-white text-center max-w-4xl font-helvetica">
         {t("multiStepForm.title")}
       </h2>

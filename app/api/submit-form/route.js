@@ -1,162 +1,217 @@
-import { MongoClient } from 'mongodb';
-import AWS from 'aws-sdk';
-import multer from 'multer';
-import multers3 from 'multer-s3';
-import { NextResponse } from 'next/server';
 
+import { NextResponse } from "next/server";
+import { MongoClient } from "mongodb";
+import AWS from "aws-sdk";
+import sgMail from "@sendgrid/mail";
 
-const formSchema = {
-  $jsonSchema: {
-    bsonType: 'object',
-    required: [
-      'fullName', 'email', 'phone', 'city', 'country', 'projectType',
-      'propertyOwner', 'step2', 'projectTypeSelect', 'step3', 'step4',
-      'billAmount', 'customSelect', 'createdAt'
-    ],
-    properties: {
-      fullName: { bsonType: 'string', minLength: 1 },
-      email: { bsonType: 'string', pattern: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$' },
-      phone: { bsonType: 'string', minLength: 1 },
-      city: { bsonType: 'string', minLength: 1 },
-      country: { bsonType: 'string', minLength: 1 },
-      projectType: { bsonType: ['string', 'null'] },
-      propertyOwner: { bsonType: ['string', 'null'] },
-      step2: { bsonType: ['string', 'null'] },
-      projectTypeSelect: {
-        bsonType: 'array',
-        items: { bsonType: 'string' },
-        minItems: 1
-      },
-      step3: {
-        bsonType: 'array',
-        items: { bsonType: 'string' },
-        minItems: 1
-      },
-      step4: {
-        bsonType: 'array',
-        items: { bsonType: 'string' }
-      },
-      billAmount: { bsonType: ['string', 'int', 'double'], minimum: 0 },
-      roofPhotoUrl: { bsonType: ['string', 'null'] },
-      electricPanelUrl: { bsonType: ['string', 'null'] },
-      billUrl: { bsonType: ['string', 'null'] },
-      customSelect: { bsonType: 'string', minLength: 1 },
-      createdAt: { bsonType: 'date' }
-    }
-  }
-};
+// ---- Configure SendGrid ----
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-// Configure AWS S3
+// ---- AWS S3 Config ----
 const s3 = new AWS.S3({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
   region: process.env.AWS_REGION,
 });
 
-// Configure Multer with S3
-const upload = multer({
-  storage: multers3({
-    s3: s3,
-    bucket: process.env.S3_BUCKET_NAME,
-    metadata: function (req, file, cb) {
-      cb(null, { fieldName: file.fieldname });
-    },
-    key: function (req, file, cb) {
-      cb(null, `uploads/${Date.now().toString()}-${file.originalname}`);
-    },
-  }),
-});
-
-// MongoDB connection
-const uri = 'mongodb+srv://zainstrugbits_db_user:h1hop3JPWl0nalz7@cluster0.hibobwd.mongodb.net/';
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+// ---- MongoDB Setup ----
+const uri = process.env.MONGODB_URI;
+const client = new MongoClient(uri);
 
 async function connectToDatabase() {
   if (!client.topology || !client.topology.isConnected()) {
     await client.connect();
   }
-  const db = client.db('form_submissions');
-  
-  // Check if collection exists, create with validator if it doesn't
-  const collections = await db.listCollections({ name: 'ancestro' }).toArray();
-  if (collections.length === 0) {
-    await db.createCollection('ancestro', {
-      validator: formSchema,
-      validationLevel: 'strict',
-      validationAction: 'error'
-    });
-  }
-  
-  return db.collection('ancestro');
+  const db = client.db("ancestro");
+  return db.collection("ancestroenergy");
 }
 
-// API Route Handler
+// ---- Upload File to S3 ----
+async function uploadToS3(file) {
+  const arrayBuffer = await file.arrayBuffer();
+  const buffer = Buffer.from(arrayBuffer);
+
+  const uploadParams = {
+    Bucket: process.env.S3_BUCKET_NAME,
+    Key: `uploads/${Date.now()}-${file.name}`,
+    Body: buffer,
+    ContentType: file.type,
+  };
+
+  const { Location } = await s3.upload(uploadParams).promise();
+  return Location;
+}
+
+// ---- Send Notification Emails ----
+async function sendNotificationEmails(formValues) {
+  const {
+    fullName,
+    email,
+    phone,
+    city,
+    country,
+    projectType,
+    propertyOwner,
+    step2,
+    projectTypeSelect = [],
+    step3 = [],
+    step4 = [],
+    billAmount,
+    customSelect,
+    roofPhotoUrl,
+    electricPanelUrl,
+    billUrl,
+  } = formValues;
+
+  // Helper to render array values cleanly
+  const renderList = (arr) =>
+    arr && arr.length
+      ? `<ul>${arr.map((item) => `<li>${item}</li>`).join("")}</ul>`
+      : "N/A";
+
+  // ---- Admin Email ----
+  const adminMsg = {
+    to: process.env.ADMIN_EMAIL,
+    from: process.env.FROM_EMAIL,
+    subject: "New Project Inquiry - Ancestro Energy",
+    html: `
+      <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px;">
+        <h2 style="color:#F5DC7B;">New Inquiry Received</h2>
+        <p>Hello Admin,</p>
+        <p>You’ve received a new inquiry through the Ancestro Energy website.</p>
+        
+        <h3>Client Details:</h3>
+        <ul>
+          <li><b>Full Name:</b> ${fullName}</li>
+          <li><b>Email:</b> ${email}</li>
+          <li><b>Phone:</b> ${phone}</li>
+          <li><b>City:</b> ${city}</li>
+          <li><b>Country:</b> ${country}</li>
+        </ul>
+
+        <h3>Project Details:</h3>
+        <ul>
+          <li><b>Project Type:</b> ${projectType}</li>
+          <li><b>Property Owner:</b> ${propertyOwner}</li>
+          <li><b>Currently Have Solar:</b> ${step2}</li>
+          <li><b>Selected Types:</b> ${renderList(projectTypeSelect)}</li>
+          <li><b>Goals:</b> ${renderList(step3)}</li>
+          <li><b>Motivations:</b> ${renderList(step4)}</li>
+          <li><b>Average Bill Amount:</b> $${billAmount}</li>
+          <li><b>Installation Area:</b> ${customSelect}</li>
+        </ul>
+
+        <h3>Uploaded Files:</h3>
+        <ul>
+          <li><b>Roof Photo:</b> <a href="${roofPhotoUrl}" target="_blank">View</a></li>
+          <li><b>Electric Panel:</b> <a href="${electricPanelUrl}" target="_blank">View</a></li>
+          <li><b>Bill:</b> <a href="${billUrl}" target="_blank">View</a></li>
+        </ul>
+
+        <p style="margin-top: 20px;">Best regards,<br><b>Ancestro Energy Team</b><br>
+        <a href="https://www.ancestrocapital.com">ancestrocapital.com</a></p>
+      </div>
+    `,
+  };
+
+  // ---- Client Email ----
+  const clientMsg = {
+    to: email,
+    from: process.env.FROM_EMAIL,
+    subject: "Thank You for Contacting Ancestro Energy",
+    html: `
+      <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px;">
+        <h2 style="color:#F5DC7B;">Thank You, ${fullName}!</h2>
+        <p>We’ve received your project inquiry through the Ancestro Energy website.</p>
+
+        <h3>Your Submitted Details:</h3>
+        <ul>
+          <li><b>Full Name:</b> ${fullName}</li>
+          <li><b>Email:</b> ${email}</li>
+          <li><b>Phone:</b> ${phone}</li>
+          <li><b>City:</b> ${city}</li>
+          <li><b>Country:</b> ${country}</li>
+        </ul>
+
+        <h3>Project Information:</h3>
+        <ul>
+          <li><b>Project Type:</b> ${projectType}</li>
+          <li><b>Property Owner:</b> ${propertyOwner}</li>
+          <li><b>Currently Have Solar:</b> ${step2}</li>
+          <li><b>Selected Types:</b> ${renderList(projectTypeSelect)}</li>
+          <li><b>Goals:</b> ${renderList(step3)}</li>
+          <li><b>Motivations:</b> ${renderList(step4)}</li>
+          <li><b>Average Bill Amount:</b> $${billAmount}</li>
+          <li><b>Installation Area:</b> ${customSelect}</li>
+        </ul>
+
+        <p>Our team will review your details and contact you soon.</p>
+        <p style="margin-top: 20px;">Best regards,<br><b>Ancestro Energy Team</b><br>
+        <a href="https://www.ancestrocapital.com">ancestrocapital.com</a></p>
+      </div>
+    `,
+  };
+
+  await Promise.all([sgMail.send(adminMsg), sgMail.send(clientMsg)]);
+}
+
+// ---- Main POST Handler ----
 export async function POST(request) {
   try {
-    // Create multer middleware for handling multiple files
-    const uploadMiddleware = upload.fields([
-      { name: 'roofPhoto', maxCount: 1 },
-      { name: 'electricPanel', maxCount: 1 },
-      { name: 'bill', maxCount: 1 },
-    ]);
+    const formData = await request.formData();
+    const data = {};
+    let roofPhotoUrl = null;
+    let electricPanelUrl = null;
+    let billUrl = null;
 
-    // Wrap multer middleware in a promise to use with async/await
-    const formData = await new Promise((resolve, reject) => {
-      uploadMiddleware(request, null, async (error) => {
-        if (error) {
-          return reject(error);
+    for (const [key, value] of formData.entries()) {
+      if (value instanceof File) {
+        if (value.size > 0) {
+          const uploadedUrl = await uploadToS3(value);
+          if (key === "roofPhoto") roofPhotoUrl = uploadedUrl;
+          if (key === "electricPanel") electricPanelUrl = uploadedUrl;
+          if (key === "bill") billUrl = uploadedUrl;
         }
-
-        const form = await request.formData();
-        const data = {};
-        
-        // Extract form fields
-        for (const [key, value] of form.entries()) {
-          if (!['roofPhoto', 'electricPanel', 'bill'].includes(key)) {
-            try {
-              data[key] = JSON.parse(value);
-            } catch {
-              data[key] = value;
-            }
-          }
+      } else {
+        try {
+          data[key] = JSON.parse(value);
+        } catch {
+          data[key] = value;
         }
+      }
+    }
 
-        // Add file URLs from S3
-        if (request.files) {
-          data.roofPhotoUrl = request.files.roofPhoto ? request.files.roofPhoto[0].location : null;
-          data.electricPanelUrl = request.files.electricPanel ? request.files.electricPanel[0].location : null;
-          data.billUrl = request.files.bill ? request.files.bill[0].location : null;
-        }
-
-        // Ensure billAmount is a number
-        if (data.billAmount) {
-          data.billAmount = parseFloat(data.billAmount);
-        }
-
-        resolve(data);
-      });
-    });
-
-    // Connect to MongoDB and insert data
-    const collection = await connectToDatabase();
-    const result = await collection.insertOne({
-      ...formData,
+    const documentToInsert = {
+      ...data,
+      roofPhotoUrl,
+      electricPanelUrl,
+      billUrl,
       createdAt: new Date(),
-    });
+    };
 
-    return NextResponse.json({
-      success: true,
-      message: 'Form submitted successfully',
-      id: result.insertedId,
-    }, { status: 200 });
+    const collection = await connectToDatabase();
+    const result = await collection.insertOne(documentToInsert);
 
+    // Send notification emails
+    await sendNotificationEmails(documentToInsert);
+
+    return NextResponse.json(
+      {
+        success: true,
+        message: "Form submitted and notifications sent successfully!",
+        id: result.insertedId,
+      },
+      { status: 200 }
+    );
   } catch (error) {
-    console.error('Error processing form:', error);
-    return NextResponse.json({
-      success: false,
-      message: 'Error submitting form',
-      error: error.message,
-    }, { status: 500 });
+    console.error("Form submission error:", error);
+    return NextResponse.json(
+      {
+        success: false,
+        message: "Error submitting form",
+        error: error.message,
+      },
+      { status: 500 }
+    );
   }
 }
-

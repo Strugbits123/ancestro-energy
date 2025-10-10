@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@sendgrid/mail": "^8.1.6",
     "aws-sdk": "^2.1692.0",
     "cloudinary": "^2.7.0",
     "i18next": "^25.5.3",

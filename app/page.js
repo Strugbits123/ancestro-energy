@@ -181,6 +181,13 @@ export default function Home() {
 
       console.log("Form submitted:", data);
       setSubmissionError(null);
+      reset({
+        fullName: "",
+        email: "",
+        phone: "",
+        address: "",
+        checkboxOptions: [],
+      }); 
       setIsModalOpen(false);
     } catch (error) {
       console.error("Submission error:", error);

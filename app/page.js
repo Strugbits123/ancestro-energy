@@ -217,32 +217,49 @@ export default function Home() {
         {i18n.language === "en" ? "Español" : "English"}
       </button>
 
-      {/* Custom Animation for Top-to-Bottom Hopping */}
-      <style>{`
-        @keyframes top-to-bottom-hop {
-          0% { transform: translateY(0) rotate(360deg); }
-          50% { transform: translateX(20px) rotate(360deg); }
-          100% { transform: translateY(0) rotate(360deg); }
-        }
-        .animate-top-to-bottom-hop {
-          animation: top-to-bottom-hop 1s infinite ease-in-out;
-        }
-      `}</style>
 
-      {/* Fixed Hopping Button */}
-      <Button
-        variant="yellow"
-        onClick={() => {
-          setIsModalOpen(true);
-          setSubmissionSuccess(false); // Reset success message when opening modal
-        }}
-        className="fixed right-[1px] bottom-[35%] rotate-90 animate-top-to-bottom-hop z-50 
-                   tracking-[2px] font-lato font-bold text-[16px] px-8 py-2 
-                   shadow-[0_10px_30px_rgba(248,176,59,0.8)] text-white border-1 border-[#F8B03B]"
-        style={{ backgroundColor: "rgba(248,176,59,0.5)" }}
-      >
-        {t("fixedButton.applyButton").toUpperCase()}
-      </Button>
+      <style>{`
+  @keyframes top-to-bottom-hop {
+    0% { transform: translateY(0) rotate(360deg); }
+    50% { transform: translateX(20px) rotate(360deg); }
+    100% { transform: translateY(0) rotate(360deg); }
+  }
+  .animate-top-to-bottom-hop {
+    animation: top-to-bottom-hop 1s infinite ease-in-out;
+  }
+`}</style>
+
+{/* Desktop & Tablet Button */}
+<Button
+  variant="yellow"
+  onClick={() => {
+    setIsModalOpen(true);
+    setSubmissionSuccess(false); // Reset success message when opening modal
+  }}
+  className="hidden sm:flex fixed right-[1px] bottom-[35%] rotate-90 animate-top-to-bottom-hop z-50 
+             tracking-[2px] font-lato font-bold text-[16px] px-8 py-2 
+             shadow-[0_10px_30px_rgba(248,176,59,0.8)] text-white border-1 border-[#F8B03B]"
+  style={{ backgroundColor: "rgba(248,176,59,0.5)" }}
+>
+  {t("fixedButton.applyButton").toUpperCase()}
+</Button>
+
+{/* Mobile Button */}
+<Button
+  variant="yellow"
+  onClick={() => {
+    setIsModalOpen(true);
+    setSubmissionSuccess(false);
+  }}
+  className="backdrop-blur-xl flex sm:hidden fixed top-4 left-4 z-50 tracking-[1px] font-lato font-bold 
+             text-[13px] px-4 py-2 shadow-[0_10px_30px_rgba(248,176,59,0.8)] 
+             text-white border-1 border-[#F8B03B] "
+  style={{ backgroundColor: "rgba(248,176,59,0.5)" }}
+>
+  {t("fixedButton.applyButton").toUpperCase()}
+</Button>
+{/* 
+
 
       {/* Modal */}
       {isModalOpen && (
@@ -251,15 +268,15 @@ export default function Home() {
           onClick={() => setIsModalOpen(false)}
         >
           <div
-            className="w-full max-w-[95vw] sm:w-5xl flex flex-col h-[85vh] sm:h-[83vh] min-h-[500px] rounded-2xl overflow-y-auto p-6 px-12"
+            className="w-full max-w-[95vw] sm:w-5xl flex flex-col h-[80vh] sm:h-[83vh] min-h-[500px] rounded-2xl overflow-y-auto p-6 px-12"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Top Section: Background and Foreground Image with Heading */}
             <div
-              className="relative flex-1 bg-cover bg-center flex flex-col items-center justify-center p-3 sm:p-6"
+              className="relative h-[31vh] sm:flex-1  bg-cover bg-center flex flex-col items-center justify-center p-1 sm:p-6 "
               style={{ backgroundImage: "url('/ModalBg.png')" }}
             >
-              <div className="relative w-[120px] h-[120px] sm:w-[173px] sm:h-[91px]">
+              <div className="relative w-[120px] h-[80px] sm:w-[173px] sm:h-[91px]">
                 <Image
                   src="/eco1.png"
                   alt="Modal Foreground"
@@ -267,7 +284,7 @@ export default function Home() {
                   className="object-contain"
                 />
               </div>
-              <h3 className="text-lg sm:text-2xl md:text-3xl font-bold text-white font-helvetica mt-3 sm:mt-4 text-center text-[20px] sm:text-[32px] md:text-[50px]">
+              <h3 className="text-md sm:text-2xl md:text-3xl font-bold text-white font-helvetica mt-2 sm:mt-4 text-center text-[16px] sm:text-[32px] md:text-[50px]">
                 {t("modal.title").split("<br>").map((line, index) => (
                   <span key={index}>
                     {line}
@@ -278,7 +295,7 @@ export default function Home() {
             </div>
 
             {/* Bottom Section: Card with Form */}
-            <div className="bg-[#FFFFFF1A] backdrop-blur-lg p-3 sm:p-6 md:p-8 flex-1 flex items-center justify-center">
+            <div className="bg-[#FFFFFF1A] backdrop-blur-lg p-3 sm:p-6 md:p-8 flex-1 flex items-center justify-center ">
               {submissionSuccess ? (
                 <div className="text-center space-y-4">
                   <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-white font-lato">
@@ -291,7 +308,7 @@ export default function Home() {
               ) : (
                 <form onSubmit={handleSubmit(onModalSubmit)} className="w-full max-w-[95%] sm:max-w-2xl space-y-5 sm:space-y-6 bg-[#0000004D] p-3 sm:p-5 md:p-12 rounded-2xl">
                   {/* Heading */}
-                  <h4 className="text-base sm:text-lg md:text-xl font-bold text-white font-lato text-center">
+                  <h4 className="text-[14px] sm:text-lg md:text-xl font-bold text-white font-lato text-center">
                     {t("modal.subtitle")}
                   </h4>
 

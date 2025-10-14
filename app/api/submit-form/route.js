@@ -218,7 +218,8 @@ async function uploadToS3(file) {
   return Location;
 }
 
-async function sendNotificationEmails(formValues) {
+
+async function sendNotificationEmails(documentToInsert) {
   const {
     fullName = "Unknown",
     email = "Unknown",
@@ -226,16 +227,16 @@ async function sendNotificationEmails(formValues) {
     city = "Unknown",
     country = "Unknown",
     projectTypeSelect = "Unknown",
-    isPropertyOwner = "Unknown",
-    needsRoofReplacement = "Unknown",
+    isPropertyOwner = null,
+    needsRoofReplacement = null,
     businessInfo = {},
     additionalQuestions = {},
-    billAmount = "Unknown",
+    billAmount = null,
     propertyType = "Unknown",
-    roofPhotoUrl = "Unknown",
-    electricPanelUrl = "Unknown",
-    billUrl = "Unknown",
-  } = formValues;
+    roofPhotoUrl = null,
+    electricPanelUrl = null,
+    billUrl = null,
+  } = documentToInsert;
 
   const formatList = (obj, keys) => {
     const selected = keys.filter((key) => obj[key]).map((key) => key.replace(/([A-Z])/g, " $1").trim());
@@ -252,25 +253,25 @@ async function sendNotificationEmails(formValues) {
       phone,
       city,
       country,
-      projectTypeSelect,
-      isPropertyOwner: isPropertyOwner ? "Yes" : "No",
-      needsRoofReplacement:
-        needsRoofReplacement === true ? "Yes" : needsRoofReplacement === false ? "No" : "Not Sure",
-      businessInfo: formatList(businessInfo, [
+      projectType: projectTypeSelect, 
+      propertyOwner: isPropertyOwner === true ? "Yes" : isPropertyOwner === false ? "No" : "Not Specified",
+      currentlyHaveSolar: needsRoofReplacement === true ? "Yes" : needsRoofReplacement === false ? "No" : "Not Sure", 
+      projectTypeSelect, 
+      goals: formatList(businessInfo, [
         "solarSubscriptionCurrentNeeds",
         "solarSubscriptionSurplusEnergy",
         "batterySubscriptionPartialBackup",
         "batterySubscriptionFullBackup",
         "evChargingOnSite",
-      ]),
-      additionalQuestions: formatList(additionalQuestions, [
+      ]), 
+      motivations: formatList(additionalQuestions, [
         "reduceElectricityBills",
         "reduceBlackoutRisk",
         "supportSustainability",
         "allOfAbove",
-      ]),
-      billAmount: billAmount !== "Unknown" ? `$${billAmount}` : "N/A",
-      propertyType,
+      ]), 
+      billAmount: billAmount !== null ? `$${billAmount}` : "N/A",
+      installationArea: propertyType, 
       roofPhotoUrl: roofPhotoUrl || "N/A",
       electricPanelUrl: electricPanelUrl || "N/A",
       billUrl: billUrl || "N/A",
@@ -287,25 +288,25 @@ async function sendNotificationEmails(formValues) {
       phone,
       city,
       country,
-      projectTypeSelect,
-      isPropertyOwner: isPropertyOwner ? "Yes" : "No",
-      needsRoofReplacement:
-        needsRoofReplacement === true ? "Yes" : needsRoofReplacement === false ? "No" : "Not Sure",
-      businessInfo: formatList(businessInfo, [
+      projectType: projectTypeSelect, 
+      propertyOwner: isPropertyOwner === true ? "Yes" : isPropertyOwner === false ? "No" : "Not Specified", 
+      currentlyHaveSolar: needsRoofReplacement === true ? "Yes" : needsRoofReplacement === false ? "No" : "Not Sure", 
+      projectTypeSelect, 
+      goals: formatList(businessInfo, [
         "solarSubscriptionCurrentNeeds",
         "solarSubscriptionSurplusEnergy",
         "batterySubscriptionPartialBackup",
         "batterySubscriptionFullBackup",
         "evChargingOnSite",
-      ]),
-      additionalQuestions: formatList(additionalQuestions, [
+      ]), 
+      motivations: formatList(additionalQuestions, [
         "reduceElectricityBills",
         "reduceBlackoutRisk",
         "supportSustainability",
         "allOfAbove",
-      ]),
-      billAmount: billAmount !== "Unknown" ? `$${billAmount}` : "N/A",
-      propertyType,
+      ]), 
+      billAmount: billAmount !== null ? `$${billAmount}` : "N/A",
+      installationArea: propertyType, 
       roofPhotoUrl: roofPhotoUrl || "N/A",
       electricPanelUrl: electricPanelUrl || "N/A",
       billUrl: billUrl || "N/A",
@@ -314,7 +315,6 @@ async function sendNotificationEmails(formValues) {
 
   await Promise.all([sgMail.send(adminMsg), sgMail.send(clientMsg)]);
 }
-
 export async function POST(request) {
   try {
     const formData = await request.formData();
@@ -348,7 +348,7 @@ export async function POST(request) {
       city: data.city || "",
       country: data.country || "",
       projectTypeSelect: data.projectTypeSelect || "",
-      isPropertyOwner: data.propertyOwner === "Yes" ? true : data.propertyOwner === "No" ? false : null,
+      isPropertyOwner: data.propertyOwner === "YES" ? true : data.propertyOwner === "NO" ? false : null,
       needsRoofReplacement:
         data.step2 === "Yes" ? true : data.step2 === "No" ? false : data.step2 === "Not Sure" ? null : null,
       propertyType: data.customSelect || "",
@@ -366,7 +366,7 @@ export async function POST(request) {
         reduceElectricityBills: (data.step4 || []).includes("REDUCE MY ELECTRICITY BILLS"),
         reduceBlackoutRisk: (data.step4 || []).includes("REDUCE BLACKOUT RISK"),
         supportSustainability: (data.step4 || []).includes("SUPPORT SUSTAINAINABILITY"),
-        allOfAbove: (data.step4 || []).includes("ALL OF ABOVE"),
+        
       },
       roofPhotoUrl,
       electricPanelUrl,

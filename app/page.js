@@ -477,7 +477,7 @@ export default function Home() {
       </section>
 
       {/* ========= SOLAR SUBSCRIPTION SECTION ========= */}
-      <section className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-24 py-20 px-6">
+      <section className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-24 py-8 md:py-20 px-6">
         <div className="md:w-[48%] flex justify-center">
           <div className="relative w-[315px] h-[276px] md:w-[631px] md:h-[552px]">
             <Image
@@ -523,7 +523,7 @@ export default function Home() {
       </section>
 
       {/* ========= BATTERY SUBSCRIPTION SECTION ========= */}
-      <section className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-24 py-20 px-6">
+      <section className="w-full max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-24 py-6 md:py-20 px-6">
         <div className="md:w-[52%] text-white space-y-3">
           <div
             className="inline-block border px-6 py-2 rounded-md font-bold font-helvetica text-[14px]"
@@ -569,7 +569,7 @@ export default function Home() {
       </section>
 
       {/* ========= ALL IN ONE APP SECTION ========= */}
-      <section className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-24 py-20 px-6">
+      <section className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-4 py-6 md:py-20 px-6">
         <div className="md:w-[60%] flex justify-center">
           <div className="relative w-[320px] h-[280px] md:w-[720px] md:h-[480px]">
             <Image

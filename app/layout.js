@@ -17,7 +17,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   // Default language (could be dynamic, e.g., from user cookies or server logic)
-  const initialLanguage = "en";
+  const initialLanguage = "es";
 
   return (
     <html lang={initialLanguage}>

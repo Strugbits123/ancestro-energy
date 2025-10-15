@@ -66,8 +66,8 @@ export default function CaseStudySection() {
           </h3>
 
           {/* Ecosystem Images Row */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8 justify-items-center w-full">
-            {[1, 2, 3, 4, 5].map((eco) => (
+          {/* <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-8 justify-items-center w-full">
+            {[1, 2, 3, 4, 5,6].map((eco) => (
               <div key={eco} className="flex flex-col items-center space-y-2 w-full">
                 <div className="relative w-[120px] h-[65px] xs:w-[140px] xs:h-[75px] sm:w-[160px] sm:h-[85px] md:w-[173px] md:h-[91px]">
                   <Image
@@ -79,8 +79,39 @@ export default function CaseStudySection() {
                 </div>
               </div>
             ))}
-          </div>
-
+          </div> */}
+  <div
+    className="
+      grid 
+      grid-cols-2 
+      sm:grid-cols-3 
+      md:grid-cols-4 
+      lg:grid-cols-5 
+      xl:grid-cols-6 
+      gap-6 
+      md:gap-8 
+      justify-items-center 
+      w-full
+      px-4
+    "
+  >
+    {[1, 2, 3, 4, 5, 6].map((eco) => (
+      <div
+        key={eco}
+        className="flex flex-col items-center space-y-2 w-full max-w-[180px]"
+      >
+        <div className="relative w-full aspect-[16/9]">
+          <Image
+            src={`/eco${eco}.png`}
+            alt={`Ecosystem ${eco}`}
+            fill
+            className="object-contain"
+            sizes="(max-width: 640px) 120px, (max-width: 768px) 160px, (max-width: 1024px) 180px, 200px"
+          />
+        </div>
+      </div>
+    ))}
+  </div>
           {/* Logo + Address */}
           <div className="flex flex-col items-center space-y-8 mt-12">
             <div className="relative w-[337px] h-[119px]">

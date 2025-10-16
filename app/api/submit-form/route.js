@@ -61,11 +61,11 @@ async function sendNotificationEmails(documentToInsert, language = "en") {
     needsRoofReplacement = null,
     businessInfo = {},
     additionalQuestions = {},
-    billAmount = null,
+    electricbillAmount = null,
     propertyType = "Unknown",
     roofPhotoUrl = null,
     electricPanelUrl = null,
-    billUrl = null,
+    electricbillUrl = null,
   } = documentToInsert;
 
   const formatList = (obj, keys) => {
@@ -90,7 +90,7 @@ async function sendNotificationEmails(documentToInsert, language = "en") {
       country,
       projectType: projectTypeSelect,
       propertyOwner: isPropertyOwner === true ? "Yes" : isPropertyOwner === false ? "No" : "Not Specified",
-      currentlyHaveSolar: needsRoofReplacement === true ? "Yes" : needsRoofReplacement === false ? "No" : "Not Sure",
+      needsRoofReplacement: needsRoofReplacement === true ? "Yes" : needsRoofReplacement === false ? "No" : "Not Sure",
       projectTypeSelect,
       goals: formatList(businessInfo, [
         "solarSubscriptionCurrentNeeds",
@@ -105,11 +105,11 @@ async function sendNotificationEmails(documentToInsert, language = "en") {
         "supportSustainability",
         "allOfAbove",
       ]),
-      billAmount: billAmount !== null ? `$${billAmount}` : "N/A",
+      electricbillAmount: electricbillAmount !== null ? `$${electricbillAmount}` : "N/A",
       installationArea: propertyType,
       roofPhotoUrl: roofPhotoUrl || "N/A",
       electricPanelUrl: electricPanelUrl || "N/A",
-      billUrl: billUrl || "N/A",
+      electricbillUrl: electricbillUrl || "N/A",
     },
   };
 
@@ -125,7 +125,7 @@ async function sendNotificationEmails(documentToInsert, language = "en") {
       country,
       projectType: projectTypeSelect,
       propertyOwner: isPropertyOwner === true ? (language === "es" ? "SÍ" : "Yes") : isPropertyOwner === false ? (language === "es" ? "NO" : "No") : (language === "es" ? "No especificado" : "Not Specified"),
-      currentlyHaveSolar: needsRoofReplacement === true ? (language === "es" ? "SÍ" : "Yes") : needsRoofReplacement === false ? (language === "es" ? "NO" : "No") : (language === "es" ? "No estoy seguro" : "Not Sure"),
+      needsRoofReplacement: needsRoofReplacement === true ? (language === "es" ? "SÍ" : "Yes") : needsRoofReplacement === false ? (language === "es" ? "NO" : "No") : (language === "es" ? "No estoy seguro" : "Not Sure"),
       projectTypeSelect,
       goals: formatList(businessInfo, [
         "solarSubscriptionCurrentNeeds",
@@ -140,11 +140,11 @@ async function sendNotificationEmails(documentToInsert, language = "en") {
         "supportSustainability",
         "allOfAbove",
       ]),
-      billAmount: billAmount !== null ? `$${billAmount}` : "N/A",
+      electricbillAmount: electricbillAmount !== null ? `$${electricbillAmount}` : "N/A",
       installationArea: propertyType,
       roofPhotoUrl: roofPhotoUrl || "N/A",
       electricPanelUrl: electricPanelUrl || "N/A",
-      billUrl: billUrl || "N/A",
+      electricbillUrl: electricbillUrl || "N/A",
     },
   };
 
@@ -195,7 +195,7 @@ export async function POST(request) {
       needsRoofReplacement:
         normalizedData.step2 === "Yes" ? true : normalizedData.step2 === "No" ? false : normalizedData.step2 === "Not Sure" ? null : null,
       propertyType: normalizedData.customSelect || "",
-      billAmount: normalizedData.billAmount ? Number(normalizedData.billAmount) : null,
+      electricbillAmount: normalizedData.billAmount ? Number(normalizedData.billAmount) : null,
       businessInfo: {
         solarSubscriptionCurrentNeeds: (normalizedData.step3 || []).includes("SOLAR SUBSCRIPTION BASED ON CURRENT NEEDS"),
         solarSubscriptionSurplusEnergy: (normalizedData.step3 || []).includes(
@@ -212,7 +212,7 @@ export async function POST(request) {
       },
       roofPhotoUrl: normalizedData.roofPhotoUrl || null,
       electricPanelUrl: normalizedData.electricPanelUrl || null,
-      billUrl: normalizedData.billUrl || null,
+      electricbillUrl: normalizedData.billUrl || null,
       language, // Store the detected language
       createdAt: new Date(),
     };

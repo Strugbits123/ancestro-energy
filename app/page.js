@@ -153,7 +153,7 @@ export default function Home() {
       email: "",
       phone: "",
       address: "",
-      checkboxOptions: [],
+      joinfreewaitlist: false,
     },
   });
   const formData = watch();
@@ -173,7 +173,7 @@ export default function Home() {
         body: JSON.stringify(data),
       });
 
-      const result = await response.json();
+      const result = await response.json(); 
 
       if (!response.ok || !result.success) {
         throw new Error(result.message || "Failed to submit form");
@@ -187,7 +187,7 @@ export default function Home() {
         email: "",
         phone: "",
         address: "",
-        checkboxOptions: [],
+        joinfreewaitlist: false,
       });
       setTimeout(() => {
         setIsModalOpen(false);
@@ -376,7 +376,7 @@ export default function Home() {
                   </div>
 
                   {/* Checkbox Options */}
-                  <Controller
+                  {/* <Controller
                     name="checkboxOptions"
                     control={control}
                     render={({ field }) => (
@@ -402,8 +402,26 @@ export default function Home() {
                         ))}
                       </div>
                     )}
+                  /> */}
+<Controller
+                    name="joinfreewaitlist"
+                    control={control}
+                    render={({ field }) => (
+                      <div className="flex flex-wrap gap-2 sm:gap-4 text-white items-start">
+                        <label
+                          className="flex items-start gap-2 cursor-pointer min-w-[140px] sm:min-w-[180px]"
+                        >
+                          <CustomCheckbox
+                            checked={field.value}
+                            onChange={(e) => field.onChange(e.target.checked)}
+                          />
+                          <span className="font-lato text-[10px] sm:text-[12px] md:text-[14px]">
+                            {t("modal.checkboxOptions", { returnObjects: true })[0]} 
+                          </span>
+                        </label>
+                      </div>
+                    )}
                   />
-
                   {/* Apply Now Button */}
                   <button
                     type="submit"

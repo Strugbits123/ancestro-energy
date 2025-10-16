@@ -25,10 +25,10 @@ async function sendNotificationEmails(formValues) {
     email = "Unknown",
     phone = "Unknown",
     address = "Unknown",
-    checkboxOptions = [],
+    joinfreewaitlist = false,
   } = formValues;
 
-  const formatList = (arr) => (arr && arr.length ? arr.join(", ") : "N/A");
+  const checkboxOptions = joinfreewaitlist ? "JOIN FREE WAITLIST" : "N/A";
 
   // 👨‍💼 Admin Email
   const adminMsg = {
@@ -40,7 +40,7 @@ async function sendNotificationEmails(formValues) {
       email,
       phone,
       address,
-      checkboxOptions: formatList(checkboxOptions),
+      checkboxOptions,
     },
   };
 
@@ -54,7 +54,7 @@ async function sendNotificationEmails(formValues) {
       email,
       phone,
       address,
-      checkboxOptions: formatList(checkboxOptions),
+      checkboxOptions,
     },
   };
 

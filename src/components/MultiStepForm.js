@@ -1,26 +1,24 @@
-
 // "use client";
-// import React, {  useState } from "react";
+// import React, { useState } from "react";
 // import { useForm, Controller } from "react-hook-form";
 // import CustomSelect from "./CustomSelect";
-// import CustomSelectWithCheckbox from "./CustomSelectWithCheckbox";
+// import SearchableSelect from "./SearchableSelect";
 // import Image from "next/image";
 // import CustomCheckbox from "./CustomCheckbox";
-// import CheckboxList from "./CheckboxList";
 // import { useTranslation } from "react-i18next";
-// import countries from '../../lib/countries.json';
+// import countries from "../../lib/countries.json";
 
 // const MultiStepForm = () => {
 //   const { t, i18n } = useTranslation();
 //   const [step, setStep] = useState(1);
-//     const [isSubmitting, setIsSubmitting] = useState(false); 
+//   const [isSubmitting, setIsSubmitting] = useState(false);
 //   const [fileNames, setFileNames] = useState({
 //     roofPhoto: "",
 //     electricPanel: "",
 //     bill: "",
 //   });
-//   const [submissionError, setSubmissionError] = useState(null); 
-//   const { register, handleSubmit, setValue, watch,reset, control, formState: { errors } } = useForm({
+//   const [submissionError, setSubmissionError] = useState(null);
+//   const { register, handleSubmit, setValue, watch, reset, control, formState: { errors } } = useForm({
 //     mode: "onSubmit",
 //     defaultValues: {
 //       fullName: "",
@@ -31,7 +29,7 @@
 //       projectType: null,
 //       propertyOwner: null,
 //       step2: null,
-//       projectTypeSelect: [],
+//       projectTypeSelect: "",
 //       step3: [],
 //       step4: [],
 //       billAmount: "",
@@ -44,39 +42,38 @@
 
 //   const formData = watch();
 
-
-// const handleCheckboxChange = (field, option) => {
-//   if (field === "propertyOwner" || field === "step2") {
-//     setValue(field, option, { shouldValidate: true });
-//   } else {
-//     const current = formData[field] || [];
-    
-//     if (field === "step4") {
-//       const allOptions = [
-//         "REDUCE MY ELECTRICITY BILLS",
-//         "REDUCE BLACKOUT RISK",
-//         "SUPPORT SUSTAINAINABILITY"
-//       ];
+//   const handleCheckboxChange = (field, option) => {
+//     if (field === "projectType" || field === "propertyOwner" || field === "step2") {
+//       setValue(field, option, { shouldValidate: true });
+//     } else {
+//       const current = formData[field] || [];
       
-//       if (option === "ALL OF ABOVE") {
-//         // Toggle all selections
-//         const allSelected = current.length === allOptions.length;
-//         const updated = allSelected ? [] : [...allOptions];
-//         setValue(field, updated, { shouldValidate: true });
+//       if (field === "step4") {
+//         const allOptions = [
+//           "REDUCE MY ELECTRICITY BILLS",
+//           "REDUCE BLACKOUT RISK",
+//           "SUPPORT SUSTAINAINABILITY"
+//         ];
+        
+//         if (option === "ALL OF ABOVE") {
+//           const allSelected = current.length === allOptions.length;
+//           const updated = allSelected ? [] : [...allOptions];
+//           setValue(field, updated, { shouldValidate: true });
+//         } else {
+//           const updated = current.includes(option)
+//             ? current.filter((item) => item !== option)
+//             : [...current, option];
+//           setValue(field, updated, { shouldValidate: true });
+//         }
 //       } else {
 //         const updated = current.includes(option)
 //           ? current.filter((item) => item !== option)
 //           : [...current, option];
 //         setValue(field, updated, { shouldValidate: true });
 //       }
-//     } else {
-//       const updated = current.includes(option)
-//         ? current.filter((item) => item !== option)
-//         : [...current, option];
-//       setValue(field, updated, { shouldValidate: true });
 //     }
-//   }
-// };
+//   };
+
 //   const handleFileChange = (field) => (event) => {
 //     const file = event.target.files[0];
 //     setValue(field, file, { shouldValidate: true });
@@ -85,14 +82,13 @@
 
 //   const onSubmit = async (data) => {
 //     try {
-//       // Client-side validation for each step
-//       if (step === 1 && ( !data.propertyOwner || !data.customSelect)) {
-//         // setValue("projectType", data.projectType, { shouldValidate: true });
+//       if (step === 1 && (!data.propertyOwner || !data.customSelect || !data.country)) {
 //         setValue("propertyOwner", data.propertyOwner, { shouldValidate: true });
 //         setValue("customSelect", data.customSelect, { shouldValidate: true });
+//         setValue("country", data.country, { shouldValidate: true });
 //         return;
 //       }
-//       if (step === 2 && (!data.step2 || !data.projectTypeSelect.length || !data.billAmount || !data.bill)) {
+//       if (step === 2 && (!data.step2 || !data.projectTypeSelect || !data.billAmount || !data.bill)) {
 //         setValue("step2", data.step2, { shouldValidate: true });
 //         setValue("projectTypeSelect", data.projectTypeSelect, { shouldValidate: true });
 //         setValue("billAmount", data.billAmount, { shouldValidate: true });
@@ -103,8 +99,11 @@
 //         setValue("step3", [], { shouldValidate: true });
 //         return;
 //       }
+//       if (step === 4 && (!data.step4 || data.step4.length === 0)) {
+//         setValue("step4", [], { shouldValidate: true });
+//         return;
+//       }
 
-//       // Only submit to API on the final step (step 4)
 //       if (step === 4) {
 //         const formDataToSend = new FormData();
 //         for (const key in data) {
@@ -116,7 +115,7 @@
 //             }
 //           }
 //         }
-//  setIsSubmitting(true); 
+//         setIsSubmitting(true);
 //         const response = await fetch("/api/submit-form", {
 //           method: "POST",
 //           body: formDataToSend,
@@ -128,19 +127,45 @@
 //           throw new Error(result.message || "Failed to submit form");
 //         }
 
-//         // Clear error and proceed to thank you step
 //         setSubmissionError(null);
 //         setStep(5);
+
+//         // Reset form to Step 1 after 5 seconds
+//         setTimeout(() => {
+//           reset({
+//             fullName: "",
+//             email: "",
+//             phone: "",
+//             city: "",
+//             country: "",
+//             projectType: null,
+//             propertyOwner: null,
+//             step2: null,
+//             projectTypeSelect: "",
+//             step3: [],
+//             step4: [],
+//             billAmount: "",
+//             roofPhoto: null,
+//             electricPanel: null,
+//             bill: null,
+//             customSelect: "",
+//           });
+//           setStep(1);
+//           setFileNames({
+//             roofPhoto: "",
+//             electricPanel: "",
+//             bill: "",
+//           });
+//           setSubmissionError(null);
+//         }, 5000);
 //       } else {
-//         // Move to next step if not final step
 //         setStep((prev) => Math.min(prev + 1, 5));
 //       }
 //     } catch (error) {
 //       console.error("Submission error:", error);
 //       setSubmissionError(error.message || "An error occurred while submitting the form");
-//     }
-//     finally {
-//       setIsSubmitting(false); 
+//     } finally {
+//       setIsSubmitting(false);
 //     }
 //   };
 
@@ -195,20 +220,6 @@
 
 //             {step === 1 && (
 //               <>
-//                 {/* <div className="space-y-3 text-white my-4 md:my-8">
-//                   <Controller
-//                     name="projectType"
-//                     control={control}
-//                     rules={{ required: true }}
-//                     render={({ field }) => (
-//                       <CheckboxList
-//                         selectedOption={field.value}
-//                         onChange={(option) => handleCheckboxChange("projectType", option)}
-//                       />
-//                     )}
-//                   />
-//                   {errors.projectType && <p className="text-red-500 text-sm mt-2">{t("multiStepForm.errors.projectType")}</p>}
-//                 </div> */}
 //                 <div className="grid grid-cols-1 md:grid-cols-2 my-4 md:my-8 gap-8 text-white">
 //                   <div className="flex flex-col space-y-2">
 //                     <label className="text-sm font-lato font-bold text-[14px]">
@@ -257,14 +268,19 @@
 //                 </div>
 //                 <div className="grid grid-cols-1 md:grid-cols-2 my-4 md:my-8 gap-8 text-white">
 //                   <div className="flex flex-col space-y-2">
-//                     <label className="text-sm font-lato font-bold text-[14px]">
-//                       {t("multiStepForm.country")}
-//                     </label>
-//                     <input
-//                       {...register("country", { required: true })}
-//                       className="bg-transparent border-b-1 border-[#FFFFFF4D] outline-none text-white placeholder-gray-300 mt-4"
+//                     <Controller
+//                       name="country"
+//                       control={control}
+//                       rules={{ required: true }}
+//                       render={({ field }) => (
+//                         <SearchableSelect
+//                           value={field.value}
+//                           onChange={(value) => field.onChange(value)}
+//                           options={countries.map(country => ({ value: country.name, label: country.name }))}
+//                         />
+//                       )}
 //                     />
-//                     {errors.country && <p className="text-red-500 text-sm">{t("multiStepForm.errors.country")}</p>}
+//                     {errors.country && <p className="text-red-500 text-sm mt-2">{t("multiStepForm.errors.country")}</p>}
 //                   </div>
 //                   <div className="flex flex-col space-y-2">
 //                     <Controller
@@ -315,15 +331,13 @@
 //                     <Controller
 //                       name="projectTypeSelect"
 //                       control={control}
-//                       rules={{
-//                         validate: (value) => value.length > 0,
-//                       }}
+//                       rules={{ required: true }}
 //                       render={({ field }) => (
-//                         <CustomSelectWithCheckbox
-//                           label={t("multiStepForm.projectType")}
+//                         <CustomSelect
+//                           value={field.value}
+//                           onChange={(value) => field.onChange(value)}
 //                           options={t("multiStepForm.projectTypeOptions", { returnObjects: true })}
-//                           selectedOptions={field.value}
-//                           setSelectedOptions={(options) => field.onChange(options)}
+//                           label={t("multiStepForm.projectType")}
 //                         />
 //                       )}
 //                     />
@@ -424,41 +438,40 @@
 //                     {errors.billAmount && <p className="text-red-500 text-sm mt-2">{t("multiStepForm.errors.billAmount")}</p>}
 //                     <div className="bg-transparent border-b-1 border-[#FFFFFF4D] outline-none mt-2"></div>
 //                   </div>
-          
 //                   <div className="flex flex-col space-y-2">
-//   <div className="flex gap-2 items-center">
-//     <label className="text-sm font-bold font-lato">
-//       {t("multiStepForm.uploadBill")}
-//     </label>
-//     <span className="text-xs font-lato">
-//       {t("multiStepForm.uploadBillHint")}
-//     </span>
-//   </div>
-//   <Controller
-//     name="bill"
-//     control={control}
-//     rules={{ required: true }}
-//     render={({ field }) => (
-//       <label className="w-1/4 bg-[#FFFFFF33] px-2 py-2 rounded-xl mt-2 font-lato text-[12px] text-center cursor-pointer">
-//         {t("multiStepForm.uploadBill")}
-//         <input
-//           type="file"
-//           accept="application/pdf, image/jpeg"
-//           className="hidden"
-//           onChange={(e) => {
-//             handleFileChange("bill")(e); 
-//             field.onChange(e.target.files[0] || null); 
-//           }}
-//         />
-//       </label>
-//     )}
-//   />
-//   {fileNames.bill && (
-//     <p className="text-sm text-gray-300 max-w-[200px] truncate">{fileNames.bill}</p>
-//   )}
-//   {errors.bill && <p className="text-red-500 text-sm mt-2">{t("multiStepForm.errors.bill")}</p>}
-//   <div className="bg-transparent border-b-1 border-[#FFFFFF4D] outline-none mt-2"></div>
-// </div>
+//                     <div className="flex gap-2 items-center">
+//                       <label className="text-sm font-bold font-lato">
+//                         {t("multiStepForm.uploadBill")}
+//                       </label>
+//                       <span className="text-xs font-lato">
+//                         {t("multiStepForm.uploadBillHint")}
+//                       </span>
+//                     </div>
+//                     <Controller
+//                       name="bill"
+//                       control={control}
+//                       rules={{ required: true }}
+//                       render={({ field }) => (
+//                         <label className="w-1/4 bg-[#FFFFFF33] px-2 py-2 rounded-xl mt-2 font-lato text-[12px] text-center cursor-pointer">
+//                           {t("multiStepForm.uploadBill")}
+//                           <input
+//                             type="file"
+//                             accept="application/pdf, image/jpeg"
+//                             className="hidden"
+//                             onChange={(e) => {
+//                               handleFileChange("bill")(e);
+//                               field.onChange(e.target.files[0] || null);
+//                             }}
+//                           />
+//                         </label>
+//                       )}
+//                     />
+//                     {fileNames.bill && (
+//                       <p className="text-sm text-gray-300 max-w-[200px] truncate">{fileNames.bill}</p>
+//                     )}
+//                     {errors.bill && <p className="text-red-500 text-sm mt-2">{t("multiStepForm.errors.bill")}</p>}
+//                     <div className="bg-transparent border-b-1 border-[#FFFFFF4D] outline-none mt-2"></div>
+//                   </div>
 //                 </div>
 //               </>
 //             )}
@@ -467,7 +480,7 @@
 //                 <Controller
 //                   name="step3"
 //                   control={control}
-//                   rules={{ validate: (value) => value.length > 0 }}
+//                   rules={{ validate: (value) => value.length > 0 || t("multiStepForm.errors.step3") }}
 //                   render={({ field }) => (
 //                     <>
 //                       {t("multiStepForm.step3Options", { returnObjects: true }).map((item) => (
@@ -487,31 +500,40 @@
 //                 {errors.step3 && <p className="text-red-500 text-sm mt-2">{t("multiStepForm.errors.step3")}</p>}
 //               </div>
 //             )}
-
-// {step === 4 && (
-//   <div className="space-y-4 text-white my-4 sm:my-6 md:my-8">
-//     <p className="text-base sm:text-lg font-lato">{t("multiStepForm.step4Intro")}</p>
-//     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
-//       {t("multiStepForm.step4Options", { returnObjects: true }).map((item, index) => (
-//         <label
-//           key={item}
-//           className={`flex items-center gap-2 cursor-pointer `}
-//         >
-//           <CustomCheckbox
-//             checked={
-//               item === "ALL OF ABOVE"
-//                 ? formData.step4.length === 3
-//                 : formData.step4.includes(item)
-//             }
-//             onChange={() => handleCheckboxChange("step4", item)}
-//           />
-//           <span className="text-sm sm:text-base font-lato">{item}</span>
-//         </label>
-//       ))}
-//     </div>
-//   </div>
-// )}
-//                      <button
+//             {step === 4 && (
+//               <div className="space-y-4 text-white my-4 sm:my-6 md:my-8">
+//                 <p className="text-base sm:text-lg font-lato">{t("multiStepForm.step4Intro")}</p>
+//                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+//                   <Controller
+//                     name="step4"
+//                     control={control}
+//                     rules={{ validate: (value) => value.length > 0 || t("multiStepForm.errors.step3") }}
+//                     render={({ field }) => (
+//                       <>
+//                         {t("multiStepForm.step4Options", { returnObjects: true }).map((item) => (
+//                           <label
+//                             key={item}
+//                             className="flex items-center gap-2 cursor-pointer"
+//                           >
+//                             <CustomCheckbox
+//                               checked={
+//                                 item === "ALL OF ABOVE"
+//                                   ? formData.step4.length === 3
+//                                   : formData.step4.includes(item)
+//                               }
+//                               onChange={() => handleCheckboxChange("step4", item)}
+//                             />
+//                             <span className="text-sm sm:text-base font-lato">{item}</span>
+//                           </label>
+//                         ))}
+//                       </>
+//                     )}
+//                   />
+//                 </div>
+//                 {errors.step4 && <p className="text-red-500 text-sm mt-2">{t("multiStepForm.errors.step3")}</p>}
+//               </div>
+//             )}
+//             <button
 //               type="submit"
 //               className="w-full px-8 py-3 rounded-full font-bold text-sm md:text-[18px] font-lato cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
 //               style={{
@@ -524,7 +546,7 @@
 //             </button>
 //           </form>
 //         )}
-//       </div>      
+//       </div>
 //     </section>
 //   );
 // };
@@ -550,6 +572,11 @@ const MultiStepForm = () => {
     electricPanel: "",
     bill: "",
   });
+  const [uploading, setUploading] = useState({
+    roofPhoto: false,
+    electricPanel: false,
+    bill: false,
+  });
   const [submissionError, setSubmissionError] = useState(null);
   const { register, handleSubmit, setValue, watch, reset, control, formState: { errors } } = useForm({
     mode: "onSubmit",
@@ -566,15 +593,47 @@ const MultiStepForm = () => {
       step3: [],
       step4: [],
       billAmount: "",
-      roofPhoto: null,
-      electricPanel: null,
-      bill: null,
+      roofPhotoUrl: "",
+      electricPanelUrl: "",
+      billUrl: "",
       customSelect: "",
     },
   });
 
   const formData = watch();
 
+  // const handleCheckboxChange = (field, option) => {
+  //   if (field === "projectType" || field === "propertyOwner" || field === "step2") {
+  //     setValue(field, option, { shouldValidate: true });
+  //   } else {
+  //     const current = formData[field] || [];
+      
+  //     if (field === "step4") {
+  //       const allOptions = [
+  //         "REDUCE MY ELECTRICITY BILLS",
+  //         "REDUCE BLACKOUT RISK",
+  //         "SUPPORT SUSTAINABILITY",     
+  //       ];
+        
+  //       if (option === "ALL OF ABOVE" ) {
+  //         const allSelected = current.length === allOptions.length;
+  //         const updated = allSelected ? [] : [...allOptions];
+  //         setValue(field, updated, { shouldValidate: true });
+  //       } else {
+  //         const updated = current.includes(option)
+  //           ? current.filter((item) => item !== option)
+  //           : [...current, option];
+  //         setValue(field, updated, { shouldValidate: true });
+  //       }
+  //     } else {
+  //       const updated = current.includes(option)
+  //         ? current.filter((item) => item !== option)
+  //         : [...current, option];
+  //       setValue(field, updated, { shouldValidate: true });
+  //     }
+      
+  //   }
+  // };
   const handleCheckboxChange = (field, option) => {
     if (field === "projectType" || field === "propertyOwner" || field === "step2") {
       setValue(field, option, { shouldValidate: true });
@@ -582,13 +641,17 @@ const MultiStepForm = () => {
       const current = formData[field] || [];
       
       if (field === "step4") {
-        const allOptions = [
+        const allOptions = i18n.language === "es" ? [
+          "REDUCIR MIS FACTURAS ELÉCTRICAS",
+          "REDUCIR EL RIESGO DE APAGONES",
+          "APOYAR LA SOSTENIBILIDAD"
+        ] : [
           "REDUCE MY ELECTRICITY BILLS",
           "REDUCE BLACKOUT RISK",
-          "SUPPORT SUSTAINAINABILITY"
+          "SUPPORT SUSTAINABILITY"
         ];
         
-        if (option === "ALL OF ABOVE") {
+        if (option === "ALL OF ABOVE" || option === "TODAS LAS ANTERIORES") {
           const allSelected = current.length === allOptions.length;
           const updated = allSelected ? [] : [...allOptions];
           setValue(field, updated, { shouldValidate: true });
@@ -607,10 +670,52 @@ const MultiStepForm = () => {
     }
   };
 
-  const handleFileChange = (field) => (event) => {
+  const handleFileChange = (field) => async (event) => {
     const file = event.target.files[0];
-    setValue(field, file, { shouldValidate: true });
-    setFileNames((prev) => ({ ...prev, [field]: file ? file.name : "" }));
+    if (!file) return;
+
+    setFileNames((prev) => ({ ...prev, [field]: file.name }));
+    setUploading((prev) => ({ ...prev, [field]: true }));
+    setSubmissionError(null); 
+
+    try {
+ 
+      const res = await fetch("/api/get-presigned-url", { 
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fileName: file.name,
+          fileType: file.type,
+          field,
+        }),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to get pre-signed URL");
+      }
+
+      const { signedUrl, objectUrl } = await res.json();
+
+      // Upload file directly to S3
+      const uploadRes = await fetch(signedUrl, {
+        method: "PUT",
+        headers: { "Content-Type": file.type },
+        body: file,
+      });
+
+      if (!uploadRes.ok) {
+        throw new Error("Failed to upload file to S3");
+      }
+
+      // Set the URL in form data
+      setValue(`${field}Url`, objectUrl, { shouldValidate: true });
+    } catch (error) {
+      console.error("File upload error:", error);
+      setSubmissionError("Failed to upload file. Please try again.");
+      setFileNames((prev) => ({ ...prev, [field]: "" })); // Reset file name on error
+    } finally {
+      setUploading((prev) => ({ ...prev, [field]: false }));
+    }
   };
 
   const onSubmit = async (data) => {
@@ -621,11 +726,11 @@ const MultiStepForm = () => {
         setValue("country", data.country, { shouldValidate: true });
         return;
       }
-      if (step === 2 && (!data.step2 || !data.projectTypeSelect || !data.billAmount || !data.bill)) {
+      if (step === 2 && (!data.step2 || !data.projectTypeSelect || !data.billAmount || !data.billUrl)) {
         setValue("step2", data.step2, { shouldValidate: true });
         setValue("projectTypeSelect", data.projectTypeSelect, { shouldValidate: true });
         setValue("billAmount", data.billAmount, { shouldValidate: true });
-        setValue("bill", data.bill, { shouldValidate: true });
+        setValue("billUrl", data.billUrl, { shouldValidate: true });
         return;
       }
       if (step === 3 && (!data.step3 || data.step3.length === 0)) {
@@ -641,11 +746,8 @@ const MultiStepForm = () => {
         const formDataToSend = new FormData();
         for (const key in data) {
           if (data[key] !== null && data[key] !== undefined) {
-            if (key === "roofPhoto" || key === "electricPanel" || key === "bill") {
-              if (data[key]) formDataToSend.append(key, data[key]);
-            } else {
-              formDataToSend.append(key, JSON.stringify(data[key]));
-            }
+
+            formDataToSend.append(key, JSON.stringify(data[key]));
           }
         }
         setIsSubmitting(true);
@@ -678,9 +780,9 @@ const MultiStepForm = () => {
             step3: [],
             step4: [],
             billAmount: "",
-            roofPhoto: null,
-            electricPanel: null,
-            bill: null,
+            roofPhotoUrl: "",
+            electricPanelUrl: "",
+            billUrl: "",
             customSelect: "",
           });
           setStep(1);
@@ -703,6 +805,9 @@ const MultiStepForm = () => {
   };
 
   const prevStep = () => setStep((prev) => Math.max(prev - 1, 1));
+
+  // Check if any file is uploading
+  const isUploading = Object.values(uploading).some((status) => status);
 
   return (
     <section id="multi-step-form" className="w-full max-w-7xl mx-auto flex flex-col items-center gap-12 py-20 px-6">
@@ -859,6 +964,9 @@ const MultiStepForm = () => {
 
             {step === 2 && (
               <>
+                <input type="hidden" {...register("roofPhotoUrl")} />
+                <input type="hidden" {...register("electricPanelUrl")} />
+                <input type="hidden" {...register("billUrl", { required: true })} />
                 <div className="grid grid-cols-1 md:grid-cols-2 my-4 md:my-8 gap-8 text-white">
                   <div className="flex flex-col space-y-2">
                     <Controller
@@ -912,12 +1020,13 @@ const MultiStepForm = () => {
                       </span>
                     </div>
                     <label className="w-1/4 bg-[#FFFFFF33] px-2 py-2 rounded-xl mt-2 font-lato text-[12px] text-center cursor-pointer">
-                      {t("multiStepForm.uploadBill")}
+                      {uploading.roofPhoto ? "Uploading..." : t("multiStepForm.uploadBill")}
                       <input
                         type="file"
                         accept="image/*"
                         className="hidden"
                         onChange={handleFileChange("roofPhoto")}
+                        disabled={uploading.roofPhoto}
                       />
                     </label>
                     {fileNames.roofPhoto && (
@@ -935,12 +1044,13 @@ const MultiStepForm = () => {
                       </span>
                     </div>
                     <label className="w-1/4 bg-[#FFFFFF33] px-2 py-2 rounded-xl mt-2 font-lato text-[12px] text-center cursor-pointer">
-                      {t("multiStepForm.uploadBill")}
+                      {uploading.electricPanel ? "Uploading..." : t("multiStepForm.uploadBill")}
                       <input
                         type="file"
                         accept="image/*"
                         className="hidden"
                         onChange={handleFileChange("electricPanel")}
+                        disabled={uploading.electricPanel}
                       />
                     </label>
                     {fileNames.electricPanel && (
@@ -980,29 +1090,20 @@ const MultiStepForm = () => {
                         {t("multiStepForm.uploadBillHint")}
                       </span>
                     </div>
-                    <Controller
-                      name="bill"
-                      control={control}
-                      rules={{ required: true }}
-                      render={({ field }) => (
-                        <label className="w-1/4 bg-[#FFFFFF33] px-2 py-2 rounded-xl mt-2 font-lato text-[12px] text-center cursor-pointer">
-                          {t("multiStepForm.uploadBill")}
-                          <input
-                            type="file"
-                            accept="application/pdf, image/jpeg"
-                            className="hidden"
-                            onChange={(e) => {
-                              handleFileChange("bill")(e);
-                              field.onChange(e.target.files[0] || null);
-                            }}
-                          />
-                        </label>
-                      )}
-                    />
+                    <label className="w-1/4 bg-[#FFFFFF33] px-2 py-2 rounded-xl mt-2 font-lato text-[12px] text-center cursor-pointer">
+                      {uploading.bill ? "Uploading..." : t("multiStepForm.uploadBill")}
+                      <input
+                        type="file"
+                        accept="application/pdf, image/jpeg"
+                        className="hidden"
+                        onChange={handleFileChange("bill")}
+                        disabled={uploading.bill}
+                      />
+                    </label>
                     {fileNames.bill && (
                       <p className="text-sm text-gray-300 max-w-[200px] truncate">{fileNames.bill}</p>
                     )}
-                    {errors.bill && <p className="text-red-500 text-sm mt-2">{t("multiStepForm.errors.bill")}</p>}
+                    {errors.billUrl && <p className="text-red-500 text-sm mt-2">{t("multiStepForm.errors.bill")}</p>}
                     <div className="bg-transparent border-b-1 border-[#FFFFFF4D] outline-none mt-2"></div>
                   </div>
                 </div>
@@ -1050,7 +1151,7 @@ const MultiStepForm = () => {
                           >
                             <CustomCheckbox
                               checked={
-                                item === "ALL OF ABOVE"
+                                item === "ALL OF ABOVE" || item === "TODAS LAS ANTERIORES"
                                   ? formData.step4.length === 3
                                   : formData.step4.includes(item)
                               }
@@ -1073,7 +1174,7 @@ const MultiStepForm = () => {
                 backgroundColor: "#F8B03B",
                 color: "#000000",
               }}
-              disabled={isSubmitting}
+              disabled={isSubmitting || isUploading}
             >
               {isSubmitting && step === 4 ? t("multiStepForm.submittingButton") : step === 4 ? t("multiStepForm.submitButton") : t("multiStepForm.nextButton")}
             </button>

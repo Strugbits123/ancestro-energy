@@ -66,20 +66,7 @@ export default function CaseStudySection() {
           </h3>
 
           {/* Ecosystem Images Row */}
-          {/* <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-8 justify-items-center w-full">
-            {[1, 2, 3, 4, 5,6].map((eco) => (
-              <div key={eco} className="flex flex-col items-center space-y-2 w-full">
-                <div className="relative w-[120px] h-[65px] xs:w-[140px] xs:h-[75px] sm:w-[160px] sm:h-[85px] md:w-[173px] md:h-[91px]">
-                  <Image
-                    src={`/eco${eco}.png`}
-                    alt={`Ecosystem ${eco}`}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              </div>
-            ))}
-          </div> */}
+  
   <div
     className="
       grid 
@@ -113,29 +100,68 @@ export default function CaseStudySection() {
     ))}
   </div>
           {/* Logo + Address */}
-          <div className="flex flex-col items-center space-y-8 mt-12">
-            <div className="relative w-[337px] h-[119px]">
-              <Image
-                src="/Logo.png"
-                alt="Ancestro Logo"
-                fill
-                className="object-contain"
-              />
-            </div>
-            {/* Address + Divider + Contact */}
-            <div className="flex flex-wrap justify-center items-center gap-4 text-center mt-6">
-              <p className="text-sm md:text-base text-white/80 font-lato font-bold">
-                {t("caseStudySection.address")}
-              </p>
+    
+<div className="flex flex-col items-center space-y-8 mt-12">
+  {/* Logo */}
+  <div className="relative w-[200px] h-[70px] sm:w-[260px] sm:h-[90px] md:w-[337px] md:h-[119px]">
+    <Image
+      src="/Logo.png"
+      alt="Ancestro Logo"
+      fill
+      className="object-contain"
+    />
+  </div>
 
-              {/* Divider */}
-              <div className="w-[50px] h-[1px] bg-white/60"></div>
+  {/* Address + Divider + Contact + Icons */}
+  <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 text-center mt-6">
+    <p className="text-sm md:text-base text-white/80 font-lato font-bold">
+      {t("caseStudySection.address")}
+    </p>
 
-              <span className="text-sm md:text-base text-white/80 font-lato font-bold">
-                {t("caseStudySection.contact")}
-              </span>
-            </div>
-          </div>
+    {/* Divider */}
+    <div className="w-[40px] md:w-[50px] h-[1px] bg-white/60"></div>
+
+    {/* Contact */}
+    <span className="text-sm md:text-base text-white/80 font-lato font-bold">
+      {t("caseStudySection.contact")}
+    </span>
+
+    {/* Social Icons */}
+    <div className="flex items-center justify-center gap-4 md:gap-6 ml-2">
+      {/* LinkedIn */}
+      <a
+        href="https://www.linkedin.com/company/ancestro-energy/posts/?feedView=all"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative w-[28px] h-[28px] sm:w-[34px] sm:h-[34px] md:w-[38px] md:h-[38px] hover:opacity-80 transition"
+      >
+        <Image
+          src="/linkedin.png"
+          alt="LinkedIn"
+          fill
+          className="object-contain"
+        />
+      </a>
+      {/* Instagram */}
+      <a
+        href="https://www.instagram.com/ancestroenergy/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative w-[28px] h-[28px] sm:w-[34px] sm:h-[34px] md:w-[38px] md:h-[38px] hover:opacity-80 transition"
+      >
+        <Image
+          src="/insta.png"
+          alt="Instagram"
+          fill
+          className="object-contain"
+        />
+      </a>
+
+    </div>
+  </div>
+</div>
+
+
         </div>
       </div>
     </section>

@@ -5,10 +5,11 @@ import Image from 'next/image';
 import logo from "@/public/assets/logo.png";
 import SunButton from './ui/SunButton';
 import Link from 'next/link';
-
+import { usePathname } from 'next/navigation';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const pathname = usePathname();
+   const headerPosition = pathname === '/' ? 'top-8' : 'top-0';
   const handleCloseMenu = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -67,7 +68,7 @@ export default function Header() {
         }
       `}</style>
 
-      <header className="absolute top-0 left-0 right-0 z-50 py-10">
+      <header className={`absolute  left-0 right-0 z-50 py-10 ${headerPosition} transition-all duration-300`} >
         {/* Navigation Bar */}
         <nav className="container-2xl mx-auto px-[25px] md:px-[55px] py-4 flex justify-between items-center">
           {/* Logo */}

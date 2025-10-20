@@ -8,10 +8,22 @@
     "start": "next start"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.911.0",
+    "@aws-sdk/s3-request-presigner": "^3.911.0",
+    "@sendgrid/mail": "^8.1.6",
+    "aws-sdk": "^2.1692.0",
+    "i18next": "^25.5.3",
+    "i18next-browser-languagedetector": "^8.2.0",
+    "mongodb": "^6.10.0",
+    "multer": "^2.0.2",
+    "multer-s3": "^3.0.1",
     "next": "15.5.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-simple-maps": "^3.0.0"
+    "react-hook-form": "^7.64.0",
+    "react-i18next": "^16.0.0",
+    "react-simple-maps": "^3.0.0",
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

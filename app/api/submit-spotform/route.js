@@ -32,7 +32,7 @@ async function sendNotificationEmails(formValues) {
 
   // 👨‍💼 Admin Email
   const adminMsg = {
-    to: process.env.ADMIN_EMAIL || process.env.FROM_EMAIL,
+    to:  process.env.FROM_EMAIL,
     from: process.env.FROM_EMAIL,
     templateId: "d-fd0ce1edc140402285c124b2df59db0c", 
     dynamic_template_data: {

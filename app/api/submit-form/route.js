@@ -79,7 +79,7 @@ async function sendNotificationEmails(documentToInsert, language = "en") {
     : "d-d332299b2f4b43a5b7421e989398d27c"; // English template ID
 
   const adminMsg = {
-    to: process.env.ADMIN_EMAIL || process.env.FROM_EMAIL,
+    to:  process.env.FROM_EMAIL,
     from: process.env.FROM_EMAIL,
     templateId: "d-88af0dba329a472583c201e92310a111", // Admin template (assumed language-agnostic)
     dynamic_template_data: {

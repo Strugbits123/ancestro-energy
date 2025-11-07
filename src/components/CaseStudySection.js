@@ -114,12 +114,12 @@ export default function CaseStudySection() {
 
   {/* Address + Divider + Contact + Icons */}
   <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 text-center mt-6">
-    <p className="text-sm md:text-base text-white/80 font-lato font-bold">
+    {/* <p className="text-sm md:text-base text-white/80 font-lato font-bold">
       {t("caseStudySection.address")}
-    </p>
+    </p> */}
 
     {/* Divider */}
-    <div className="w-[40px] md:w-[50px] h-[1px] bg-white/60"></div>
+    {/* <div className="w-[40px] md:w-[50px] h-[1px] bg-white/60"></div> */}
 
     {/* Contact */}
     <span className="text-sm md:text-base text-white/80 font-lato font-bold">
